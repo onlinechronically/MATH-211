@@ -610,6 +610,58 @@ $$\lim_{x \to a}{\sqrt[n]{f(x)}} = \sqrt[n]{\lim_{x \to a}{f(x)}}\text{, provide
 	    &=& \frac{1}{1} \\
 	    &=& 1
 	    \end{eqnarray}
+	\item (Section 2.4, Related Exercise 6):
+		$$f(x) = \frac{x}{(x^2 - 2x - 3)^2}$$
+		$$\lim_{x \to -1}{f(x)} = - \infty$$
+		$$\lim_{x \to 3}{f(x)} = \infty$$
+	\item (Section 2.4, Related Exercise 7):
+		$$\lim_{x \to 1^-}{f(x)} = \infty$$
+		$$\lim_{x \to 1^+}{f(x)} = \infty$$
+		$$\lim_{x \to 1}{f(x)} = \infty$$
+		$$\lim_{x \to 2^-}{f(x)} = \infty$$
+		$$\lim_{x \to 2^+}{f(x)} = - \infty$$
+		$$\lim_{x \to 2}{f(x)} = \text{Does not exist}$$
+	\item (Section 2.4, Related Exercise 8):
+		$$\lim_{x \to 2^-}{g(x)} = \infty$$
+		$$\lim_{x \to 2^+}{g(x)} = - \infty$$
+		$$\lim_{x \to 2}{g(x)} = \text{Does not exist}$$
+		$$\lim_{x \to 4^-}{g(x)} = - \infty$$
+		$$\lim_{x \to 4^+}{g(x)} = - \infty$$
+		$$\lim_{x \to 4}{g(x)} = - \infty$$
+	\item (Section 2.4, Related Exercise 21):
+		$$\lim_{x \to 2^+}{\frac{1}{x-2}} = \infty$$
+		$$\lim_{x \to 2^-}{\frac{1}{x-2}} = - \infty$$
+		$$\lim_{x \to 2}{\frac{1}{x-2}} = \text{Does not exist}$$
+	\item (Section 2.4, Related Exercise 22):
+		$$\lim_{x \to 3^+}{\frac{2}{(x - 3)^3}} = \infty$$
+		$$\lim_{x \to 3^-}{\frac{2}{(x - 3)^3}} = - \infty$$
+		$$\lim_{x \to 3}{\frac{2}{(x - 3)^3}} = \text{Does not exist}$$
+	\item (Section 2.4, Related Exercise 28):
+		$$\lim_{t \to -2^+}{\frac{t^3 - 5t^2 + 6t}{t^4 - 4t^2}} = \lim_{t \to -2^+}{\frac{t(t-2)(t-3)}{t^2(t^2 - 4)}} = \lim_{t \to -2^+}{\frac{t(t-2)(t-3)}{t^2(t-2)(t+2)}} = \lim_{t \to -2^+}{\frac{t(t-3)}{t^2(t+2)}} = \lim_{t \to -2^+}{\frac{t^2 - 3t}{t^3 + 2t^2}} = - \infty$$
+		$$\lim_{t \to -2^-}{\frac{t^3 - 5t^2 + 6t}{t^4 - 4t^2}} = \lim_{t \to -2^-}{\frac{t(t-2)(t-3)}{t^2(t^2 - 4)}} = \lim_{t \to -2^-}{\frac{t(t-2)(t-3)}{t^2(t-2)(t+2)}} = \lim_{t \to -2^-}{\frac{t(t-3)}{t^2(t+2)}} = \lim_{t \to -2^-}{\frac{t^2 - 3t}{t^3 + 2t^2}} = - \infty$$
+		$$\lim_{t \to -2}{\frac{t^3 - 5t^2 + 6t}{t^4 - 4t^2}} = \lim_{t \to -2}{\frac{t(t-2)(t-3)}{t^2(t^2 - 4)}} = \lim_{t \to -2}{\frac{t(t-2)(t-3)}{t^2(t-2)(t+2)}} = \lim_{t \to -2}{\frac{t(t-3)}{t^2(t+2)}} = \lim_{t \to -2}{\frac{t^2 - 3t}{t^3 + 2t^2}} = - \infty$$
+		$$\lim_{t \to 2}{\frac{t^3 - 5t^2 + 6t}{t^4 - 4t^2}} = \lim_{t \to 2}{\frac{t(t-2)(t-3)}{t^2(t^2 - 4)}} = - \frac{1}{8}$$
+	\item (Section 2.4, Related Exercise 31): Remember, if you are able to solve by direct substitution after canceling terms (where the denominator does not equal zero), that's your answer
+		$$\lim_{x \to 0}{\frac{x - 3}{x^4 - 9x^2}} = \lim_{x \to 0}{\frac{x - 3}{x^2(x-3)(x+3)}} = \lim_{x \to 0}{\frac{1}{x^2(x+3)}} = \lim_{x \to 0}{\frac{1}{x^3+3x^2}} = \infty$$
+		$$\lim_{x \to 3}{\frac{x - 3}{x^4 - 9x^2}} = \lim_{x \to 3}{\frac{x - 3}{x^2(x-3)(x+3)}} = \lim_{x \to 3}{\frac{1}{x^2(x+3)}} = \lim_{x \to -3}{\frac{1}{x^3+3x^2}} = \frac{1}{54}$$
+		$$\lim_{x \to -3}{\frac{x - 3}{x^4 - 9x^2}} = \lim_{x \to -3}{\frac{x - 3}{x^2(x-3)(x+3)}} = \lim_{x \to -3}{\frac{1}{x^2(x+3)}} = \lim_{x \to -3}{\frac{1}{x^3+3x^2}} = \text{Does not exist}$$
+	\item (Section 2.4, Related Exercise 45):
+		$$f(x) = \frac{x-5}{x^2 - 25} = \frac{x-5}{(x-5)(x+5)} = \frac{1}{x+5}$$
+		Vertical Asymptotes: $x=-5$
+		$$\lim_{x \to 5}{f(x)} = \lim_{x \to 5}{\frac{1}{x+5}} = \frac{1}{5+5} = \frac{1}{10}$$
+		$$\lim_{x \to -5^-}{f(x)} = \lim_{x \to -5^-}{\frac{1}{x+5}} = - \infty$$
+		$$\lim_{x \to -5^+}{f(x)} = \lim_{x \to -5^+}{\frac{1}{x+5}} = \infty$$
+	\item (Section 2.4, Related Exercise 46):
+		$$f(x) = \frac{x+7}{x^4 - 49x^2} = \frac{x+7}{x^2(x^2 - 49)} = \frac{x+7}{x^2(x+7)(x-7)} = \frac{1}{x^2(x-7)} = \frac{1}{x^3 - 7x^2}$$
+		Vertical Asymptotes: $x = 0$, $x = 7$, $x = -7$
+		$$\lim_{x \to 7^-}{f(x)} = \lim_{x \to 7^-}{\frac{1}{x^3 - 6x^2}} = - \infty$$
+		$$\lim_{x \to 7^+}{f(x)} = \lim_{x \to 7^+}{\frac{1}{x^3 - 6x^2}} = \infty$$
+		$$\lim_{x \to -7}{f(x)} = \lim_{x \to -7}{\frac{1}{x^3 - 7x^2}} = \text{Does not exist}$$
+		$$\lim_{x \to 0}{f(x)} = \lim_{x \to 0}{\frac{1}{x^3 - 7x^2}} = - \infty$$
+	\item (Section 2.4, Related Exercise 39):
+		$$\lim_{\theta \to 0^+}{\csc{\theta}} = \infty$$
+	\item (Section 2.4, Related Exercise 40):
+		$$\lim_{x \to 0^-}{\csc{x}} = - \infty$$
 \end{enumerate}
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
 \end{document}
