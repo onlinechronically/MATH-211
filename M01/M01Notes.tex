@@ -75,6 +75,20 @@
     	    	\item When direct substitution is not possible, you may rationalize the numerator
             \end{itemize}
         \end{itemize}
+	\item Infinite Limits: In either case, the limit does not exist (not a real number) if it is infinite
+	\begin{itemize}
+		\item Suppose $f$ is defined for all $x$ near $a$. If $f(x)$ gorws arbitrarily large for all $x$ sufficinetly close (but not equal) to $a$, we write
+		$$\lim_{x \to a}{f(x)} = \infty$$
+		\item If $f(x)$ is negative and gorws arbitrarily large in magnitude for all $x$ sufficinetly close (but not equal) to $a$, we write
+		$$\lim_{x \to a}{f(x)} = - \infty$$
+		\item The line $x = a$ is a vertical asymptote for $f$ if any of the following hold
+		$$\lim_{x \to a}{f(x)} = \pm \infty$$
+		$$\lim_{x \to a^+}{f(x)} = \pm \infty$$
+		$$\lim_{x \to a^-}{f(x)} = \pm \infty$$
+		\item A vertical asymptote exists at $x = a$ if any one sided limit as $x \to a$ is $\infty$ or $- \infty$
+		\item If you have a limit of a rational function, where $p(a) = L \neq 0$ and $q(a) = 0$, then the one sided limits for $\frac{p(x)}{q(x)}$ approach $\pm \infty$
+		$$\lim_{x \to a}{\frac{p(x)}{q(x)}} = \frac{L}{0}$$
+	\end{itemize}
 \end{itemize}
 \section*{Limit Rules/Laws}
 $$\text{Assume }\lim_{x \to a}{f(x)}\text{ and }\lim_{x \to a}{g(x)}\text{ exist.}$$
@@ -268,6 +282,49 @@ $$\lim_{x \to a}{\sqrt[n]{f(x)}} = \sqrt[n]{\lim_{x \to a}{f(x)}}\text{, provide
     	    &=& 2 \cdot 1 \\
     	    &=& 2
     	\end{eqnarray}
+	\item Infinite Limits Numerically
+		$$f(x) = \frac{x}{(x-2)^2}$$
+		\begin{tabular}{| c | c | c | c |}
+			\hline
+			2.1 & 2.01 & 2.001 & 2.0001 \\
+			\hline
+			210 & 20100 & 2001000 & 200010000 \\
+			\hline
+		\end{tabular}
+
+		\begin{tabular}{| c | c | c | c |}
+			\hline
+			1.9 & 1.99 & 1.999 & 1.9999 \\
+			\hline
+			190 & 19900 & 1999000 & 199990000 \\
+			\hline
+		\end{tabular}
+
+		$$\lim_{x \to 2}{f(x)} = \infty$$
+	\item Infinite Limits Graphically
+		$$\lim_{x \to -2^-}{h(x)} = - \infty$$
+		$$\lim_{x \to -2^+}{h(x)} = - \infty$$
+		$$\lim_{x \to -2}{h(x)} = - \infty$$
+		$$\lim_{x \to 3^-}{h(x)} = \infty$$
+		$$\lim_{x \to 3^+}{h(x)} = - \infty$$
+		$$\lim_{x \to 3}{h(x)} = \text{Does not exist}$$
+	\item Infinite Limits Analytically
+		\\ Hint: Look at the signs of the fractions
+		$$\frac{x^2-5x+6}{x^4-4x^2} = \frac{(x - 3)(x - 2)}{x^2(x + 2)(x - 2)} = \frac{x-3}{x^2(x+2)}$$
+		$$\lim_{x \to -2^+}{\frac{x^2 - 5x + 6}{x^4 - 4x^2}} = \lim_{x \to -2^+}{\frac{x-3}{x^2(x+2)}} = - \infty$$
+		$$\lim_{x \to -2^-}{\frac{x^2 - 5x + 6}{x^4 - 4x^2}} = \lim_{x \to -2^-}{\frac{x-3}{x^2(x+2)}} = \infty$$
+		$$\lim_{x \to -2}{\frac{x^2 - 5x + 6}{x^4 - 4x^2}} = \text{Does not exist}$$
+	\item Infinite Limits Analytically with Square Root
+		$$\lim_{x \to 1^+}{\frac{x + 3}{\sqrt{x^2 - 5x + 4}}} = \lim_{x \to 1^+}{\frac{x + 3}{\sqrt{(x-4)(x-1)}}} = \text{Does not exist}$$
+		$$\lim_{x \to 1^-}{\frac{x + 3}{\sqrt{x^2 - 5x + 4}}} = \lim_{x \to 1^-}{\frac{x + 3}{\sqrt{(x-4)(x-1)}}} = \infty$$
+		$$\lim_{x \to 1}{\frac{x + 3}{\sqrt{x^2 - 5x + 4}}} = \text{Does not exist}$$
+	\item Infinite Limit with a Trigonometric Function
+		$$\lim_{\theta \to 0^-}{\frac{\sin{\theta}}{\cos^2{\theta} - 1}} = \lim_{\theta \to 0^-}{\frac{\sin{\theta}}{- \sin^2{\theta}}} = \lim_{\theta \to 0^-}{\frac{1}{- \sin^{\theta}}} = \infty$$
+	\item Locating Veritical Asymptotes
+		$$f(x) = \frac{x + 7}{x^4 - 49x^2} = \frac{x+7}{x^2(x^2-49)} = \frac{x+7}{x^2((x-7)(x+7))} = \frac{1}{x^2(x-7)}$$
+		Denominator is $0$ at $x=0$, $x=-7$, $x=7$ \\
+		$x=-7$ does not fit, as it is connected with $x+7$, but cancels out \\
+		Vertical Asympotetes: $x = 0$, $x = 7$
     \item (Section 2.1, Related Exercise 13):
     	\\Hint: use the secant line slope formula
     	$$s(t) = -16t^2 + 128t$$
