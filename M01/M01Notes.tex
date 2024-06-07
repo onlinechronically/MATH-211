@@ -109,6 +109,7 @@
 		$$\lim_{x \to \pm \infty}{f(x)} = \frac{a_m}{b_n}$$
 		If the degree of $p(x)$ is greater than the degree of $q(x)$ then
 		$$\lim_{x \to \pm \infty}{f(x)} = - \infty \text{ or } \infty$$
+        If the graph of a function $f$ approaches a line (with finite and nonzero slope) as $x \to \pm \infty$, then that line is a slant asymptote/oblique asymptote of $f$
 		\item End behaviour for transcendental functions
 		$$\lim_{x \to \pm \infty}{\sin{x}} = \text{Does not exist}$$
 		$$\lim_{x \to \infty}{e^x} = \infty$$
@@ -728,6 +729,53 @@ $$\lim_{x \to a}{\sqrt[n]{f(x)}} = \sqrt[n]{\lim_{x \to a}{f(x)}}\text{, provide
 		$$\lim_{\theta \to 0^+}{\csc{\theta}} = \infty$$
 	\item (Section 2.4, Related Exercise 40):
 		$$\lim_{x \to 0^-}{\csc{x}} = - \infty$$
+	\item (Section 2.5, Related Exercise 10)
+		$$\lim_{x \to \infty}{5 + \frac{1}{x} + \frac{10}{x^2}} = 5 + 0 + 0 = 5$$
+	\item (Section 2.5, Related Exercise 19)
+		$$\lim_{x \to \infty}{\frac{\cos{x^5}}{\sqrt{x}}} = 0$$
+	\item (Section 2.5, Related Exercise 21)
+        $$\lim_{x \to \infty}{3x^12 - 9x^7} = \infty$$
+	\item (Section 2.5, Related Exercise 23)
+        $$\lim_{x \to - \infty}{-3x^16 + 2} = - \infty$$
+	\item (Section 2.5, Related Exercise 38)
+        $$f(x) = \frac{3x^2 - 7}{x^2 + 5x}$$
+        Horizontal Asymptote: $y = 3$
+	\item (Section 2.5, Related Exercise 41)
+        $$f(x) = \frac{3x^3 - 7}{x^4 + 5x^2}$$
+        Horizontal Asymptote: $y = 0$
+	\item (Section 2.5, Related Exercise 43)
+        $$f(x) = \frac{40x^5 + x^2}{16x^4 - 2x}$$
+        Horizontal Asymptote: None
+        \\ \textbf{Explanation}: Since the limit is infinity, there is no horizontal asymptote.
+	\item (Section 2.5, Related Exercise 51)
+        $$f(x) = \frac{x^2 - 3}{x+6} = \frac{}{}$$
+        $$\lim_{x \to \infty}{\frac{x^2 - 3}{x+6}} = \lim_{x \to \infty}{\frac{x^2 - 3}{x+6}}$$
+        Vertical Asymptote: $x = -6$
+	\item (Section 2.5, Related Exercise 52)
+	\item (Section 2.5, Related Exercise 46)
+        $$f(x) = \frac{\sqrt{x^2 + 1}}{2x+1}$$
+        \begin{eqnarray}
+            f(x) &=& \frac{\sqrt{x^2 + 1}}{2x+1} \\
+                 &=& \frac{\frac{1}{2x+1}\sqrt{x^2+1}}{\frac{2x+1}{2x+1}} \\
+                 &=& \frac{1}{2x+1}\sqrt{x^2+1} \\
+                 &=& \frac{1}{\sqrt{(2x+1)^2}}\sqrt{x^2+1} \\
+                 &=& \sqrt{\frac{x^2+1}{(2x+1)^2}} \\
+                 &=& \sqrt{\frac{x^2+1}{4x^2+4x+1}} \\
+        \end{eqnarray}
+	\item (Section 2.5, Related Exercise 47)
+	\item (Section 2.5, Related Exercise 57)
+        $$f(x) = -3e^{-x}$$
+        $$\lim_{x \to \infty}{-3e^{-x}} = 3(0) = 0$$
+        $$\lim_{x \to - \infty}{-3e^{-x}} = 3(\infty) = \infty$$
+        Horizontal Asymptotes: $y = 0$
+	\item (Section 2.5, Related Exercise 59)
+        $$f(x) = 1 - \ln{x}$$
+        $$\lim_{x \to \infty}{(1 - \ln{x})} = 1 - \infty = - \infty$$
+        $$\lim_{x \to 0^+}{(1 - \ln{x})} = 1 + \infty = \infty$$
+	\item (Section 2.5, Related Exercise 62)
+        $$f(x) = \frac{50}{e^{2x}}$$
+        $$\lim_{x \to \infty}{\frac{50}{e^{2x}}} = \frac{50}{\infty} = 0$$
+        $$\lim_{x \to - \infty}{\frac{50}{e^{2x}}} = \text{Does not exist}$$
 \end{enumerate}
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
 \end{document}
