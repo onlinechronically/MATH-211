@@ -748,21 +748,52 @@ $$\lim_{x \to a}{\sqrt[n]{f(x)}} = \sqrt[n]{\lim_{x \to a}{f(x)}}\text{, provide
         Horizontal Asymptote: None
         \\ \textbf{Explanation}: Since the limit is infinity, there is no horizontal asymptote.
 	\item (Section 2.5, Related Exercise 51)
-        $$f(x) = \frac{x^2 - 3}{x+6} = \frac{}{}$$
-        $$\lim_{x \to \infty}{\frac{x^2 - 3}{x+6}} = \lim_{x \to \infty}{\frac{x^2 - 3}{x+6}}$$
+        $$f(x) = \frac{x^2 - 3}{x+6}$$
+		Slant Asymptote: $y = x - 6$ \\
         Vertical Asymptote: $x = -6$
 	\item (Section 2.5, Related Exercise 52)
+		$$f(x) = \frac{x^2 - 1}{x + 2}$$
+		Slant Asymptote: $y = x - 2$ \\
+        Vertical Asymptote: $x = -2$
 	\item (Section 2.5, Related Exercise 46)
         $$f(x) = \frac{\sqrt{x^2 + 1}}{2x+1}$$
         \begin{eqnarray}
-            f(x) &=& \frac{\sqrt{x^2 + 1}}{2x+1} \\
-                 &=& \frac{\frac{1}{2x+1}\sqrt{x^2+1}}{\frac{2x+1}{2x+1}} \\
-                 &=& \frac{1}{2x+1}\sqrt{x^2+1} \\
-                 &=& \frac{1}{\sqrt{(2x+1)^2}}\sqrt{x^2+1} \\
-                 &=& \sqrt{\frac{x^2+1}{(2x+1)^2}} \\
-                 &=& \sqrt{\frac{x^2+1}{4x^2+4x+1}} \\
+            \lim_{x \to \infty}{f(x)} &=& \lim_{x \to \infty}{\frac{\sqrt{x^2 + 1}}{2x+1}} \\
+			&=& \lim_{x \to \infty}{\frac{\sqrt{\frac{x^2}{x^2} + \frac{1}{x^2}}}{\frac{2x}{x}+\frac{1}{x}}} \\
+			&=& \lim_{x \to \infty}{\frac{\sqrt{1 + \frac{1}{x^2}}}{2+\frac{1}{x}}} \\
+			&=& \frac{\sqrt{1 + 0}}{2+0} \\
+			&=& \frac{\sqrt{1}}{2} \\
+			&=& \frac{1}{2}
         \end{eqnarray}
+		\begin{eqnarray}
+			\lim_{x \to - \infty}{f(x)} &=& \lim_{x \to - \infty}{\frac{- \sqrt{x^2 + 1}}{2x+1}} \\
+			&=& \lim_{x \to - \infty}{\frac{- \sqrt{\frac{x^2}{x^2} + \frac{1}{x^2}}}{\frac{2x}{x}+\frac{1}{x}}} \\
+			&=& \frac{- \sqrt{1 + 0}}{2+0} \\
+			&=& \frac{- 1}{2} \\
+			&=& - \frac{1}{2}
+		\end{eqnarray}
+		Horizontal Asymptotes: $y = \frac{1}{2}$, $y = - \frac{1}{2}$
 	\item (Section 2.5, Related Exercise 47)
+		$$f(x) = \frac{4x^3 + 1}{2x^3 + \sqrt{16x^6 + 1}}$$
+		\begin{eqnarray}
+			\lim_{x \to \infty}{f(x)} &=& \lim_{x \to \infty}{\frac{4x^3 + 1}{2x^3 + \sqrt{16x^6 + 1}}} \\
+			&=& \lim_{x \to \infty}{\frac{\frac{4x^3}{x^3} + \frac{1}{x^3}}{\frac{2x^3}{x^3} + \sqrt{\frac{16x^6}{x^6} + \frac{1}{x^6}}}} \\
+			&=& \frac{4 + 0}{2 + \sqrt{16 + 0}} \\
+			&=& \frac{4}{2 + \sqrt{16}} \\
+			&=& \frac{4}{2 + 4} \\
+			&=& \frac{4}{6} \\
+			&=& \frac{2}{3}
+		\end{eqnarray}
+		\begin{eqnarray}
+			\lim_{x \to - \infty}{f(x)} &=& \lim_{x \to - \infty}{\frac{4x^3 + 1}{2x^3 - \sqrt{16x^6 + 1}}} \\
+			&=& \lim_{x \to - \infty}{\frac{\frac{4x^3}{x^3} + \frac{1}{x^3}}{\frac{2x^3}{x^3} - \sqrt{\frac{16x^6}{x^6} + \frac{1}{x^6}}}} \\
+			&=& \frac{4 + 0}{2 - \sqrt{16 + 0}} \\
+			&=& \frac{4}{2 - \sqrt{16}} \\
+			&=& \frac{4}{2 - 4} \\
+			&=& \frac{4}{-2} \\
+			&=& -2
+		\end{eqnarray}
+		Horizontal Asymptotes: $y = \frac{2}{3}$, $y = -2$
 	\item (Section 2.5, Related Exercise 57)
         $$f(x) = -3e^{-x}$$
         $$\lim_{x \to \infty}{-3e^{-x}} = 3(0) = 0$$
