@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}} 
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+\title{Module 2 Notes (MATH-211)}
+\author{Lillie Donato}
+\date{17 June 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{General Notes (and Definitions)}
+\begin{itemize}
+    \item Derivatives
+    \begin{itemize}
+        \item A \textbf{derivative} is a new function made up of the slopes of the tangent lines as they change along a curve
+        \item If a curve represents the trajectory of a moving object, the tangent line at a point indicates the direction of motion at that point
+        \item As $x \to a$, the slope of the secant lines approaches the slope of the tangent line
+        \item Alternative definition for Tangent Line(s): Consider the curve $y = f(x)$ and a secant line intersecting the curve at points $P(a, f(a))$ and $Q(a + h, f(a + h))$, with $m_{sec}$ and $m_{tan}$
+        $$\text{Interval:} (a, a + h)$$
+        $$m_{sec} = \frac{f(a + h) - f(a)}{h}$$
+        $$m_{tan} = \lim_{h \to 0}{\frac{f(a + h) - f(a)}{h}}$$
+        \item \textbf{Definition}: The derivative of $f$ at $a$, denoted $f'(a)$, is given by either the two following limits, provided the limits exist and $a$ is in the domain of $f$
+        \begin{eqnarray}
+            f'(a) &=& \lim_{x \to a}{\frac{f(x) - f(a)}{x - a}} \\
+            f'(a) &=& \lim_{h \to 0}{\frac{f(a + h) - f(a)}{h}}
+        \end{eqnarray}
+        If $f'(a)$ exists, we say that $f$ is \textbf{differentiable} at $a$
+    \end{itemize}
+\end{itemize}
+
+\section*{Examples}
+\begin{enumerate}
+    \item Instantaneous Velocity
+    $$s(t) = -16t^2 + 128t + 192$$
+    $$t = 2$$
+    \begin{eqnarray}
+        \lim_{t \to 2}{\frac{s(t) - s(2)}{t - 2}} &=& \lim_{t \to 2}{\frac{(-16t^2 + 128t + 192) - (-16(2^2) + 128(2) + 192)}{t - 2}} \\
+        &=& \lim_{t \to 2}{\frac{(-16t^2 + 128t + 192) - (-64 + 256 + 192)}{t - 2}} \\
+        &=& \lim_{t \to 2}{\frac{(-16t^2 + 128t + 192) - 384}{t - 2}} \\
+        &=& \lim_{t \to 2}{\frac{-16t^2 + 128t - 192}{t - 2}} \\
+        &=& \lim_{t \to 2}{\frac{(t - 2)(-16t + 96)}{t - 2}} \\
+        &=& \lim_{t \to 2}{-16t + 96} \\
+        &=& -32 + 96 \\
+        &=& 64
+    \end{eqnarray}
+    \item Secant Lines
+    $$y = f(x)$$
+    Intersection Points: $P(a, f(a))$ and $Q(x, f(x))$ \\
+    $$\text{Secant Line Slope} = \frac{f(x) - f(a)}{x - a}$$
+    \item Tangent Lines
+    $$f(x) = 2x^2 + 4x - 3$$
+    $$(-1, 5)$$
+    \begin{eqnarray}
+        \lim_{x \to -1}{\frac{f(x) - f(-1)}{x - (-1)}} &=& \lim_{x \to -1}{\frac{2x^2 + 4x - 3 - (-5)}{x + 1}} \\
+        &=& \lim_{x \to -1}{\frac{2x^2 + 4x + 2}{x + 1}} \\
+        &=& \lim_{x \to -1}{\frac{(x + 1)(2x + 2)}{x + 1}} \\
+        &=& \lim_{x \to -1}{\frac{(x + 1)(2x + 2)}{x + 1}} \\
+        &=& \lim_{x \to -1}{2x + 2} \\
+        &=& 2(-1) + 2 \\
+        &=& -2 + 2 \\
+        &=& 0
+    \end{eqnarray}
+    \item Alternative Tangent Lines
+    $$f(x) = 5 - x^3$$
+    $$(2, -3)$$
+    $$a = 2$$
+    $$h = -3 - 2 = -5$$
+    \begin{eqnarray}
+        \lim_{h \to 0}{\frac{f(2 + h) - f(2)}{h}} &=& \lim_{h \to 0}{\frac{f(2 + h) - (-3)}{h}} \\
+        &=& \lim_{h \to 0}{\frac{f(2 + h) + 3}{h}} \\
+        &=& \lim_{h \to 0}{\frac{5 - (2 + h)^3 + 3}{h}} \\
+        &=& \lim_{h \to 0}{\frac{8 - (2 + h)^3}{h}} \\
+        &=& \lim_{h \to 0}{\frac{2^3 - (2 + h)^3}{h}} \\
+        &=& \lim_{h \to 0}{\frac{(2 - (2 + h))(2^2 + 2(2 + h) + (2 + h)^2)}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-h(4 + 4 + 2h + h^2 + 4h + 4)}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-h(h^2 + 6h + 12)}{h}} \\
+        &=& \lim_{h \to 0}{-(h^2 + 6h + 12)} \\
+        &=& -12 \\
+    \end{eqnarray}
+    $$y+3 = -12(x-2) = -12x + 24$$
+    $$y = -12x + 21$$
+    \item Derrivative Example
+    $$f(x) = \sqrt{x - 1}$$
+    $$x = 2$$
+    $$f(x) = f(2) = \sqrt{2 - 1} = \sqrt{1} = 1$$
+\end{enumerate}
+
+\section*{Related Exercises}
+\begin{enumerate}
+    \item Example
+\end{enumerate}
+
+\blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
+\end{document}
