@@ -140,7 +140,170 @@
 
 \section*{Related Exercises}
 \begin{enumerate}
-    \item Example
+    \item (Section 3.1, Related Exercise 13)
+    $$s(t) = -16t^2 + 100t$$
+    $$a = 1$$
+    \begin{eqnarray}
+        \lim_{h \to 0}{\frac{s(a + h) - s(a)}{h}} &=& \lim_{h \to 0}{\frac{s(1 + h) - 84}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-16(1 + h)^2 + 100(1 + h) - 84}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-16(h^2 + 2h + 1) + 100 + 100h - 84}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-16h^2 - 32h - 16 + 100 + 100h - 84}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-16h^2 + 68h}{h}} \\
+        &=& \lim_{h \to 0}{-16h + 68} \\
+        &=& -16(0) + 68 \\
+        &=& 68
+    \end{eqnarray}
+    \item (Section 3.1, Related Exercise 14)
+    $$s(t) = -16t^2 + 128t + 192$$
+    $$a = 2$$
+    \begin{eqnarray}
+        \lim_{h \to 0}{\frac{s(a + h) - s(a)}{h}} &=& \lim_{h \to 0}{\frac{s(2 + h) - 384}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-16(2 + h)^2 + 128(2 + h) + 192 - 384}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-16(h^2 + 4h + 4) + 128(2 + h) + 192 - 384}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-16h^2 - 64h - 64 + 256 + 128h + 192 - 384}{h}} \\
+        &=& \lim_{h \to 0}{\frac{-16h^2 + 64h}{h}} \\
+        &=& \lim_{h \to 0}{-16h + 64} \\
+        &=& -16(0) + 64 \\
+        &=& 64
+    \end{eqnarray}
+    \item (Section 3.1, Related Exercise 17)
+    $$f(x) = \frac{1}{x}$$
+    $$P(-1, -1)$$
+    \begin{eqnarray}
+        \lim_{x \to -1}{\frac{f(x) - f(-1)}{x - (-1)}} &=& \lim_{x \to -1}{\frac{f(x) - (-1)}{x + 1}} \\
+        &=& \lim_{x \to -1}{\frac{f(x) + 1}{x + 1}} \\
+        &=& \lim_{x \to -1}{\frac{\frac{1}{x} + 1}{x + 1}} \\
+        &=& \lim_{x \to -1}{\frac{\frac{1+x}{x}}{x + 1}} \\
+        &=& \lim_{x \to -1}{\frac{\frac{1+x}{x}}{x + 1} \cdot \frac{x}{x}} \\
+        &=& \lim_{x \to -1}{\frac{1+x}{(x + 1)x}} \\
+        &=& \lim_{x \to -1}{\frac{1}{x}} \\
+        &=& \frac{1}{-1} \\
+        &=& -1
+    \end{eqnarray}
+    $$y - (-1) = -1(x - (-1))$$
+    $$y = -1(x + 1) - 1 = -x - 1 - 1 = -x - 2$$
+    \item (Section 3.1, Related Exercise 18)
+    $$f(x) = \frac{4}{x^2}$$
+    $$(-1, 4)$$
+    \begin{eqnarray}
+        \lim_{x \to -1}{\frac{f(x) - 4}{x - (-1)}} &=& \lim_{x \to -1}{\frac{f(x) - 4}{x + 1}} \\
+                                                 &=& \lim_{x \to -1}{\frac{\frac{4}{x^2} - 4}{x + 1}} \\
+                                                 &=& \lim_{x \to -1}{\frac{\frac{4 - 4x^2}{x^2}}{x + 1}} \\
+                                                 &=& \lim_{x \to -1}{\frac{\frac{4 - 4x^2}{x^2}}{x + 1} \cdot \frac{x^2}{x^2}} \\
+                                                 &=& \lim_{x \to -1}{\frac{4 - 4x^2}{x^2(x + 1)}} \\
+                                                 &=& \lim_{x \to -1}{\frac{4(1 - x^2)}{x^2(x + 1)}} \\
+                                                 &=& \lim_{x \to -1}{\frac{4(1 - x)(1 + x)}{x^2(x + 1)}} \\
+                                                 &=& \lim_{x \to -1}{\frac{4(1 - x)}{x^2}} \\
+                                                 &=& \frac{4(1 - (-1)^2)}{(-1)^2} \\
+                                                 &=& \frac{4(1 - 1)}{1} \\
+                                                 &=& 0
+    \end{eqnarray}
+    $$y - 4 = 0$$
+    $$y = 4$$
+    \item (Section 3.1, Related Exercise 23)
+    $$f(x) = 3x^2 - 4x$$
+    $$(1, -1)$$
+    \begin{eqnarray}
+        \lim_{h \to 0}{\frac{f(a + h) - f(a)}{h}} &=& \lim_{h \to 0}{\frac{f(1 + h) - (-1)}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{3(1 + h)^2 - 4(1 + h) +1}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{3h^2 + 6h + 3 - 4 - 4h +1}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{3h^2 + 2h + 3 - 4 + 1}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{3h^2 + 2h}{h}} \\
+                                                &=& \lim_{h \to 0}{3h + 2} \\
+                                                &=& 3(0) + 2 \\
+                                                &=& 2
+    \end{eqnarray}
+    $$y - (-1) = 2(x - 1)$$
+    $$y = 2(x - 1) - 1 = 2x - 2 - 1 = 2x - 3$$
+    \item (Section 3.1, Related Exercise 27)
+    $$f(x) = x^3$$
+    $$(1, 1)$$
+    \begin{eqnarray}
+        \lim_{h \to 0}{\frac{f(a + h) - f(a)}{h}} &=& \lim_{h \to 0}{\frac{f(1 + h) - 1}{h}} \\
+        &=& \lim_{h \to 0}{\frac{(1 + h)^3 - 1}{h}} \\
+        &=& \lim_{h \to 0}{\frac{h^3 + h^2 + 2h + 2h^2 + h + 1 - 1}{h}} \\
+        &=& \lim_{h \to 0}{\frac{h^3 + 2h^2 + 3h}{h}} \\
+        &=& \lim_{h \to 0}{h^2 + 2h + 3} \\
+        &=& 0^2 + 2(0) + 3 \\
+        &=& 3
+    \end{eqnarray}
+    $$y - 1 = 3(x - 1)$$
+    $$y = 3x - 3 + 1 = 3x - 2$$
+    \item (Section 3.1, Related Exercise 39)
+    $$f(x) = \sqrt{2x+1}$$
+    $$a = 4$$
+    \begin{eqnarray}
+        \lim_{x \to 4}{\frac{f(x) - f(a)}{x - a}} &=& \lim_{x \to 4}{\frac{f(x) - 3}{x - 4}} \\
+                                                &=& \lim_{x \to 4}{\frac{\sqrt{2x + 1} - 3}{x - 4}} \\
+                                                &=& \lim_{x \to 4}{\frac{\sqrt{2x + 1} - 3}{x - 4} \cdot \frac{\sqrt{2x + 1} + 3}{\sqrt{2x + 1} + 3}} \\
+                                                &=& \lim_{x \to 4}{\frac{2x + 1 - 9}{(x - 4)(\sqrt{2x + 1} + 3)}} \\
+                                                &=& \lim_{x \to 4}{\frac{2(x - 4)}{(x - 4)(\sqrt{2x + 1} + 3)}} \\
+                                                &=& \lim_{x \to 4}{\frac{2}{\sqrt{2x + 1} + 3}} \\
+                                                &=& \frac{2}{\sqrt{9} + 3} \\
+                                                &=& \frac{2}{3 + 3} \\
+                                                &=& \frac{2}{6} \\
+                                                &=& \frac{1}{3}
+    \end{eqnarray}
+    $$y - 3 = \frac{1}{3}(x - 4)$$
+    $$y = \frac{1}{3}x - \frac{4}{3} + \frac{9}{3} = \frac{1}{3}x + \frac{5}{3}$$
+    \item (Section 3.1, Related Exercise 40)
+    $$f(x) = \sqrt{3x}$$
+    $$a = 12$$
+    \begin{eqnarray}
+        \lim_{x \to 12}{\frac{f(x) - f(a)}{x - a}} &=& \lim_{x \to 12}{\frac{f(x) - 6}{x - 12}} \\
+                                                 &=& \lim_{x \to 12}{\frac{\sqrt{3x} - 6}{x - 12}} \\
+                                                 &=& \lim_{x \to 12}{\frac{\sqrt{3x} - 6}{x - 12} \cdot \frac{\sqrt{3x} + 6}{\sqrt{3x} + 6}} \\
+                                                 &=& \lim_{x \to 12}{\frac{3x - 36}{(x - 12)(\sqrt{3x} + 6)}} \\
+                                                 &=& \lim_{x \to 12}{\frac{3(x - 12)}{(x - 12)(\sqrt{3x} + 6)}} \\
+                                                 &=& \lim_{x \to 12}{\frac{3}{\sqrt{3x} + 6}} \\
+                                                 &=& \frac{3}{\sqrt{3(12)} + 6} \\
+                                                 &=& \frac{3}{\sqrt{36} + 6} \\
+                                                 &=& \frac{3}{6 + 6} \\
+                                                 &=& \frac{3}{12} \\
+                                                 &=& \frac{1}{4}
+    \end{eqnarray}
+    $$y - 6 = \frac{1}{4}(x - 12)$$
+    $$y = \frac{1}{4}x - 3 + 6 = \frac{1}{4}x + 3$$
+    \item (Section 3.1, Related Exercise 49)
+    $$d(t) = 16t^2$$
+    $$a = 4$$
+    \begin{eqnarray}
+        \lim_{x \to 4}{\frac{f(x) - f(a)}{x - a}} &=& \lim_{h \to 0}{\frac{f(x) - 256}{x - 4}} \\
+        &=& \lim_{x \to 4}{\frac{16x^2 - 256}{x - 4}} \\
+        &=& \lim_{x \to 4}{\frac{(16x + 64)(x - 4)}{x - 4}} \\
+        &=& \lim_{x \to 4}{16x + 64} \\
+        &=& 16(4) + 64 \\
+        &=& 64 + 64 \\
+        &=& 128
+    \end{eqnarray}
+    \item (Section 3.1, Related Exercise 50)
+    $$F(x) = \frac{k}{x^2} \text{ where } k \text{ is some constant}$$
+    $$a = 1$$
+    \begin{eqnarray}
+        \lim_{h \to 0}{\frac{F(a + h) - F(a)}{h}} &=& \lim_{h \to 0}{\frac{F(1 + h) - \frac{k}{1}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{F(1 + h) - \frac{k}{1}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{\frac{k}{(1 + h)^2} - \frac{k}{1}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{\frac{k}{(1 + h)^2} - \frac{k(1 + h)^2}{(1 + h)^2}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{\frac{k - k(1 + h)^2}{(1 + h)^2}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{\frac{k - k(1 + h)^2}{(1 + h)^2}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{\frac{k - (kh^2 + 2kh + k)}{(1 + h)^2}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{\frac{k - kh^2 - 2kh - k}{(1 + h)^2}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{\frac{- kh^2 - 2kh}{(1 + h)^2}}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{- kh^2 - 2kh}{(1 + h)^2} \cdot \frac{1}{h}} \\
+                                                &=& \lim_{h \to 0}{\frac{h(- kh - 2k)}{h(1 + h)^2}} \\
+                                                &=& \lim_{h \to 0}{\frac{- kh - 2k}{(1 + h)^2}} \\
+                                                &=& \frac{- kh - 2k}{(1 + h)^2} \\
+                                                &=& \frac{- k(0) - 2k}{(1 + 0)^2} \\
+                                                &=& \frac{- 2k}{1} \\
+                                                &=& - 2k
+    \end{eqnarray}
+    \item (Section 3.1, Related Exercise 53)
+        \\ Hint: Sketch a Secant Line
+        $$L'(1.5) \approx 4$$
+        $$L'(a) \approx 0 \text{ where } a \geq 4$$
+    \item (Section 3.1, Related Exercise 54)
+        $$D'(60) \approx 0.6$$
+        $$D'(170) \approx 0$$
 \end{enumerate}
 
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
