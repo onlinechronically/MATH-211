@@ -46,6 +46,31 @@
         \end{eqnarray}
         If $f'(a)$ exists, we say that $f$ is \textbf{differentiable} at $a$
     \end{itemize}
+\item Derivatives as Functions
+    \begin{itemize}
+        \item The slope of the tangent line of somefunction $f$ is a function called the derivative of $f$
+            $$f'(x) = \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}}$$
+        \item If $f'(x)$ exists, we say that $f$ is \textbf{differentiable} at x
+        \item If $f$ is differentiable at every point in some open interval $I$, we say that $f$ is differentiable on $I$
+        \item For some function $f$ we can denote the derivative of $f$ like such:
+        \begin{eqnarray}
+            f'(x) \\
+            \frac{dy}{dx} \\
+            \frac{df}{dx} \\
+            \frac{d}{dx}(f(x)) \\
+            D_x (f(x)) \\
+            y'(x)
+        \end{eqnarray}
+        \item When evaluating some derivative $f$ at $a$, we can use the following:
+        \begin{eqnarray}
+            f'(a) \\
+            y'(a) \\
+            \frac{df}{dx}\Bigr|_{\substack{x=a}} \\
+            \frac{dy}{dx}\Bigr|_{\substack{x=a}}
+        \end{eqnarray}
+        \item If $f$ is differentiable at $a$, then $f$ is continuous at $a$
+        \item If $f$ is not continuous at $a$, then $f$ is not differentiable at $a$
+    \end{itemize}
 \end{itemize}
 
 \section*{Examples}
@@ -135,6 +160,34 @@
         y &=& 3x - 36 + 36 \\
           &=& 3x \\
     \end{eqnarray}
+    \item Find the Derivative
+    $$f(x) = 4x^2 - 5x + 6$$
+    \begin{eqnarray}
+        \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}} &=& \lim_{h \to 0}{\frac{4(x + h)^2 - 5(x + h) + 6 - (4x^2 - 5x + 6)}{h}} \\
+        &=& \lim_{h \to 0}{\frac{4(x + h)^2 - 5x - 5h + 6 - 4x^2 + 5x - 6}{h}} \\
+        &=& \lim_{h \to 0}{\frac{4(x + h)^2 - 5h - 4x^2}{h}} \\
+        &=& \lim_{h \to 0}{\frac{4h^2 + 8xh - 5h}{h}} \\
+        &=& \lim_{h \to 0}{4h + 8x - 5} \\
+        &=& 4(0) + 8x - 5 \\
+        &=& 8x - 5
+    \end{eqnarray}
+    \item Calculating a Derivative
+    $$f(x) = \frac{1}{x}$$
+    $$(-5, - \frac{1}{5})$$
+    \begin{eqnarray}
+        \frac{dy}{dx} &=& \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}} \\
+                      &=& \lim_{h \to 0}{\frac{\frac{1}{x + h} - \frac{1}{x}}{h}} \\
+                      &=& \lim_{h \to 0}{\frac{\frac{x - (x + h)}{x(x + h)}}{h}} \\
+                      &=& \lim_{h \to 0}{\frac{\frac{-h}{x(x + h)}}{h}} \\
+                      &=& \lim_{h \to 0}{\frac{-h}{x(x + h)} \cdot \frac{1}{h}} \\
+                      &=& \lim_{h \to 0}{\frac{-h}{h(x(x + h))}} \\
+                      &=& \lim_{h \to 0}{\frac{-1}{x(x + h)}} \\
+                      &=& \frac{-1}{x(x + 0)} \\
+                      &=& \frac{-1}{x^2}
+    \end{eqnarray}
+    $$m_{\tan} = \frac{dy}{dx}\Bigr|_{\substack{x=-5}} = \frac{-1}{(-5)^2} = \frac{-1}{25}$$
+    $$y - (- \frac{1}{5}) = \frac{-1}{25}(x - (-5))$$
+    $$y = \frac{-1}{25}x - \frac{1}{5} - \frac{1}{5} = \frac{-1}{25}x - \frac{2}{5}$$
 \end{enumerate}
 
 \section*{Related Exercises}
