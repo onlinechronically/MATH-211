@@ -356,6 +356,111 @@
     \item (Section 3.1, Related Exercise 54)
         $$D'(60) \approx 0.6$$
         $$D'(170) \approx 0$$
+    \item (Section 3.2, Related Exercise 23)
+    $$f(x) = 4x^2 + 1$$
+    $$a = 2, 4$$
+    \begin{eqnarray}
+        f'(x) &=& \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}} \\
+              &=& \lim_{h \to 0}{\frac{4(x + h)^2 + 1 - (4x^2 + 1)}{h}} \\
+              &=& \lim_{h \to 0}{\frac{4(x^2 + 2xh + h^2) + 1 - 4x^2 - 1}{h}} \\
+              &=& \lim_{h \to 0}{\frac{4x^2 + 8xh + 4h^2 - 4x^2}{h}} \\
+              &=& \lim_{h \to 0}{\frac{8xh + 4h^2}{h}} \\
+              &=& \lim_{h \to 0}{8x + 4h} \\
+              &=& 8x + 4(0) \\
+              &=& 8x
+    \end{eqnarray}
+    $$f'(2) = 8(2) = 16$$
+    $$f'(4) = 8(4) = 32$$
+    \item (Section 3.2, Related Exercise 24)
+    $$f(x) = x^2 + 3x$$
+    $$a = -1, 4$$
+    \begin{eqnarray}
+        f'(x) &=& \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}} \\
+        &=& \lim_{h \to 0}{\frac{(x + h)^2 + 3(x + h) - (x^2 + 3x)}{h}} \\
+        &=& \lim_{h \to 0}{\frac{x^2 + h^2 + xh + 3x + 3h - x^2 - 3x}{h}} \\
+        &=& \lim_{h \to 0}{\frac{h^2 + xh + 3h}{h}} \\
+        &=& \lim_{h \to 0}{h + x + 3} \\
+        &=& 0 + x + 3 \\
+        &=& x + 3
+    \end{eqnarray}
+    $$f'(-1) = -1 + 3 = 2$$
+    $$f'(4) = 4 + 3 = 7$$
+    \item (Section 3.2, Related Exercise 37)
+    $$f(x) = \sqrt{3x + 1}$$
+    $$a = 8$$
+    \begin{eqnarray}
+        f'(x) &=& \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}} \\
+              &=& \lim_{h \to 0}{\frac{\sqrt{3(x + h) + 1} - \sqrt{3x + 1}}{h}} \\
+              &=& \lim_{h \to 0}{\frac{\sqrt{3(x + h) + 1} - \sqrt{3x + 1}}{h} \cdot \frac{\sqrt{3(x + h) + 1} + \sqrt{3x + 1}}{\sqrt{3(x + h) + 1} + \sqrt{3x + 1}}} \\
+              &=& \lim_{h \to 0}{\frac{3(x + h) + 1 - (3x + 1)}{h(\sqrt{3(x + h) + 1} + \sqrt{3x + 1})}} \\
+              &=& \lim_{h \to 0}{\frac{3x + 3h + 1 - 3x - 1}{h(\sqrt{3(x + h) + 1} + \sqrt{3x + 1})}} \\
+              &=& \lim_{h \to 0}{\frac{3h}{h(\sqrt{3(x + h) + 1} + \sqrt{3x + 1})}} \\
+              &=& \lim_{h \to 0}{\frac{3}{\sqrt{3(x + h) + 1} + \sqrt{3x + 1}}} \\
+              &=& \frac{3}{\sqrt{3(x + 0) + 1} + \sqrt{3x + 1}} \\
+              &=& \frac{3}{\sqrt{3x + 1} + \sqrt{3x + 1}} \\
+              &=& \frac{3}{2 \sqrt{3x + 1}}
+    \end{eqnarray}
+    $$f'(8) = \frac{3}{2\sqrt{3(8) + 1}} = \frac{3}{2\sqrt{24 + 1}} = \frac{3}{2\sqrt{25}} = \frac{3}{2(5)} = \frac{3}{10}$$
+    $$y - f(8) = f'(8)(x - 8)$$
+    $$y = \frac{3}{10}(x - 8) + 5 = \frac{3}{10}x - \frac{12}{5} + 5 = \frac{3}{10}x + \frac{13}{5}$$
+    \item (Section 3.2, Related Exercise 38)
+    $$f(x) = \sqrt{x + 2}$$
+    $$a = 7$$
+    \begin{eqnarray}
+        f'(x) &=& \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}} \\
+              &=& \lim_{h \to 0}{\frac{\sqrt{x + h + 2} - \sqrt{x + 2}}{h}} \\
+              &=& \lim_{h \to 0}{\frac{\sqrt{x + h + 2} - \sqrt{x + 2}}{h} \cdot \frac{\sqrt{x + h + 2} + \sqrt{x + 2}}{\sqrt{x + h + 2} + \sqrt{x + 2}}} \\
+              &=& \lim_{h \to 0}{\frac{x + h + 2 - (x + 2)}{h(\sqrt{x + h + 2} + \sqrt{x + 2})}} \\
+              &=& \lim_{h \to 0}{\frac{x + h + 2 - x - 2}{h(\sqrt{x + h + 2} + \sqrt{x + 2})}} \\
+              &=& \lim_{h \to 0}{\frac{h}{h(\sqrt{x + h + 2} + \sqrt{x + 2})}} \\
+              &=& \lim_{h \to 0}{\frac{1}{\sqrt{x + h + 2} + \sqrt{x + 2}}} \\
+              &=& \frac{1}{\sqrt{x + 0 + 2} + \sqrt{x + 2}} \\
+              &=& \frac{1}{\sqrt{x + 2} + \sqrt{x + 2}} \\
+              &=& \frac{1}{2\sqrt{x + 2}}
+    \end{eqnarray}
+    $$f'(7) = \frac{1}{2\sqrt{7 + 2}} = \frac{1}{2\sqrt{9}} = \frac{1}{2 \cdot 3} = \frac{1}{6}$$
+    $$y - f(7) = f'(7)(x - 7)$$
+    $$y = \frac{1}{6}(x - 7) + 3 = \frac{1}{6}x - \frac{7}{6} + 3 = \frac{1}{6}x + \frac{11}{6}$$
+    \item (Section 3.2, Related Exercise 25)
+        $$f(x) = \frac{1}{x + 1}$$
+        $$a = - \frac{1}{2}, 5$$
+        \begin{eqnarray}
+            f'(x) &=& \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}} \\
+                  &=& \lim_{h \to 0}{\frac{\frac{1}{x + h + 1} - \frac{1}{x+1}}{h}} \\
+                  &=& \lim_{h \to 0}{\frac{\frac{1}{x + h + 1} - \frac{1}{x+1}}{h}} \\
+                  &=& \lim_{h \to 0}{\frac{\frac{x + 1 - (x + h + 1)}{(x + h + 1)(x + 1)}}{h}} \\
+                  &=& \lim_{h \to 0}{\frac{x + 1 - x - h - 1}{h(x + h + 1)(x + 1)}} \\
+                  &=& \lim_{h \to 0}{\frac{-h}{h(x + h + 1)(x + 1)}} \\
+                  &=& \lim_{h \to 0}{\frac{-1}{(x + h + 1)(x + 1)}} \\
+                  &=& \frac{-1}{(x + 0 + 1)(x + 1)} \\
+                  &=& \frac{-1}{(x + 1)(x + 1)} \\
+                  &=& \frac{-1}{(x + 1)^2}
+        \end{eqnarray}
+        $$f'(- \frac{1}{2}) = \frac{-1}{(- \frac{1}{2} + 1)^2} = \frac{-1}{(\frac{1}{2})^2} = \frac{-1}{\frac{1}{4}} = -1 \cdot 4 = -4$$
+        $$f'(5) = \frac{-1}{(5 + 1)^2} = \frac{-1}{(6)^2} = \frac{-1}{36}$$
+    \item (Section 3.2, Related Exercise 27)
+        $$f(t) = \frac{1}{\sqrt{t}}$$
+        $$a = 9, \frac{1}{4}$$
+        \begin{eqnarray}
+            f'(t) &=& \lim_{h \to 0}{\frac{f(t + h) - f(t)}{h}} \\
+                  &=& \lim_{h \to 0}{\frac{\frac{1}{\sqrt{t + h}} - \frac{1}{\sqrt{t}}}{h}} \\
+                  &=& \lim_{h \to 0}{\frac{\frac{\sqrt{t} - \sqrt{t + h}}{\sqrt{t + h}\sqrt{t}}}{h}} \\
+                  &=& \lim_{h \to 0}{\frac{\frac{\sqrt{t} - \sqrt{t + h}}{\sqrt{t + h}\sqrt{t}} \cdot \frac{\sqrt{t} + \sqrt{t + h}}{\sqrt{t} + \sqrt{t + h}}}{h}} \\
+                  &=& \lim_{h \to 0}{\frac{t - (t + h)}{h(t\sqrt{t + h} + (t + h)\sqrt{t})}} \\
+                  &=& \lim_{h \to 0}{\frac{- h}{h(t\sqrt{t + h} + (t + h)\sqrt{t})}} \\
+                  &=& \lim_{h \to 0}{\frac{- 1}{t\sqrt{t + h} + (t + h)\sqrt{t}}} \\
+                  &=& \frac{- 1}{t\sqrt{t + 0} + (t + 0)\sqrt{t}} \\
+                  &=& \frac{- 1}{t\sqrt{t} + t\sqrt{t}} \\
+                  &=& \frac{- 1}{2(t\sqrt{t})}
+        \end{eqnarray}
+        $$f'(9) = \frac{-1}{2 \left (9\sqrt{9} \right )} = \frac{-1}{2 \left (9 \cdot 3 \right )} = \frac{-1}{2\left(27\right)} = \frac{-1}{54}$$
+        $$f'\left(\frac{1}{4}\right) = \frac{-1}{2\left(\frac{1}{4}\sqrt{\frac{1}{4}}\right)} = \frac{-1}{2\left(\frac{1}{4} \cdot \frac{1}{2}\right)} = \frac{-1}{2\left(\frac{1}{8}\right)} = \frac{-1}{\frac{2}{8}} = -1\left(4\right) = -4$$
+    \item (Section 3.2, Related Exercise 53)
+    \\ $f$ is not continuous at $x = 1$
+    \\ $f$ is not differentiable at $x = 1, 2$
+    \item (Section 3.2, Related Exercise 54)
+    \\ $f$ is not continuous at $x = 1$
+    \\ $f$ is not differentiable at $x = 1, 2$
 \end{enumerate}
 
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
