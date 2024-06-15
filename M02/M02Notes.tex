@@ -96,6 +96,29 @@
     $$f''(x) = \frac{d}{dx}\left(f'(x)\right)$$
     For $n \in \mathbb{Z}$ where $n \geq 1$, the \textbf{nth derivative} of $f$ is
     $$f^{(n)}\left(x\right) = \frac{d}{dx}\left(f^{(n - 1)}\left(x\right)\right)$$
+    \item Product Rule
+    $$\text{If } f \text{ and } g \text{ are differentiable at } x \text{, then } \frac{d}{dx}\left(f(x)g(x)\right) = f'(x)g(x) + f(x)g'(x)$$
+    \item Quotient Rule
+        $$\text{If } f \text{ and } g \text{ are differentiable at } x \text{ and } g(x) \neq 0 \text{, then the derivative of } \frac{f}{g} \text{ at } x \text{ exists and}$$
+        $$\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{g(x)f'(x) - f(x)g'(x)}{(g(x))^2}$$
+    \item Power Rule for Negative Integers
+    \begin{proof}
+        \begin{align*}
+            &\quad \text{Choose } n \in \mathbb{Z} \\
+            &\quad \text{Assume that } n < 0 \\
+            &\quad \hspace{1cm} \text{Let } m = -n \\
+            &\quad \hspace{1cm} \text{Since } m = -n \text{ and } n < 0 \text{, we know } m > 0
+        \end{align*}
+        \begin{eqnarray}
+            \frac{d}{dx}\left(x^n\right) &=& \frac{d}{dx}\left(\frac{1}{x^m}\right) \\
+                                         &=& \frac{x^m \cdot 0 - 1 \cdot (mx^{m - 1})}{(x^m)^2} \\
+                                         &=& \frac{-mx^{m - 1}}{x^{2m}} \\
+                                         &=& -mx^{(m - 1) - 2m} \\
+                                         &=& -mx^{- m - 1} \\
+                                         &=& nx^{n - 1} \\
+        \end{eqnarray} \\
+        $$\text{Under the assumption that } n \in \mathbb{Z} \text{ and } n < 0 \text{, we proved } \frac{d}{dx}\left(x^n\right) = nx^{n - 1}$$
+    \end{proof}
 \end{itemize}
 
 \section*{Examples}
@@ -233,6 +256,41 @@
     $$f''(x) = 36x^2 - 4 - e^x$$
     $$f'''(x) = 72x - e^x$$
     $$f^{(4)}(x) = 72 - e^x$$
+    \item Product Rule
+    $$\frac{d}{dt}\left((t + 1)(t^2 - t + 1)\right) = 1(t^2 - t + 1) + (2t - 1)(t + 1) = 3t^2$$
+    $$\frac{d}{dx}\left(x^5e^x\right) = 5x^4(e^x) + e^x(x^5) = e^x\left(x^5 + 5x^4\right)$$
+    \item Quotient Rule
+    \begin{eqnarray}
+        \frac{d}{dx}\left(\frac{x^4 + 5x^2 + x}{\sin{x}}\right) &=& \frac{\sin{x}(4x^3 + 10x + 1) - (x^4 + 5x^2 + x)\cos{x}}{\sin^2{x}} \\
+                                                                &=& \frac{(4x^3 + 10x + 1) - (x^4 + 5x^2 + x)\cot{x}}{\sin{x}}
+    \end{eqnarray}
+    \begin{eqnarray}
+        \frac{d}{dx}\left(\frac{2e^x - 1}{3e^x + 1}\right) &=& \frac{2e^x(2e^x + 1) - 2e^x(2e^x - 1)}{(2e^x + 1)^2} \\
+        &=& \frac{2e^x(2e^x + 1 - 2e^x + 1)}{(2e^x + 1)^2} \\
+        &=& \frac{2e^x(2)}{(2e^x + 1)^2} \\
+        &=& \frac{4e^x}{(2e^x + 1)^2}
+    \end{eqnarray}
+    \item Tangent Lines with Quotient Rule
+    $$f(x) = \frac{2x^2}{3x - 1}$$
+    $$(1, 1)$$
+    $$f(1) = 1$$
+    $$f'(1) = \frac{4x(3x - 1) - 3(2x^2)}{(3x - 1)^2} = \frac{2}{4} = \frac{1}{2}$$
+    $$y = \frac{1}{2}x + \frac{1}{2}$$
+    \item Power Rule with Negative Powers
+    \begin{eqnarray}
+        \frac{d}{dx}\left(\frac{-5}{x^6}\right) &=& \frac{d}{dx}\left(-5x^{-6}\right) \\
+        &=& -5\left(-6x^{-7}\right) \\
+        &=& 30x^{-7} \\
+        &=& \frac{1}{30x^{7}}
+    \end{eqnarray}
+    \begin{eqnarray}
+    \frac{d}{dp}\left(\frac{2p^8 - 7}{p^3}\right) &=& \frac{d}{dp}2p^5 - 7p^{-3} \\
+    &=& 10p^4 + 21p^{-4} \\
+    &=& \frac{10p^4}{21p^4}
+    \end{eqnarray}
+    \item Combining Rules to Evaluate Derivatives
+        $$f(x) = \left(\frac{x^2 + 1}{x}\right)e^x = \left(x + x^{-1}\right)e^x$$
+        $$f'(x) = \left(1 + -x^{-2}\right)e^x + \left(x + x^{-1}\right)e^x$$
 \end{enumerate}
 
 \section*{Related Exercises}
