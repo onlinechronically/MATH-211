@@ -71,6 +71,15 @@
         \item If $f$ is differentiable at $a$, then $f$ is continuous at $a$
         \item If $f$ is not continuous at $a$, then $f$ is not differentiable at $a$
     \end{itemize}
+    \item Trigonometric Derivatives
+    $$\lim_{x \to 0}{\frac{\sin{x}}{x}} = 1$$
+    $$\lim_{x \to 0}{\frac{\cos{x} - 1}{x}} = 0$$
+    $$\frac{d}{dx}\left(\sin{x}\right) = \cos{x}$$
+    $$\frac{d}{dx}\left(\cos{x}\right) = - \sin{x}$$
+    $$\frac{d}{dx}\left(\tan{x}\right) = \sec^2{x}$$
+    $$\frac{d}{dx}\left(\cot{x}\right) = - \csc^2{x}$$
+    $$\frac{d}{dx}\left(\sec{x}\right) = \sec{x}\tan{x}$$
+    $$\frac{d}{dx}\left(\csc{x}\right) = - \csc{x}\cot{x}$$
 \end{itemize}
 
 \section*{Rules of Differentiation}
@@ -291,6 +300,30 @@
     \item Combining Rules to Evaluate Derivatives
         $$f(x) = \left(\frac{x^2 + 1}{x}\right)e^x = \left(x + x^{-1}\right)e^x$$
         $$f'(x) = \left(1 + -x^{-2}\right)e^x + \left(x + x^{-1}\right)e^x$$
+    \item Evaluating Trigonometric Limits
+    $$\lim_{x \to 0}{\frac{\sin{3x}}{x}} = 3$$
+    $$\lim_{x \to 0}{\frac{\tan{7x}}{\sin{x}}} = \lim_{x \to 0}{\frac{\sin{7x}}{\cos{7x}\sin{x}}} = \lim_{x \to 0}{\frac{\sin{7x}}{\sin{x}} \cdot \frac{1}{\cos{7x}}} = 7 \cdot 1 = 1$$
+    \item Finding Trigonometric Derivatives
+    \begin{eqnarray}
+        \frac{d}{dx}\left(x\sin{x}\right) &=& \sin{x} + x\cos{x}
+    \end{eqnarray}
+    \begin{eqnarray}
+        \frac{d}{dx}\left(\frac{\cos{x}}{e^x}\right) &=& \frac{-\sin{x}e^x - \cos{x}e^x}{\left(e^x\right)^2} \\
+        &=& \frac{e^x (-\sin{x} - \cos{x})}{\left(e^x\right)^2} \\
+        &=& \frac{-\sin{x} - \cos{x}}{e^x} \\
+    \end{eqnarray}
+    \item Finding Other Trigonometric Derivatives
+    \begin{eqnarray}
+        e^x \csc{x} &=& e^x\csc{x} - \csc{x}\cot{x}e^x \\
+                    &=& e^x\csc{x}(1 - \cot{x})
+    \end{eqnarray}
+    \item Higher-order Trigonometric Derivatives
+    \begin{eqnarray}
+        \frac{d}{dx} \left(\frac{d}{dx} \left(\tan{x}\right)\right) &=& \frac{d}{dx} \left(\sec^2{x}\right) \\
+                                                                    &=& \frac{d}{dx} \left(\sec{x}\sec{x}\right) \\
+                                                                    &=& \sec^2{x}\tan{x} + \sec^2{x}\tan{x} \\
+                                                                    &=& 2\left(\sec^2{x}\tan{x}\right)
+    \end{eqnarray}
 \end{enumerate}
 
 \section*{Related Exercises}
