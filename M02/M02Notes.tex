@@ -715,6 +715,85 @@
             &=& \frac{6x^5 - 6x^2 - 4x^4 + 4x - x^3 + 1 - 6x^5 + 6x^4 + 3x^3 - 3x^2}{(x^3 - 1)^2} \\
             &=& \frac{2x^4 + 2x^3 - 9x^2 + 5}{(x^3 - 1)^2} \\
         \end{eqnarray}
+    \item (Section 3.5, Related Exercise 12)
+        \begin{eqnarray}
+            \lim_{x \to 0}{\frac{\sin{5x}}{3x}} &=& \lim_{x \to 0}{\frac{\sin{5x}}{3x} \cdot \frac{5}{5}} \\
+            &=& \lim_{x \to 0}{\frac{5\sin{5x}}{15x}} \\
+            &=& \lim_{x \to 0}{\frac{5}{3} \cdot \frac{\sin{5x}}{5x}} \\
+            &=& \frac{5}{3} \cdot \lim_{x \to 0}{\frac{\sin{5x}}{5x}} \\
+            &=& \frac{5}{3} \cdot 1 \\
+            &=& \frac{5}{3}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 13)
+        \begin{eqnarray}
+            \lim_{x \to 0}{\frac{\sin{7x}}{\sin{3x}}} &=& \lim_{x \to 0}{\frac{\left(\frac{\sin{7x}}{x}\right)}{\left(\frac{\sin{3x}}{x}\right)}} \\
+            &=& \lim_{x \to 0}{\frac{\left(\frac{\sin{7x}}{x}\right)}{\left(\frac{\sin{3x}}{x}\right)}} \\
+            &=& \frac{\lim_{x \to 0}{\left(\frac{\sin{7x}}{x}\right)}}{\lim_{x \to 0}{\left(\frac{\sin{3x}}{x}\right)}} \\
+            &=& \frac{7}{3}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 25)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(e^{-x}\sin{x}\right) &=& \frac{d}{dx}\left(\frac{\sin{x}}{e^x}\right) \\
+            &=& \frac{\cos{x}e^x - \sin{x}e^x}{\left(e^x\right)^2} \\
+            &=& \frac{e^x\left(\cos{x} - \sin{x}\right)}{e^{2x}} \\
+            &=& \frac{\cos{x} - \sin{x}}{e^x} \\
+            &=& e^{-x} \left(\cos{x} - \sin{x}\right)
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 27)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(x \sin{x}\right) &=& \sin{x} + x\cos{x}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 29)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(\frac{\cos{x}}{\sin{x} + 1}\right) &=& \frac{-\sin{x}(\sin{x} + 1) - \cos{x}\cos{x}}{\left(\sin{x} + 1\right)^2} \\
+            &=& \frac{-\sin^2{x} - \sin{x} - \cos^2{x}}{\left(\sin{x} + 1\right)^2} \\
+            &=& \frac{-(\sin^2{x} + \cos^2{x}) - \sin{x}}{\left(\sin{x} + 1\right)^2} \\
+            &=& \frac{- 1 - \sin{x}}{\left(\sin{x} + 1\right)^2} \\
+            &=& \frac{- \left(\sin{x} + 1\right)}{\left(\sin{x} + 1\right)^2} \\
+            &=& \frac{-1}{\sin{x} + 1} \\
+            &=& -\frac{1}{\sin{x} + 1}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 52)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(\cot{x}\right) &=& \frac{d}{dx}\left(\frac{1}{\tan{x}}\right) \\
+                                             &=& \frac{d}{dx}\left(\frac{1}{\left(\frac{\sin{x}}{\cos{x}}\right)}\right) \\
+                                             &=& \frac{d}{dx}\left(\frac{\cos{x}}{\sin{x}}\right) \\
+                                             &=& \frac{-\sin{x}\sin{x} - \cos{x}\cos{x}}{\sin^2{x}} \\
+                                             &=& \frac{-\sin^2{x} - \cos^2{x}}{\sin^2{x}} \\
+                                             &=& - \frac{\sin^2{x}}{\sin^2{x}} - \frac{\cos^2{x}}{\sin^2{x}} \\
+                                             &=& - 1 - \frac{1 - \sin^2{x}}{\sin^2{x}} \\
+                                             &=& - 1 - \left(\frac{1}{\sin^2{x}} - \frac{\sin^2{x}}{\sin^2{x}}\right) \\
+                                             &=& - 1 - \frac{1}{\sin^2{x}} + 1 \\
+                                             &=& - \frac{1}{\sin^2{x}} \\
+                                             &=& - \csc^2{x}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 54)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(\csc{x}\right) &=& \frac{d}{dx}\left(\frac{1}{\sin{x}}\right) \\
+                                             &=& \frac{- \cos{x}}{\sin^2{x}} \\
+                                             &=& \frac{- \cot{x}}{\sin{x}} \\
+                                             &=& - \cot{x}\csc{x}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 43)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(\sec{x} + \csc{x}\right) &=& \sec{x}\tan{x} - \csc{x}\cot{x}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 44)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(\sec{x}\tan{x}\right) &=& \sec{x}\tan{x}\tan{x} + \sec^2{x}\sec{x} \\
+            &=& \sec{x}\tan^2{x} + \sec^3{x}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 61)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(\frac{d}{dx}\left(\cot{x}\right)\right) &=& \frac{d}{dx}\left(- \csc^2{x}\right) \\
+                                                                      &=& - 2 \left(-\csc{x}\cot{x}\right) \\
+                                                                      &=&  2\csc{x}\cot{x}
+        \end{eqnarray}
+    \item (Section 3.5, Related Exercise 62)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(\frac{d}{dx}\left(\tan{x}\right)\right) &=& \frac{d}{dx}\left(\sec^2{x}\right) \\
+                                                                      &=& 2\sec{x}\tan{x} \\
+        \end{eqnarray}
 \end{enumerate}
 
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
