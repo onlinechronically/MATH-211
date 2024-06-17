@@ -80,6 +80,22 @@
     $$\frac{d}{dx}\left(\cot{x}\right) = - \csc^2{x}$$
     $$\frac{d}{dx}\left(\sec{x}\right) = \sec{x}\tan{x}$$
     $$\frac{d}{dx}\left(\csc{x}\right) = - \csc{x}\cot{x}$$
+    \item Derivatives as Rate of Change
+    \begin{itemize}
+        \item Secant Lines give average velocities
+        $$v_{av} = \frac{f(a + \Delta t) - f(a)}{\Delta t}$$
+        \item Tangent Line gives instantaneous velocity
+        $$v(a) = \lim_{\Delta t \to 0}{\frac{f(a + \Delta t) - f(a)}{\Delta t}} = f'(a)$$
+        \item Velocity, speed, and acceleration
+        \\ Suppose and object moves along a line with position $s = f(t)$
+        $$\text{the \textbf{velocity} at time } t \text{ is } v = \frac{ds}{dt} = f'(t)$$
+        $$\text{the \textbf{speed} at time } t \text{ is } |v| = |f'(t)|$$
+        $$\text{the \textbf{acceleration} at time } t \text{ is } a = \frac{dv}{dt} = \frac{d^2s}{dt^2} = f''(t)$$
+        \item Average and marginal cost
+        $$\text{The \textbf{cost function} } C(x) \text{ gives the cost to produce the first } x \text{ items in a manufacturing process}$$
+        $$\text{The \textbf{average cost} to produce } x \text{ items is } \overline{C}(x) = \frac{C(x)}{x}$$
+        $$\text{The \textbf{marginal cost} } C'(x) \text{ is the approximate cost to produce one additional item after producing } x \text{ items}$$
+    \end{itemize}
 \end{itemize}
 
 \section*{Rules of Differentiation}
@@ -324,6 +340,36 @@
                                                                     &=& \sec^2{x}\tan{x} + \sec^2{x}\tan{x} \\
                                                                     &=& 2\left(\sec^2{x}\tan{x}\right)
     \end{eqnarray}
+    \item Velocity
+    $$\frac{600}{1.5} = 400$$
+    $$\frac{-300}{1} = -300$$
+    The velocity at $2.75 \leq t \leq 4.75$, where the plane is probably stationary at minneapolis. \\
+    $v(6) = -400$, because they are getting closer to seattle
+    \item Position, velocity, and acceleration
+    \\ Hint: the object is stationary when $v(t) = 0$
+    $$s = -t^2 + 4t - 3$$
+    $$0 \leq t \leq 5$$
+    $$v(t) = s'(t) = -2t + 4$$
+    \begin{eqnarray}
+        -2t + 4 &=& 0 \\
+        -2t &=& -4 \\
+        t &=& 2
+    \end{eqnarray}
+    The object is stationary after 2 seconds.
+    $$a(t) = f''(t) = v'(t) = -2$$
+    After 1 second, the acceleration is $-2$ \\
+    The acceleration when the velocity is zero ($t = 2$), is $-2$
+    \item Growth Rates
+    $$p_{av} = \frac{p(6) - p(0)}{6} = \frac{7.1788 - 6.73}{6} = \frac{0.4488}{6} = 0.0748$$
+    $$p'(t) = 0.0156t + 0.028$$
+    $$p'(1) = 0.0436$$
+    $$p'(5) = 0.106$$
+    \item Average and marginal cost
+    $$C(x) = -0.04x^2 + 100x + 800$$
+    $$\overline{C}(x) = \frac{-0.04x^2 + 100x + 800}{x} = -0.04x + 100 + \frac{800}{x}$$
+    $$C'(x) = -0.08x + 100$$
+    $$\overline{C}(500) = -0.04(500) + 100 + \frac{800}{500} = -20 + 100 + 1.6 = 81.6$$
+    $$C'(500) = -0.08(500) + 100 = 60$$
 \end{enumerate}
 
 \section*{Related Exercises}
