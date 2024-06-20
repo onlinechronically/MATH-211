@@ -1,0 +1,262 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}} 
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+\title{Module 3 Notes (MATH-211)}
+\author{Lillie Donato}
+\date{24 June 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{General Notes (and Definitions)}
+\begin{itemize}
+    \item The Chain Rule
+        \\ Suppose $y = f(u)$ is differentiable at $u = g(x)$ and $u = g(x)$ is differentiable at $x$. The composite function $y = f(g(x))$ is differentiable at $x$, and its derivative can be expressed in two equivalent ways.
+        \begin{eqnarray}
+            \frac{dy}{dx} &=& \frac{dy}{dy} \cdot \frac{du}{dx} \\
+            \frac{d}{dx}\left(f\left(g\left(x\right)\right)\right) &=& f'\left(g\left(x\right)\right) \cdot g'\left(x\right)
+        \end{eqnarray}
+        Application of the Chain Rule (Assume the differentiable function $y = f(g(x))$ is given):
+        \begin{enumerate}
+            \item Identify an outer function $f$ and an inner function $g$, and let $u = g(x)$.
+            \item Replace $g(x)$ with $u$ to express $y$ in terms of $u$:
+            $$y = f(g(x)) = f(u)$$
+            \item Calculate the product
+            $$\frac{dy}{du} \cdot \frac{du}{dx}$$
+            \item Replace $u$ with $g(x)$ in $\frac{dy}{du}$ to obtain $\frac{dy}{dx}$
+        \end{enumerate}
+        $$\text{If } g \text{ is differentiable for all } x \text{ in its domain and } p \in \mathbb{R} \text{,}$$
+        $$\frac{d}{dx}\left(\left(g\left(x\right)\right)^p\right) = p\left(g\left(x\right)\right)^{p - 1}g'\left(x\right)$$
+\end{itemize}
+
+\section*{Examples}
+\begin{enumerate}
+    \item The Chain Rule
+    \begin{eqnarray}
+        y &=& \left(5x^2+11x\right)^{\frac{4}{3}} \\
+        u &=& 5x^2 + 11x \\
+        f &=& u^{\frac{4}{3}} \\
+        \frac{dy}{dx} &=& \frac{dy}{du} \cdot \frac{du}{dx} \\
+                      &=& \frac{4}{3}u^{\frac{1}{3}} \cdot 10x + 11 \\
+                      &=& \frac{4}{3}\left(5x^2 + 11x\right)^{\frac{1}{3}} \cdot 10x + 11 \\
+    \end{eqnarray}
+    \begin{eqnarray}
+        y &=& e^{4x^2 + 1} \\
+        u &=& 4x^2 + 1 \\
+        y &=& e^u \\
+        \frac{dy}{dx} &=& \frac{dy}{du} \cdot \frac{du}{dx} \\
+                      &=& e^u \cdot 8x \\
+                      &=& e^{4x^2 + 1} \cdot 8x \\
+                      &=& 8xe^{4x^2 + 1}
+    \end{eqnarray}
+    \item The Chain Rule (with Tables)
+    $$h(x) = f(g(x))$$
+    \begin{eqnarray}
+        y &=& f(g(x)) \\
+        u &=& g(x) \\
+        y &=& f(u) \\
+        \frac{dy}{dx} &=& \frac{dy}{du} \cdot \frac{du}{dx} \\
+                      &=& f(u) \cdot g'(x) \\
+                      &=& f'(g(x)) \cdot g'(x) \\
+                      \nonumber \\
+        h'(1) &=& f'(g(1)) \cdot g'(1) \\
+              &=& f'(4) \cdot 9 \\
+              &=& 7 \cdot 9 \\
+              &=& 63 \\
+              \nonumber \\
+        h'(2) &=& f'(g(2)) \cdot g'(2) \\
+              &=& f'(1) \cdot 7 \\
+              &=& -6 \cdot 7 \\
+              &=& -42 \\
+              \nonumber \\
+        h'(3) &=& f'(g(3)) \cdot g'(3) \\
+              &=& f'(5) \cdot 3 \\
+              &=& 2 \cdot 3 \\
+              &=& 6
+    \end{eqnarray}
+    $$k(x) = g(g(x))$$
+    \begin{eqnarray}
+        y &=& g(g(x)) \\
+        u &=& g(x) \\
+        y &=& g(u) \\
+        \frac{dy}{dx} &=& \frac{dy}{du} \cdot \frac{du}{dx} \\
+                      &=& g'(u) \cdot g'(x) \\
+                      &=& g'(g(x)) \cdot g'(x) \\
+                      \nonumber \\
+        k'(3) &=& g'(g(3)) \cdot g'(3) \\
+              &=& g'(5) \cdot 3 \\
+              &=& -5 \cdot 3 \\
+              &=& -15 \\
+              \nonumber \\
+        k'(1) &=& g'(g(1)) \cdot g'(1) \\
+              &=& g'(4) \cdot 9 \\
+              &=& -1 \cdot 9 \\
+              &=& -9 \\
+              \nonumber \\
+        k'(5) &=& g'(g(5)) \cdot g'(5) \\
+              &=& g'(3) \cdot -5 \\
+              &=& 3 \cdot -5 \\
+              &=& -15
+    \end{eqnarray}
+    \item The Chain Rule (All Forms)
+    \begin{eqnarray}
+        y &=& \sqrt[3]{2x^2 - x - 5} \\
+        u &=& 2x^2 - x - 5 \\
+        y &=& \sqrt[3]{u} \\
+        y' &=& u^{-\frac{2}{3}} \cdot 4x - 1 \\
+           &=& \frac{1}{3}\left(2x^2 - x - 5\right)^{-\frac{2}{3}} \cdot 4x - 1
+    \end{eqnarray}
+    \begin{eqnarray}
+        y &=& \csc{(\tan{t})} \\
+        u &=& \tan{t} \\
+        y &=& \csc{u} \\
+        y' &=& -\csc{u}\cot{u} \cdot \sec^2{t} \\
+           &=& -\csc{(\tan{t})}\cot{(\tan{t})} \cdot \sec^2{t}
+    \end{eqnarray}
+    \item The Chain Rule (Nested)
+    \begin{eqnarray}
+        y &=& \tan{(\sin{e^x})} \\
+        u_2 &=& e^x \\
+        u_1 &=& \sin{u_2} \\
+        y &=& \tan{u_1} \\
+        y' &=& \sec^2{(\sin{e^x})} \cdot \cos{e^x} \cdot e^x
+    \end{eqnarray}
+    \item The Chain Rule (Combination of Rules)
+    \begin{eqnarray}
+        y &=& \left(\frac{e^x}{x+1}\right)^8 \\
+        y' &=& 8\left(\frac{e^x}{x+1}\right)^7 \cdot \frac{xe^x}{(x+1)^2} \\
+           &=& 8\frac{e^{7x}}{(x+1)^7} \cdot \frac{xe^x}{(x+1)^2} \\
+           &=& \frac{8xe^{8x}}{(x+1)^9}
+    \end{eqnarray}
+\end{enumerate}
+
+\section*{Related Exercises}
+\begin{enumerate}
+    \item (Section 3.7 Exercise 15)
+        \begin{eqnarray}
+            y &=& \left(3x+7\right)^{10} \\
+            u &=& 3x+7 \\
+            f(u) &=& u^{10} \\
+            y' &=& 10u^9 \cdot 3 \\
+               &=& 10\left(3x+7\right)^9 \cdot 3 \\
+               &=& 30\left(3x+7\right)^9
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 17)
+        \begin{eqnarray}
+            y &=& \sin^5{x} \\
+            u &=& \sin{x} \\
+            f(u) &=& u^5 \\
+            y' &=& 5u^4 \cdot \cos{x} \\
+               &=& 5\sin^4{x} \cos{x}
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 28)
+        \begin{eqnarray}
+            y &=& \left(x^2+2x+7\right)^8 \\
+            u &=& x^2 + 2x + 7 \\
+            f(u) &=& u^8 \\
+            y' &=& 8u^7 \cdot (2x + 2) \\
+               &=& 8\left(x^2+2x+7\right)^7 \cdot (2x + 2) \\
+               &=& \left(16x + 16\right)\left(x^2+2x+7\right)^7
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 29)
+        \begin{eqnarray}
+            y &=& \sqrt{10x + 1} \\
+            u &=& 10x + 1 \\
+            f(u) &=& \sqrt{u} \\
+            y' &=& \frac{1}{2\sqrt{u}} \cdot 10 \\
+               &=& \frac{1}{2\sqrt{10x + 1}} \cdot 10 \\
+               &=& \frac{10}{2\sqrt{10x + 1}} \\
+               &=& \frac{5}{\sqrt{10x + 1}}
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 41)
+        \begin{eqnarray}
+            y &=& \sqrt[4]{\frac{2x}{4x-3}} \\
+            u &=& \frac{2x}{4x-3} \\
+            f(u) &=& \sqrt[4]{u} \\
+            y' &=& \frac{1}{4}u^{-\frac{3}{4}} \cdot -\frac{6}{\left(4x-3\right)^2} \\
+               &=& \frac{1}{4}\left(\frac{2x}{4x-3}\right)^{-\frac{3}{4}} \cdot -\frac{6}{\left(4x-3\right)^2} \\
+               &=& -\frac{6}{4\left(4x-3\right)^2}\left(\frac{2x}{4x-3}\right)^{-\frac{3}{4}}
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 23)
+        \begin{eqnarray}
+            y &=& \tan{5x^2} \\
+            u &=& 5x^2 \\
+            f(u) &=& \tan{u} \\
+            y' &=& \sec^2{u} \cdot 10x \\
+               &=& \sec^2{5x^2} \cdot 10x \\
+               &=& 10x\sec^2{5x^2} \\
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 24)
+        \begin{eqnarray}
+            y &=& \sin{\frac{x}{4}} \\
+            u &=& \frac{x}{4} \\
+            f(u) &=& \sin{u} \\
+            y' &=& \cos{u} \cdot \frac{4}{16} \\
+               &=& \cos{\frac{x}{4}} \cdot \frac{1}{4} \\
+               &=& \frac{1}{4}\cos{\frac{x}{4}}
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 45)
+        \begin{eqnarray}
+            y &=& (2x^6 - 3x^3 + 3)^{25} \\
+            u &=& 2x^6 - 3x^3 + 3 \\
+            f(u) &=& u^{25} \\
+            y' &=& 25\left(u\right)^{24} \cdot 12x^5 - 9x^2 \\
+               &=& 25\left(2x^6 - 3x^3 + 3\right)^{24} \cdot 12x^5 - 9x^2 \\
+               &=& 25\left(12x^5 - 9x^2\right)\left(2x^6 - 3x^3 + 3\right)^{24}
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 46)
+        \begin{eqnarray}
+            y &=& (\cos{x} + 2\sin{x})^8 \\
+            u &=& \cos{x} + 2\sin{x} \\
+            f(u) &=& u^8 \\
+            y' &=& 8u^7 \cdot (-\sin{x} + 2\cos{x}) \\
+               &=& 8\left(\cos{x} + 2\sin{x}\right)^7 \cdot (-\sin{x} + 2\cos{x}) \\
+               &=& 8(-\sin{x} + 2\cos{x})\left(\cos{x} + 2\sin{x}\right)^7 \\
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 53)
+        \begin{eqnarray}
+            y &=& \sin{(\sin{(e^x)})} \\
+            y' &=& \cos{(\sin{e^x})}\cos{e^x}e^x
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 54)
+        \begin{eqnarray}
+            y &=& \sin^2{e^{3x + 1}} \\
+            y' &=& 6\sin{e^{3x+1}}\cos{e^{3x+1}}
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 68)
+        \begin{eqnarray}
+            y &=& \left(\frac{3x}{4x+2}\right)^5 \\
+            y' &=& 5u^4 \cdot \frac{12x+6 - 12x}{\left(4x+2\right)^2} \\
+               &=& 5\left(\frac{3x}{4x+2}\right)^4 \cdot \frac{6}{\left(4x+2\right)^2} \\
+               &=& \frac{30}{\left(4x+2\right)^2}\left(\frac{3x}{4x+2}\right)^4
+        \end{eqnarray}
+    \item (Section 3.7 Exercise 69)
+        \begin{eqnarray}
+            y &=& \left(\left(x+2\right)\left(x^2+1\right)\right)^4 \\
+            y' &=& 4u^3 \cdot x^2 + 1 + 2x^2 + 4x \\
+               &=& 4\left(3x^2 + 4x + 1\right)\left(\left(x+2\right)\left(x^2+1\right)\right)^3 \\
+               &=& 4\left(3x + 1\right)\left(x + 1\right)\left(\left(x+2\right)\left(x^2+1\right)\right)^3
+        \end{eqnarray}
+\end{enumerate}
+
+\blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
+\end{document}
