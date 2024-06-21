@@ -50,6 +50,22 @@
     \\ When we are unable to solve for $y$ explicitly, we treat $y$ as a function of $x \left(y = y(x)\right)$ and apply the Chain Rule:
     $$y' = \frac{dy}{dx}$$
     $$\frac{d}{dx}y^n = ny^{n - 1}\frac{dy}{dx}$$
+    \item Derivatives of Logarithmic and Exponential Functions
+    $$\frac{d}{dx}\left(\ln{x}\right) = \frac{1}{x} \text{, for } x > 0$$
+    $$\frac{d}{dx}\left(\ln{|x|}\right) = \frac{1}{x} \text{, for } x \neq 0$$
+    If $u$ is differentiable at $x$ and $u(x) \neq 0$, then
+    $$\frac{d}{dx}\left(\ln{|u(x)|}\right) = \frac{u'(x)}{u(x)}$$
+    If $b > 0$ and $b \neq 1$, then for all $x$,
+    $$\frac{d}{dx}\left(b^x\right) = b^x\ln{b}$$
+    General Power Rule:
+    $$\text{For } p \in \mathbb{R} \text{ and for } x > 0 \text{, } \frac{d}{dx}\left(x^p\right) = px^{p - 1}$$
+    Furthermore, if $u$ is a positive differentiable function on its domain, then
+    $$\frac{d}{dx}\left(u\left(x\right)^p\right) = p\left(u\left(x\right)\right)^{p - 1} \cdot u'\left(x\right)$$
+    Functions of the form $f(x) = \left(g(x)\right)^{h(x)}$, where both $g$ and $h$ are nonconstant functions, are neither exponential function nor power functions (they are sometimes called \textbf{tower functions}). To compute their derivatives, we use the identity $b^x = e^{x\ln{b}}$ to rewrite $f$ with base $e$:
+    $$f(x) = \left(g(x)\right)^{h(x)} = e^{h(x)\ln{g(x)}}$$
+    If $b > 0$ and $b \neq 1$, then
+    $$\frac{d}{dx}\left(\log_b{x}\right) = \frac{1}{x\ln{b}} \text{, for } x > 0$$
+    $$\frac{d}{dx}\left(\log_b{|x|}\right) = \frac{1}{x\ln{b}} \text{, for } x \neq 0$$
 \end{itemize}
 
 \section*{Examples}
@@ -193,6 +209,73 @@
                           &=& \frac{-3x^2y^3 - \frac{3x^6}{y}}{y^6} \\
                           &=& \frac{\frac{-3x^2y^4 - 3x^6}{y}}{y^6} \\
                           &=& \frac{-3x^2y^4 - 3x^6}{y^7}
+    \end{eqnarray}
+    \item Derivatives with $\ln{x}$
+    \begin{eqnarray}
+        y &=& \ln{2x^8} \\
+        \frac{dy}{dx} &=& \frac{1}{2x^8} \cdot 16x^7 \\
+                      &=& \frac{16x^7}{2x^8} \\
+                      &=& \frac{8}{x}
+    \end{eqnarray}
+    \begin{eqnarray}
+        y &=& x^2\left(1 - \ln{x^2}\right) \\
+        \frac{dy}{dx} &=& 2x\left(1 - \ln{x^2}\right) + x^2\left(- \frac{2x}{x^2}\right) \\
+                      &=& 2x - 2x\ln{x^2} - 2x \\
+                      &=& - 2x\ln{x^2}
+    \end{eqnarray}
+    \item Derivatives with $b^x$
+    \begin{eqnarray}
+        y &=& 2^{2x} \\
+        \frac{dy}{dx} &=& 2^{2x}\ln{2} \cdot 2 \\
+                      &=& 2^{2x + 1}\ln{2}
+    \end{eqnarray}
+    \begin{eqnarray}
+        f(x) &=& 7^{-x}\cos{x} \\
+        \frac{dy}{dx} &=& -7^{-x}\ln{7}\cos{x} - 7^{-x}\sin{x} \\
+                      &=& -7^{-x}\left(\ln{7}\cos{x} + \sin{x}\right)
+    \end{eqnarray}
+    \item Derivatives with the General Power Rule
+    \begin{eqnarray}
+        y &=& x^e \\
+        \frac{dy}{dx} &=& ex^{e - 1}
+    \end{eqnarray}
+    \begin{eqnarray}
+        f(x) &=& \left(x^3 + 3^x\right)^\pi \\
+        \frac{dy}{dx} &=& \pi\left(x^3 + 3^x\right)^{\pi - 1} \cdot \left(3x^2 + 3^x\ln{3}\right)
+    \end{eqnarray}
+    \item Derivatives with Tower Functions
+    \begin{eqnarray}
+        g(x) &=& x^{\ln{x}} \\
+             &=& e^{\ln{x}\ln{x}} \\
+             &=& e^{\left(\ln{x}\right)^2} \\
+        g'(x) &=& e^{\left(\ln{x}\right)^2} \cdot \frac{2\ln{x}}{x} \\
+        g'(e) &=& e^{\left(\ln{e}\right)^2} \cdot \frac{2\ln{e}}{e} \\
+              &=& \frac{2e}{e} \\
+              &=& 2 \\
+        y &=& 2x - 2e + e \\
+          &=& 2x - e
+    \end{eqnarray}
+    \item Derivatives of Logarithmic Functions
+    \begin{eqnarray}
+        y &=& \log_7{5x} \\
+        \frac{dy}{dx} &=& \frac{5}{5x\ln{7}} \\
+                      &=& \frac{1}{x\ln{7}}
+    \end{eqnarray}
+    \begin{eqnarray}
+        y &=& \log{\left(\log{x}\right)} \\
+        \frac{dy}{dx} &=& \frac{1}{\log{x}\ln{10}} \cdot \frac{1}{x\ln{10}} \\
+                      &=& \frac{1}{x\log{x}\ln{\left(10\right)}^2}
+    \end{eqnarray}
+    \item Logarithmic Differentiation
+    \begin{eqnarray}
+        f(x) &=& \left(\cos{x}\right)^{\sec{x}} \\
+        \ln{f(x)} &=& \ln{\left(\left(\cos{x}\right)^{\sec{x}}\right)} \\
+                  &=& \sec{x} \cdot \ln{\left(\cos{x}\right)} \\
+        \frac{f'(x)}{f(x)} &=& \sec{x} \cdot \tan{x} \cdot \ln{\left(\cos{x}\right)} + \sec{x} \cdot \frac{-\sin{x}}{\cos{x}} \\
+                      &=& \sec{x} \cdot \tan{x} \cdot \ln{\left(\cos{x}\right)} + \sec{x} \cdot \left(-\tan{x}\right) \\
+                      &=& \tan{x}\sec{x}\left(\ln{\left(\cos{x}\right)} - 1\right) \\
+        f'(x) &=& f(x)\tan{x}\sec{x}\left(\ln{\left(\cos{x}\right)} - 1\right) \\
+              &=& \left(\cos{x}\right)^{\sec{x}}\tan{x}\sec{x}\left(\ln{\left(\cos{x}\right)} - 1\right) \\
     \end{eqnarray}
 \end{enumerate}
 
