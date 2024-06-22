@@ -662,6 +662,53 @@
             f'(x) &=& f(x)\left(\frac{10\sec{x}}{\sin{x}} - \frac{30}{5x + 3}\right) \\
                   &=& \frac{\tan^{10}x}{\left(5x + 3\right)^6}\left(\frac{10\sec{x}}{\sin{x}} - \frac{30}{5x + 3}\right)
         \end{eqnarray}
+    \item (Section 3.10 Exercise 13)
+        \begin{eqnarray}
+            f(x) &=& \sin^{-1}{2x} \\
+            f'(x) &=& \frac{2}{\sqrt{1 - \left(2x\right)^2}} \\
+                  &=& \frac{2}{\sqrt{1 - 4x^2}}
+        \end{eqnarray}
+    \item (Section 3.10 Exercise 15)
+        \begin{eqnarray}
+            f(w) &=& \cos{\left(\sin^{-1}{2w}\right)} \\
+            f'(w) &=& -\sin{\left(\sin^{-1}{2w}\right)} \cdot \frac{1}{\sqrt{1 - \left(2w\right)^2}} \cdot 2 \\
+                  &=& - \frac{2\sin{\left(\sin^{-1}{2w}\right)}}{\sqrt{1 - 4w^2}} \\
+                  &=& - \frac{4w}{\sqrt{1 - 4w^2}}
+        \end{eqnarray}
+    \item (Section 3.10 Exercise 27)
+        \begin{eqnarray}
+            f(w) &=& w^2 - \tan^{-1}{w^2} \\
+            f'(w) &=& 2w - \frac{2w}{1 + w^4} \\
+                  &=& \frac{2w^5}{1 + w^4}
+        \end{eqnarray}
+    \item (Section 3.10 Exercise 41)
+        \begin{eqnarray}
+            f(x) &=& \tan^{-1}{2x} \\
+            f'(x) &=& \frac{2}{1 + 4x^2} \\
+            f'\left(\frac{1}{2}\right) &=& 1 \\
+            y &=& x - \frac{1}{2} + \frac{\pi}{4}
+        \end{eqnarray}
+    \item (Section 3.10 Exercise 45)
+        \begin{eqnarray}
+            \tan{\theta} &=& \frac{150}{x} \\
+            \theta &=& \tan^{-1}{\frac{150}{x}} \\
+            \frac{d\theta}{dx} &=& -\frac{150}{x^2\left(1 + \left(\frac{150}{x}\right)^2\right)} \\
+            \frac{d\theta}{dx}\Bigr|_{\substack{x = 500}} &=& -0.00055
+        \end{eqnarray}
+    \item (Section 3.10 Exercise 7)
+        \begin{enumerate}
+            \item $$\left(f^{-1}\right)'\left(4\right) = \frac{1}{f'(0)} = \frac{1}{2}$$
+            \item $$\left(f^{-1}\right)'\left(6\right) = \frac{1}{f'(1)} = \frac{2}{3}$$
+            \item $$\left(f^{-1}\right)'\left(1\right) = \text{Undeterminable}$$
+            \item $$f'\left(1\right) = \frac{3}{2}$$
+        \end{enumerate}
+    \item (Section 3.10 Exercise 8)
+        \begin{enumerate}
+            \item $$f'\left(f\left(0\right)\right) = 2$$
+            \item $$\left(f^{-1}\right)'\left(0\right) = \frac{1}{f'(-4)} = \frac{1}{5}$$
+            \item $$\left(f^{-1}\right)'\left(1\right) = \frac{1}{f'(-2)} = \frac{1}{4}$$
+            \item $$\left(f^{-1}\right)'\left(f\left(4\right)\right) = \frac{1}{f'(4)} = 1$$
+        \end{enumerate}
 \end{enumerate}
 
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
