@@ -66,6 +66,12 @@
     If $b > 0$ and $b \neq 1$, then
     $$\frac{d}{dx}\left(\log_b{x}\right) = \frac{1}{x\ln{b}} \text{, for } x > 0$$
     $$\frac{d}{dx}\left(\log_b{|x|}\right) = \frac{1}{x\ln{b}} \text{, for } x \neq 0$$
+    Useful Properties of Logarithms
+    \begin{eqnarray}
+        \ln{xy} &=& \ln{x} + \ln{y} \\
+        \ln{\left(\frac{x}{y}\right)} &=& \ln{x} - \ln{y} \\
+        \ln{x^z} &=& z\ln{x}
+    \end{eqnarray}
 \end{itemize}
 
 \section*{Examples}
@@ -502,6 +508,106 @@
                               &=& -2x\frac{dy}{dx}\frac{-1}{y^2} \\
                               &=& -2x\frac{-2x}{y}\frac{-1}{y^2} \\
                               &=& \frac{-4x^2}{y^3}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 15)
+        \begin{eqnarray}
+            y &=& \ln{7x} \\
+            y' &=& \frac{1}{7x} \cdot 7 \\
+               &=& \frac{7}{7x} \\
+               &=& \frac{1}{x}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 16)
+        \begin{eqnarray}
+            y &=& x^2\ln{x} \\
+            y' &=& 2x\ln{x} + \frac{x^2}{x} \\
+               &=& 2x\ln{x} + x
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 19)
+        \begin{eqnarray}
+            y &=& \ln{|\sin{x}|} \\
+            y' &=& \frac{\cos{x}}{\sin{x}} \\
+               &=& \cot{x}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 37)
+        \begin{eqnarray}
+            y &=& 8^x \\
+            y' &=& 8^x\ln{8}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 39)
+        \begin{eqnarray}
+            y &=& 5 \cdot 4^x \\
+            y' &=& 5 \cdot 4^x\ln{4}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 10)
+        \begin{eqnarray}
+            \frac{d}{dx}\left(x^e + e^x\right) &=& ex^{e-1} + e^x
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 33)
+        \begin{eqnarray}
+            y &=& x^e \\
+            y' &=& ex^{e-1}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 35)
+        \begin{eqnarray}
+            y &=& \left(2^x + 1\right)^\pi \\
+            y' &=& \pi(2^x + 1)^{\pi - 1} \cdot 2^x\ln{2}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 49)
+        \begin{eqnarray}
+            f(x) &=& x^{\cos{x}} \\
+                 &=& e^{\cos{x}\ln{x}} \\
+            a &=& \frac{\pi}{2} \\
+            f'(x) &=& e^{\cos{x}\ln{x}} \cdot \left(-\sin{x}\ln{x} + \frac{\cos{x}}{x}\right) \\
+                  &=& x^{\cos{x}}\left(-\sin{x}\ln{x} + \frac{\cos{x}}{x}\right) \\
+            f'\left(\frac{\pi}{2}\right) &=& \left(\frac{\pi}{2}\right)^0 \left(-1\cdot\ln{\frac{\pi}{2}} + \frac{0}{\pi}\right) \\
+                                         &=& -\ln{\frac{\pi}{2}}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 59)
+        \begin{eqnarray}
+            f(x) &=& x^{\sin{x}} \\
+                 &=& e^{\sin{x}\ln{x}} \\
+            f'(x) &=& e^{\sin{x}\ln{x}} \cdot \left(\cos{x}\ln{x} + \frac{\sin{x}}{x}\right) \\
+            f'(1) &=& e^0 \cdot \left(\cos{1}\ln{1} + \frac{\sin{1}}{1}\right) \\
+                  &=& \cos{1} \cdot 0 + \sin{1} \\
+                  &=& \sin{1} \\
+            y &=& x\sin{1} - \sin{1} + 1
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 63)
+        \begin{eqnarray}
+            y &=& 4\log_3{\left(x^2 - 1\right)} \\
+            y' &=& 4 \cdot \frac{1}{\left(x^2 - 1\right)\ln{3}} \cdot 2x \\
+               &=& \frac{8x}{\left(x^2 - 1\right)\ln{3}} \\
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 64)
+        \begin{eqnarray}
+            y &=& \log_{10}{x} \\
+            y' &=& \frac{1}{x\ln{10}}
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 77)
+        \begin{eqnarray}
+            f(x) &=& \frac{\left(x + 1\right)^{10}}{\left(2x - 4\right)^8} \\
+            \ln{f(x)} &=& \ln{\frac{\left(x + 1\right)^{10}}{\left(2x - 4\right)^8}} \\
+                      &=& \ln{\left(x + 1\right)^{10}} - \ln{\left(2x - 4\right)^8} \\
+                      &=& 10\ln{x + 1} - 8\ln{2x - 4} \\
+            \frac{d}{dx}\left(\ln{f\left(x\right)}\right) &=& \frac{f'(x)}{f(x)} \\
+            \frac{f'(x)}{f(x)} &=& 10\frac{1}{x + 1} - 8\frac{1}{2x - 4}2 \\
+                               &=& \frac{10}{x + 1} - \frac{16}{2x - 4} \\
+                               &=& \frac{10}{x + 1} - \frac{8}{x - 2} \\
+            f'(x) &=& f(x)\left(\frac{10}{x + 1} - \frac{8}{x - 2}\right) \\
+                  &=& \frac{\left(x + 1\right)^{10}}{\left(2x - 4\right)^8}\left(\frac{10}{x + 1} - \frac{8}{x - 2}\right) \\
+        \end{eqnarray}
+    \item (Section 3.9 Exercise 80)
+        \begin{eqnarray}
+            f(x) &=& \frac{\tan^{10}x}{\left(5x + 3\right)^6} \\
+            \ln{f(x)} &=& \ln{\frac{\tan^{10}x}{\left(5x + 3\right)^6}} \\
+                      &=& \ln{\tan^{10}{x}} - \ln{\left(5x + 3\right)^6} \\
+                      &=& 10\ln{\tan{x}} - 6\ln{5x + 3} \\
+            \frac{d}{dx}\left(\ln{f\left(x\right)}\right) &=& \frac{f'(x)}{f(x)} \\
+            \frac{f'(x)}{f(x)} &=& 10\frac{1}{\tan{x}}\sec^2{x} - 6\frac{1}{5x + 3}5 \\
+                               &=& \frac{10\sec^2{x}}{\tan{x}} - \frac{30}{5x + 3} \\
+                               &=& \frac{10\sec{x}}{\sin{x}} - \frac{30}{5x + 3} \\
+            f'(x) &=& f(x)\left(\frac{10\sec{x}}{\sin{x}} - \frac{30}{5x + 3}\right) \\
+                  &=& \frac{\tan^{10}x}{\left(5x + 3\right)^6}\left(\frac{10\sec{x}}{\sin{x}} - \frac{30}{5x + 3}\right)
         \end{eqnarray}
 \end{enumerate}
 
