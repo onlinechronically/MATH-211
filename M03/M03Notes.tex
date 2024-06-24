@@ -89,6 +89,15 @@
     \end{eqnarray}
     Let $f$ be differentiable and have an inverse on an interval $I$. If $x_0$ is a point of $I$ at which $f'(x_0) \neq 0$, then $f^{-1}$ is differentiable at $y_0 = f(x_0)$ and
     $$\left(f^{-1}\right)'\left(y_0\right) = \frac{1}{f'\left(x_0\right)} \text{, where } y_0 = f\left(x_0\right)$$
+    \item Related Rates
+    \\ \textbf{Procedure}
+    \begin{enumerate}
+        \item Read the problem carefully, making a sketch to organize the given information. Identify the rates that are given and the rate that is to be determined.
+        \item Write one or more equations that express the basic relationships among the variables.
+        \item Introduce rates of change by differentiating the appropriate equation(s) with respect to time $t$.
+        \item Substitute known values and solve for the desired quantity.
+        \item Check that units are consistent and the answer is reasonable. (For example, does it have the correct sign?)
+    \end{enumerate}
 \end{itemize}
 
 \section*{Examples}
@@ -336,6 +345,58 @@
         $$f(x) = x^3 + 3$$
         If $(2, -1)$ is on the graph of $f^{-1}(x)$, then $(-1, 2)$ is on the graph of $f(x)$.
         $$\left(f^{-1}\right)\left(2\right) = \frac{1}{f'\left(-1\right)} = \frac{1}{3\left(-1\right)^2} = \frac{1}{3}$$
+    \item Related Rates (Geometric Ideas)
+    \\ Hint: we want the decreasing length
+    \\ Hint (2): use the pythagorean theorem
+    \begin{eqnarray}
+        A &=& x^2 \\
+        \frac{dA}{dt} &=& 2x \cdot \frac{dx}{dt} \\
+        f'(5) &=& 2(5) \cdot -1 \\
+              &=& -10 \text{ m/s}^2 \\
+        L^2 &=& x^2 + x^2 \\
+            &=& 2x^2 \\
+        L &=& \sqrt{2x^2} \\
+          &=& \sqrt{2}x \\
+        \frac{dL}{dt} &=& \sqrt{2} \cdot -1 \\
+                      &=& -\sqrt{2} \text{ m/s}
+    \end{eqnarray}
+    \item Related Rates (Distance Formula)
+    \\ Hint: use the distance formula
+    \begin{eqnarray}
+        A(h) &=& 20h \\
+        B(h) &=& 15h \\
+        A(0.5) &=& 20(0.5) \\
+               &=& 10 \\
+        B(0.5) &=& 15(0.5) \\
+               &=& 7.5 \\
+        L^2 &=& x^2 + y^2 \\
+        2L\frac{dL}{dt} &=& 2x\frac{dx}{dt} + 2y\frac{dy}{dt} \\
+        \frac{dL}{dt} &=& \frac{2x\frac{dx}{dt} + 2y\frac{dy}{dt}}{2L} \\
+                      &=& \frac{x\frac{dx}{dt} + y\frac{dy}{dt}}{L} \\
+                      &=& \frac{10(20) + 7.5(15)}{\sqrt{10^2 + 7.5^2}} \\
+                      &=& \frac{200 + 112.5}{\sqrt{100 + 56.25}} \\
+                      &=& \frac{312.5}{\sqrt{156.25}} \\
+                      &=& \frac{312.5}{\sqrt{156.25}} \\
+                      &=& \frac{312.5}{12.5} \\
+                      &=& 25
+    \end{eqnarray}
+    \item Related Rates (Cylinders \& Cones)
+    \begin{eqnarray}
+        V &=& \pi r^2h \\
+        \frac{dh}{dt} = -0.25 \\
+        \frac{dv}{dt} &=& \pi r^2 \cdot \frac{dh}{dt} \\
+                      &=& \pi 2^2 \cdot -0.25 \\
+                      &=& -\pi
+    \end{eqnarray}
+    \item Related Rates (Trigonometry)
+    \begin{eqnarray}
+        \frac{dy}{dt} &=& 20 \\
+        \tan{\theta} &=& \frac{y}{300} \\
+        \theta &=& \tan^{-1}{\frac{y}{300}} \\
+        \frac{d\theta}{dt} &=& \frac{1}{1 + \left(\frac{y}{300}\right)^2} \cdot \frac{1}{300} \cdot \frac{dy}{dt} \\
+        \frac{d\theta}{dt}\Bigr|_{\substack{y = 400}} &=& \frac{20}{300\left(1 + \frac{16}{9}\right)} \\
+                                                      &=& 0.024
+    \end{eqnarray}
 \end{enumerate}
 
 \section*{Related Exercises}
