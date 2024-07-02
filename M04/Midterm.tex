@@ -1,0 +1,334 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}} 
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+\title{Midterm Review (MATH-211)}
+\author{Lillie Donato}
+\date{3 July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Limits (M01)}
+\begin{itemize}
+    \item Limit Definition(s):
+        \begin{itemize}
+            \item Simple: The value that the outputs of a function approach as inputs approach a certain value
+            \item Preliminary: Suppose a function $f$ is defined for all $x$ near $a$ except possibly at $a$. If $f(x)$ is arbitrarily close to $L$ all $x$ sufficiently close (but not equal) to $a$, we write the following.
+        \end{itemize}
+        $$\lim_{x \to a}=L$$
+    \item Secant Line: a line passing through two points $(t_0, s(t_0))$ and $(t_1, s(t_1))$. The slope is given by
+    $$\frac{s(t_1)-s(t_0)}{t_1-t_0}$$
+    \item Tangent Line: the line passing through $(t_0, s(t_0))$ with slope $$\lim_{t \to t_0}\frac{s(t)-s(t_0)}{t-t_0}$$
+    \item One Sided limits:
+        \begin{itemize}
+            \item Right-hand (Definition): Suppose a function $f$ is defined for all $x$ near $a$ with $x > a$. If $f(x)$ is arbitrarily close to $L$ for all $x$ sufficiently close to $a$ with $x > a$ we write
+            $$\lim_{x \to a^+}{f(x) = L}$$
+            \item Left-hand (Definition): Suppose a function $f$ is defined for all $x$ near $a$ with $x < a$. If $f(x)$ is arbitrarily close to $L$ for all $x$ sufficiently close to $a$ with $x < a$ we write
+            $$\lim_{x \to a^-}{f(x) = L}$$
+            \item In order for their to be a double sided limit, we must have:
+            $$\lim_{x \to a^-}{f(x)} = \lim_{x \to a^+}{f(x)}$$
+            \item If the limits from sides are not equal, then a the double sided limit, "does not exist"
+        \end{itemize}
+    \item Velocity
+        \begin{itemize}
+            \item Average Veolcity
+            \begin{itemize}
+                \item The average velocity over some interval $[t_0, t_1]$ is defined as
+                $$v_{av} = \frac{s(t_1) - s(t_0)}{t_1 - t_0}$$
+            \end{itemize}
+            \item Instantaneous Veolcity
+            \begin{itemize}
+                \item The average velocity over some interval $[t_0, t_1]$ is defined as
+                $$v_{inst} = \lim_{t \to a}{v_{av}} = = \frac{s(t) - s(a)}{t - a}$$
+            \end{itemize}
+        \end{itemize}
+    \item Solving Techniques
+        \begin{itemize}
+    	    \item Factoring and canceling out
+    	    \item Using conjugates
+            \begin{itemize}
+    	    	\item When direct substitution is not possible, you may rationalize the numerator
+            \end{itemize}
+        \end{itemize}
+	\item Infinite Limits: In either case, the limit does not exist (not a real number) if it is infinite
+	\begin{itemize}
+		\item Suppose $f$ is defined for all $x$ near $a$. If $f(x)$ gorws arbitrarily large for all $x$ sufficiently close (but not equal) to $a$, we write
+		$$\lim_{x \to a}{f(x)} = \infty$$
+		\item If $f(x)$ is negative and gorws arbitrarily large in magnitude for all $x$ sufficiently close (but not equal) to $a$, we write
+		$$\lim_{x \to a}{f(x)} = - \infty$$
+		\item The line $x = a$ is a vertical asymptote for $f$ if any of the following hold
+		$$\lim_{x \to a}{f(x)} = \pm \infty$$
+		$$\lim_{x \to a^+}{f(x)} = \pm \infty$$
+		$$\lim_{x \to a^-}{f(x)} = \pm \infty$$
+		\item A vertical asymptote exists at $x = a$ if any one sided limit as $x \to a$ is $\infty$ or $- \infty$
+		\item If you have a limit of a rational function, where $p(a) = L \neq 0$ and $q(a) = 0$, then the one sided limits for $\frac{p(x)}{q(x)}$ approach $\pm \infty$
+		$$\lim_{x \to a}{\frac{p(x)}{q(x)}} = \frac{L}{0}$$
+	\end{itemize}
+	\item Limits as Infinity
+	\begin{itemize}
+		\item \textbf{Definition}: If $f(x)$ becoomes arbitrarily close to a finite number $L$ for all sufficiently large and positive $x$, the we write
+		$$\lim_{x \to \infty}{f(x)} = L$$
+		The definition for
+		$$\lim_{x \to - \infty}{f(x)} = M$$
+		is analogous.
+		\item If $\lim\limits_{x \to \infty}{f(x)} = L$ we say that the function $f(x)$ has a horizontal asymptote at $y = L$
+		\item If $\lim\limits_{x \to - \infty}{f(x)} = M$ we say that the function $f(x)$ has a horizontal asymptote at $y = M$
+		\item \textbf{Principle}: If $n > 0$ is an integer then
+		$$\lim_{x \to \pm \infty}{\frac{1}{x^n}} = 0$$
+		\item Suppose $f(x) = \frac{p(x)}{q(x)}$ is a rational function where
+		$$p(x) = a_mx^m + a_{m-1}x^{x-1} + ... + a_1x + a_0$$
+		$$q(x) = b_nx^n + b_{n-1}x^{x-1} + ... + b_1x + b_0$$
+		If the degree of $p(x)$ is less than the degree of $q(x)$ then
+		$$\lim_{x \to \pm \infty}{f(x)} = 0$$
+		If the degree of $p(x)$ equals the degree of $q(x)$ then
+		$$\lim_{x \to \pm \infty}{f(x)} = \frac{a_m}{b_n}$$
+		If the degree of $p(x)$ is greater than the degree of $q(x)$ then
+		$$\lim_{x \to \pm \infty}{f(x)} = - \infty \text{ or } \infty$$
+        If the graph of a function $f$ approaches a line (with finite and nonzero slope) as $x \to \pm \infty$, then that line is a slant asymptote/oblique asymptote of $f$
+		\item End behaviour for transcendental functions
+		$$\lim_{x \to \pm \infty}{\sin{x}} = \text{Does not exist}$$
+		$$\lim_{x \to \infty}{e^x} = \infty$$
+		$$\lim_{x \to \infty}{e^{-x}} = 0$$
+		$$\lim_{x \to - \infty}{e^x} = 0$$
+		$$\lim_{x \to - \infty}{e^{-x}} = \infty$$
+		$$\lim_{x \to \infty}{\ln{x}} = \infty$$
+		$$\lim_{x \to 0^+}{\ln{x}} = - \infty$$
+	\end{itemize}
+	\item Continuity \\
+	\begin{itemize}
+		\item \textbf{Definition}: A function $f$ is continuous at $a$ if
+		$$\lim_{x \to a}{f(x)} = f(a)$$
+		\item A function $f$ is continuous at $a$ if
+		\begin{enumerate}
+			\item $f(a)$ is defined (Removable Discontinuity)
+			\item $\lim\limits_{x \to a}{f(x)}$ exists (Jump Discontinuity)
+			\item $\lim\limits{x \to a}{f(x)} = f(a)$ (Removable Discontinuity)
+		\end{enumerate}
+		\item A function $f$ has an \textbf{Infinite Discontinuity} at $a$ if the function has a Vertical Asymptote at $a$ \\
+		\item Suppose $f$ is a function defined on an interval $I$. We say that $f$ is continuous on interval $I$ if $f$ is continuous at every point on the interior of $I$ and the following hold: \\
+		\begin{enumerate}
+			\item If $a$ is the the left-hand endpoint of $I$ and $a$ is contained in $I$ then
+			$$\lim_{x \to a^+}{f(x)} = f(a) \text{ ($f$ is continuous from the right)}$$
+			\item If $b$ is the the righ-hand endpoint of $I$ and $b$ is contained in $I$ then
+			$$\lim_{x \to b^-}{f(x)} = f(b) \text{ ($f$ is continuous from the left)}$$
+		\end{enumerate}
+		\item \textbf{Theorem}: All of the following functions are continuous on the intervals where they are defined.
+		\begin{enumerate}
+			\item Polynomials (continuous everywhere)
+			\item Rational Functions (continuous except where denominator is zero)
+			\item Exponential functions
+			\item Logarithmic functions
+			\item Trigonometric functions
+			\item Inverse trigonometric functions
+		\end{enumerate}
+		\item \textbf{Theorem}: If $f$ and $g$ are continuous at $a$, then the following functions are also continuous at $a$. Assume $c$ is a constant and $n > 0$ is an integer.
+		\begin{enumerate}
+			\item $f + g$
+			\item $f - g$
+			\item $cf$
+			\item $fg$
+			\item $\frac{f}{g}$ provided $g(a) \neq 0$
+			\item $(f(x))^n$
+		\end{enumerate}
+		\item \textbf{Theorem}:
+		\begin{enumerate}
+			\item A polynomial function is continuous for all $x$
+			\item A rational function (a function of the form $\frac{p}{q}$, where $p$ and $q$ are polynomials) is continuous for all $x$ for which $q(x) \neq 0$
+		\end{enumerate}
+		\item \textbf{Theorem}: If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$ then the composite function $f \circ g$ is continuous at $a$. \\
+		\item \textbf{Theorem}: Assume $n$ is a positive integer. If $n$ is odd then $(f(x))^{1/n}$ is continuous at all points at which $f$ is continuous. If $n$ is even then $(f(x))^{1/n}$ is continuous at all points $a$ at which $f$ is continuous and $f(a) > 0$ \\
+		\item \textbf{Intermediate Value Theorem}: Suppose $f$ is continuous on the interval $[a, b]$ and $L$ is a number strictly between $f(a)$ and $f(b)$. Then there exists at least one number $c$ in $(a,b)$ satisfying $f(c) = L$.
+	\end{itemize}
+\end{itemize}
+
+\section*{Derivatives (M02)}
+\begin{itemize}
+    \item Derivatives
+    \begin{itemize}
+        \item A \textbf{derivative} is a new function made up of the slopes of the tangent lines as they change along a curve
+        \item If a curve represents the trajectory of a moving object, the tangent line at a point indicates the direction of motion at that point
+        \item As $x \to a$, the slope of the secant lines approaches the slope of the tangent line
+        \item Alternative definition for Tangent Line(s): Consider the curve $y = f(x)$ and a secant line intersecting the curve at points $P(a, f(a))$ and $Q(a + h, f(a + h))$, with $m_{sec}$ and $m_{tan}$
+        $$\text{Interval: } (a, a + h)$$
+        $$m_{\sec} = \frac{f(a + h) - f(a)}{h}$$
+        $$m_{\tan} = \lim_{h \to 0}{\frac{f(a + h) - f(a)}{h}}$$
+        $$y - f(a) = m_{\tan}(x - a)$$
+        \item \textbf{Definition}: The derivative of $f$ at $a$, denoted $f'(a)$, is given by either the two following limits, provided the limits exist and $a$ is in the domain of $f$
+        \begin{eqnarray}
+            f'(a) &=& \lim_{x \to a}{\frac{f(x) - f(a)}{x - a}} \\
+            f'(a) &=& \lim_{h \to 0}{\frac{f(a + h) - f(a)}{h}}
+        \end{eqnarray}
+        If $f'(a)$ exists, we say that $f$ is \textbf{differentiable} at $a$
+    \end{itemize}
+\item Derivatives as Functions
+    \begin{itemize}
+        \item The slope of the tangent line of somefunction $f$ is a function called the derivative of $f$
+            $$f'(x) = \lim_{h \to 0}{\frac{f(x + h) - f(x)}{h}}$$
+        \item If $f'(x)$ exists, we say that $f$ is \textbf{differentiable} at x
+        \item If $f$ is differentiable at every point in some open interval $I$, we say that $f$ is differentiable on $I$
+        \item For some function $f$ we can denote the derivative of $f$ like such:
+        \begin{eqnarray}
+            f'(x) \\
+            \frac{dy}{dx} \\
+            \frac{df}{dx} \\
+            \frac{d}{dx}(f(x)) \\
+            D_x (f(x)) \\
+            y'(x)
+        \end{eqnarray}
+        \item When evaluating some derivative $f$ at $a$, we can use the following:
+        \begin{eqnarray}
+            f'(a) \\
+            y'(a) \\
+            \frac{df}{dx}\Bigr|_{\substack{x=a}} \\
+            \frac{dy}{dx}\Bigr|_{\substack{x=a}}
+        \end{eqnarray}
+        \item If $f$ is differentiable at $a$, then $f$ is continuous at $a$
+        \item If $f$ is not continuous at $a$, then $f$ is not differentiable at $a$
+    \end{itemize}
+    \item Derivatives as Rate of Change
+    \begin{itemize}
+        \item Secant Lines give average velocities
+        $$v_{av} = \frac{f(a + \Delta t) - f(a)}{\Delta t}$$
+        \item Tangent Line gives instantaneous velocity
+        $$v(a) = \lim_{\Delta t \to 0}{\frac{f(a + \Delta t) - f(a)}{\Delta t}} = f'(a)$$
+        \item Velocity, speed, and acceleration
+        \\ Suppose and object moves along a line with position $s = f(t)$
+        $$\text{the \textbf{velocity} at time } t \text{ is } v = \frac{ds}{dt} = f'(t)$$
+        $$\text{the \textbf{speed} at time } t \text{ is } |v| = |f'(t)|$$
+        $$\text{the \textbf{acceleration} at time } t \text{ is } a = \frac{dv}{dt} = \frac{d^2s}{dt^2} = f''(t)$$
+        \item Average and marginal cost
+        $$\text{The \textbf{cost function} } C(x) \text{ gives the cost to produce the first } x \text{ items in a manufacturing process}$$
+        $$\text{The \textbf{average cost} to produce } x \text{ items is } \overline{C}(x) = \frac{C(x)}{x}$$
+        $$\text{The \textbf{marginal cost} } C'(x) \text{ is the approximate cost to produce one additional item after producing } x \text{ items}$$
+        \item Elasticity
+        $$E(p) = \frac{dD}{dp}\frac{p}{D} \text{ where } D = f(p)$$
+    \end{itemize}
+\end{itemize}
+
+\section*{Rules of Differentiation}
+\begin{itemize}
+    \item Constant Rule
+    $$\text{If } c \in \mathbb{R} \text{, then } \frac{d}{dx}\left(c\right) = 0$$
+    \item Power Rule
+    $$\text{If } n \in \mathbb{Z} \text{ and } n > 0 \text{, then } \frac{d}{dx}\left(x^n\right) = nx^{n - 1}$$
+    \item Derivative of a Root
+    $$\frac{d}{dx}\left(\sqrt{x}\right) = \frac{1}{2\sqrt{x}}$$
+    \item Constant Multiple Rule
+    $$\text{If } f \text{ is differentiable at } x \text{ and } c \text{ is a constant, then } \frac{d}{dx}\left(cf(x)\right) = cf'\left(x\right)$$
+    \item Sum Rule
+    $$\text{If } f \text{ and } g \text{ are differentiable at } x \text{, then } \frac{d}{dx}\left(f(x) + g(x)\right) = f'(x) + g'(x)$$
+    \item Generalized Sum Rule
+    $$\frac{d}{dx}\left(f_1(x) + f_2(x) + ... + f_x(x)\right) = f_1'(x) + f_2'(x) + ... + f_n'(x)$$
+    \item Difference Rule
+    $$\frac{d}{dx}\left(f(x) - g(x)\right) = f'(x) - g'(x)$$
+    \item Euler's Number
+        $$\text{The function } f(x) = e^x \text{ is differentiable for all } x \in \mathbb{R} \text{, and } \frac{d}{dx}\left(e^x\right) = e^x$$
+    \item Higher-order Derivatives
+    \\ Assuming $y = f(x)$ can be differentiated as often as necessary, the \textbf{second derivative} of $f$ is
+    $$f''(x) = \frac{d}{dx}\left(f'(x)\right)$$
+    For $n \in \mathbb{Z}$ where $n \geq 1$, the \textbf{nth derivative} of $f$ is
+    $$f^{(n)}\left(x\right) = \frac{d}{dx}\left(f^{(n - 1)}\left(x\right)\right)$$
+    \item Product Rule
+    $$\text{If } f \text{ and } g \text{ are differentiable at } x \text{, then } \frac{d}{dx}\left(f(x)g(x)\right) = f'(x)g(x) + f(x)g'(x)$$
+    \item Quotient Rule
+        $$\text{If } f \text{ and } g \text{ are differentiable at } x \text{ and } g(x) \neq 0 \text{, then the derivative of } \frac{f}{g} \text{ at } x \text{ exists and}$$
+        $$\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{g(x)f'(x) - f(x)g'(x)}{(g(x))^2}$$
+\end{itemize}
+
+\section*{Trigonometric (and inverse) Derivatives}
+\begin{eqnarray}
+    \lim_{x \to 0}{\frac{\sin{x}}{x}} &=& 1 \\
+    \lim_{x \to 0}{\frac{\cos{x} - 1}{x}} &=& 0 \\
+    \frac{d}{dx}\left(\sin{x}\right) &=& \cos{x} \\
+    \frac{d}{dx}\left(\cos{x}\right) &=& - \sin{x} \\
+    \frac{d}{dx}\left(\tan{x}\right) &=& \sec^2{x} \\
+    \frac{d}{dx}\left(\cot{x}\right) &=& - \csc^2{x} \\
+    \frac{d}{dx}\left(\sec{x}\right) &=& \sec{x}\tan{x} \\
+    \frac{d}{dx}\left(\csc{x}\right) &=& - \csc{x}\cot{x} \\
+    \frac{d}{dx}\left(\sin^{-1}{x}\right) &=& \frac{1}{\sqrt{1 - x^2}} \text{, for } -1 < x < 1 \\
+    \frac{d}{dx}\left(\cos^{-1}{x}\right) &=& -\frac{1}{\sqrt{1 - x^2}} \text{, for } -1 < x < 1 \\
+    \frac{d}{dx}\left(\tan^{-1}{x}\right) &=& \frac{1}{1 + x^2} \text{, for } -\infty < x < \infty \\
+    \frac{d}{dx}\left(\cot^{-1}{x}\right) &=& -\frac{1}{1 + x^2} \text{, for } -\infty < x < \infty \\
+    \frac{d}{dx}\left(\sec^{-1}{x}\right) &=& \frac{1}{|x|\sqrt{x^2 - 1}} \text{, for } |x| > 1 \\
+    \frac{d}{dx}\left(\csc^{-1}{x}\right) &=& -\frac{1}{|x|\sqrt{x^2 - 1}} \text{, for } |x| > 1 \\
+\end{eqnarray}
+
+\section*{More Derivatives (M03)}
+\begin{itemize}
+    \item The Chain Rule
+        \\ Suppose $y = f(u)$ is differentiable at $u = g(x)$ and $u = g(x)$ is differentiable at $x$. The composite function $y = f(g(x))$ is differentiable at $x$, and its derivative can be expressed in two equivalent ways.
+        \begin{eqnarray}
+            \frac{dy}{dx} &=& \frac{dy}{dy} \cdot \frac{du}{dx} \\
+            \frac{d}{dx}\left(f\left(g\left(x\right)\right)\right) &=& f'\left(g\left(x\right)\right) \cdot g'\left(x\right)
+        \end{eqnarray}
+        Application of the Chain Rule (Assume the differentiable function $y = f(g(x))$ is given):
+        \begin{enumerate}
+            \item Identify an outer function $f$ and an inner function $g$, and let $u = g(x)$.
+            \item Replace $g(x)$ with $u$ to express $y$ in terms of $u$:
+            $$y = f(g(x)) = f(u)$$
+            \item Calculate the product
+            $$\frac{dy}{du} \cdot \frac{du}{dx}$$
+            \item Replace $u$ with $g(x)$ in $\frac{dy}{du}$ to obtain $\frac{dy}{dx}$
+        \end{enumerate}
+        $$\text{If } g \text{ is differentiable for all } x \text{ in its domain and } p \in \mathbb{R} \text{,}$$
+        $$\frac{d}{dx}\left(\left(g\left(x\right)\right)^p\right) = p\left(g\left(x\right)\right)^{p - 1}g'\left(x\right)$$
+    \item Implicit Differentiation
+    \\ When we are unable to solve for $y$ explicitly, we treat $y$ as a function of $x \left(y = y(x)\right)$ and apply the Chain Rule:
+    $$y' = \frac{dy}{dx}$$
+    $$\frac{d}{dx}y^n = ny^{n - 1}\frac{dy}{dx}$$
+    \item Derivatives of Logarithmic and Exponential Functions
+    $$\frac{d}{dx}\left(\ln{x}\right) = \frac{1}{x} \text{, for } x > 0$$
+    $$\frac{d}{dx}\left(\ln{|x|}\right) = \frac{1}{x} \text{, for } x \neq 0$$
+    If $u$ is differentiable at $x$ and $u(x) \neq 0$, then
+    $$\frac{d}{dx}\left(\ln{|u(x)|}\right) = \frac{u'(x)}{u(x)}$$
+    If $b > 0$ and $b \neq 1$, then for all $x$,
+    $$\frac{d}{dx}\left(b^x\right) = b^x\ln{b}$$
+    General Power Rule:
+    $$\text{For } p \in \mathbb{R} \text{ and for } x > 0 \text{, } \frac{d}{dx}\left(x^p\right) = px^{p - 1}$$
+    Furthermore, if $u$ is a positive differentiable function on its domain, then
+    $$\frac{d}{dx}\left(u\left(x\right)^p\right) = p\left(u\left(x\right)\right)^{p - 1} \cdot u'\left(x\right)$$
+    Functions of the form $f(x) = \left(g(x)\right)^{h(x)}$, where both $g$ and $h$ are nonconstant functions, are neither exponential function nor power functions (they are sometimes called \textbf{tower functions}). To compute their derivatives, we use the identity $b^x = e^{x\ln{b}}$ to rewrite $f$ with base $e$:
+    $$f(x) = \left(g(x)\right)^{h(x)} = e^{h(x)\ln{g(x)}}$$
+    If $b > 0$ and $b \neq 1$, then
+    $$\frac{d}{dx}\left(\log_b{x}\right) = \frac{1}{x\ln{b}} \text{, for } x > 0$$
+    $$\frac{d}{dx}\left(\log_b{|x|}\right) = \frac{1}{x\ln{b}} \text{, for } x \neq 0$$
+    Useful Properties of Logarithms
+    \begin{eqnarray}
+        \ln{xy} &=& \ln{x} + \ln{y} \\
+        \ln{\left(\frac{x}{y}\right)} &=& \ln{x} - \ln{y} \\
+        \ln{x^z} &=& z\ln{x}
+    \end{eqnarray}
+    Let $f$ be differentiable and have an inverse on an interval $I$. If $x_0$ is a point of $I$ at which $f'(x_0) \neq 0$, then $f^{-1}$ is differentiable at $y_0 = f(x_0)$ and
+    $$\left(f^{-1}\right)'\left(y_0\right) = \frac{1}{f'\left(x_0\right)} \text{, where } y_0 = f\left(x_0\right)$$
+    \item Related Rates
+    \\ \textbf{Procedure}
+    \begin{enumerate}
+        \item Read the problem carefully, making a sketch to organize the given information. Identify the rates that are given and the rate that is to be determined.
+        \item Write one or more equations that express the basic relationships among the variables.
+        \item Introduce rates of change by differentiating the appropriate equation(s) with respect to time $t$.
+        \item Substitute known values and solve for the desired quantity.
+        \item Check that units are consistent and the answer is reasonable. (For example, does it have the correct sign?)
+    \end{enumerate}
+\end{itemize}
+
+\blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
+\end{document}
