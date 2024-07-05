@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}} 
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+\title{Module 5 Notes (MATH-211)}
+\author{Lillie Donato}
+\date{08 July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{General Notes (and Definitions)}
+\begin{itemize}
+    \item Maxima and Minima \\
+    \textbf{Absolute Maximum:} Assume a function $f$ is defined on a set $D$, and $x = c$ is a point in $D$. Then, $y = f(c)$ is an \textbf{absolute maximum value} of $f$ on $D$ if $f(c) \geq f(x)$ for every $x$ in $D$. Changing the set on which $f$ is defined \underline{may} change the absolute maximum value. \\
+    \textbf{Absolute Minimum}: Assume a function $f$ is defined on a set $D$, and $x = c$ is a point in $D$. Then, $y = f(c)$ is an \textbf{absolute minimum value} of $f$ on $D$ if $f(c) \leq f(x)$ for every $x$ in $D$. Changing the set on which $f$ is defined \underline{may} change the absolute minimum value. \\
+    \textbf{Extreme Value Theorem}: A function that is continuous on a closed interval is guarenteed to have both an absolute maximum value and an absolute minmum value. \\
+    A discontinuous function, or a function defined on an interval that is not closed, may still have absolute extrema. \\
+    \textbf{Local Maximum and Minimum Values}: Assume $x = c$ is an interior point (not an endpoint) of some interval $I$ in the domain of $f$. Then, $y = f(c)$ is a \textbf{local maximum value} of $f$ if $f(c) \geq f(x)$ for every $x$ in $I$, and $y = f(c)$ is a \textbf{local minimum value} of $f$ if $f(c) \leq f(x)$ for every $x$ in $I$. \\
+    \textbf{Critical Points}: An interior point $x = c$ of the domain of $f$ is called a \textbf{critical point} of $f$ if either $f'(c) = 0$ or $f'(c)$ does not exist. \\
+    \textbf{Local Extreme Value Theorem}: If a function $f$ has a local maximum or a local minimum at a point $x = c$, then either $f'(c) = 0$ or $f'(c)$ does not exist. \\
+    If $f$ has a local extreme, it must occur at a critical point. \\
+    Not every critical point is the location of a local extreme value. \\
+    For a continuous function $f$ on a closed interval $[a, b]$, absolute extremes are guaranteed to exist, and they must occur either at the endpoints of interval or at critical points of $f$ within the interval.
+\end{itemize}
+
+\section*{Examples}
+\begin{enumerate}
+    \item Locate absolute maxima and minima from a graph \\
+    Absolute Maximum: $f(c)$ and occurs at $x = c$ \\
+    Absolute Minimum: None, as the $f(b)$ does not exist
+    \item Locate local maxima and minima from a graph \\
+    Absolute Min at $(a, f(a))$ \\
+    Absolute Max at $(p, f(p))$ \\
+    Local Max at $(p, f(p))$ \\
+    Local Max at $(r, f(r))$ \\
+    Local Min at $(q, f(q))$ \\
+    Local Min at $(s, f(s))$
+    \item Find critical points of a function
+    $$f(t) = t^2 - 2\ln{\left(t^2 + 1\right)}$$
+    $$f'(t) = \frac{2t\left(t+1\right)\left(t-1\right)}{t^2 + 1}$$
+    Critical Point at $x = -1$ \\
+    Critical Point at $x = 0$ \\
+    Critical Point at $x = 1$
+    \item Find absolute extremes of a continuous function on a closed interval
+    $$f(x) = \frac{x}{\left(x^2 + 9\right)^5}$$
+    $$f'(x) = \frac{-9x^2 + 9}{\left(x^2 + 9\right)^6}$$
+    $$[-2, 2]$$
+    $$f(-2) \approx -0.000005$$
+    $$f(2) \approx 0.000005$$
+    $$f(-1) = -0.00001$$
+    $$f(1) = 0.00001$$
+    Absolute Min at $(-1, f(-1))$ \\
+    Absolute Max at $(1, f(1))$
+    \item Application of finding absolute extreme values
+    $$P(x) = 2x + \frac{128}{x}$$
+    $$P'(x) = 2 + \frac{-128}{x^2}$$
+    $$(0, \infty)$$
+    $$f(8) = 18$$
+    Absolute min at $(8, 32)$ or a perimeter of 32 units
+\end{enumerate}
+
+\section*{Related Exercises}
+\begin{enumerate}
+    \item (Section 4.1, Exercise 11) \\
+        Absolute Min at $x = c_2$ \\
+        Absolute Max at $x = b$
+    \item (Section 4.1, Exercise 14) \\
+        Absolute Min at $x = c$ \\
+        Absolute Max at $x = b$
+    \item (Section 4.1, Exercise 15) \\
+        Absolute Max at $x = b$ \\
+        Absolute Min at $x = a$ \\
+        Local Max at $x = p$ \\
+        Local Max at $x = r$ \\
+        Local Min at $x = q$ \\
+        Local Min at $x = s$
+    \item (Section 4.1, Exercise 18)
+        Absolute Max at $x = p$ \\
+        Absolute Min at $x = u$ \\
+        Local Max at $x = p$ \\
+        Local Max at $x = r$ \\
+        Local Max at $x = t$ \\
+        Local Min at $x = q$ \\
+        Local Min at $x = s$ \\
+        Local Min at $x = u$ \\
+    \item (Section 4.1, Exercise 35)
+        $$f(x) = \frac{1}{x} + \ln{x}$$
+        $$f'(x) = \frac{x-1}{x^2}$$
+        Critical Points at $x = 1$
+    \item (Section 4.1, Exercise 36)
+        $$f(t) = t^2 - 2\ln{\left(t^2 + 1\right)}$$
+        $$f'(t) = \frac{2t\left(t+1\right)\left(t-1\right)}{t^2 + 1}$$
+        Critical Points at $t = -1$, $t = 0$ and $t = 1$
+    \item (Section 4.1, Exercise 46)
+        $$f(x) = x^4 - 4x^3 + 4x^2$$
+        $$f'(x) = 4x^3 - 12x^2 + 8x$$
+        $$[-1, 3]$$
+        $$f(-1) = 9$$
+        $$f(0) = 0$$
+        $$f(1) = 1$$
+        $$f(2) = 0$$
+        $$f(3) = 9$$
+        Absolute Max at $(-1, 9)$ and $(3, 9)$ \\
+        Absolute Min at $(0, 0)$ and $(2, 0)$ \\
+    \item (Section 4.1, Exercise 52)
+        $$f(x) = 3x^{\frac{2}{3}}$$
+        $$f'(x) = \frac{2}{x^{\frac{1}{3}}}$$
+        $$[0, 27]$$
+        $$f(0) = 0$$
+        $$f(27) = 27$$
+        Absolute Min at $(0, 0)$ \\
+        Absolute Min at $(27, 27)$
+    \item (Section 4.1, Exercise 73)
+        $$s(t) = -16t^2 + 64t + 192$$
+        $$s'(t) = -32t + 64$$
+        $$0 \leq t \leq 6$$
+        $$s(0) = 192$$
+        $$s(2) = 256$$
+        $$s(6) = 0$$
+        The stone will reach its maximum height at $2$ seconds
+\end{enumerate}
+
+\blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
+\end{document}
