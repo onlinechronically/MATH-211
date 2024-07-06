@@ -55,6 +55,23 @@
         \item If $f'$ changes sign from negative to positive as $x$ increases through $c$, then $f$ has a local minimum at $c$.
         \item If $f'$ is positive on both sides of $c$, or negative on both sides of $c$, then $f$ has no local extreme value at $c$.
     \end{itemize}
+    \textbf{One local extremum implies absolute extremum}: Suppose $f$ is continuous on an interval $I$ that contains exactly one local extremum $x = c$.
+    \begin{itemize}
+        \item If $f$ has a local max at $c$, then $f(c)$ is the absolute max of $f$ on $I$.
+        \item If $f$ has a local min at $c$, then $f(c)$ is the absolute min of $f$ on $I$.
+    \end{itemize}
+    \textbf{Concavity}: Suppose a function $f$ is twice differentiable on an open interval $I$.
+    \begin{itemize}
+        \item If $f'$ is increasing on $I$, then $f$ is \textbf{concave up} on $I$, and $f'' > 0$ on $I$.
+        \item If $f'$ is decreasing on $I$, then $f$ is \textbf{concave down} on $I$, and $f'' < 0$ on $I$.
+    \end{itemize}
+    \textbf{Inflection Point}: Suppose a function $f$ is twice differentiable on an open interval $I$. If $f$ is continuous at a point $c$ in $I$ and $f$ changes concavity at $c$, then $f$ has an \textbf{inflection point} at $c$. \\
+    \textbf{Second Derivative Test}: Assume $f''$ is continuous on an open interval containing $x = c$, with $f'(c) = 0$. Under these conditions:
+    \begin{itemize}
+        \item If $f''(c) > 0$, then $f$ has a local minimum at $c$.
+        \item If $f''(c) < 0$, then $f$ has a local maximum at $c$.
+        \item If $f''(c) = 0$, then the test is inconclusive; $f$ may have a local minimum, a local maximum, or neither of these at $x = c$.
+    \end{itemize}
 \end{itemize}
 
 \section*{Examples}
@@ -127,6 +144,27 @@
     There is a local maximum at $x = \sqrt{3}$ and $f(\sqrt{3}) \approx 10.39230485$ \\
     There is an absolute minimum at $x = -\sqrt{3}$ and $f(-\sqrt{3}) \approx -10.39230485$ \\
     There is an absolute maximum at $x = -4$ and $f(-4) = 28$
+    \item Find absolute extrema on unclosed intervals of functions with one critical point
+    $$f(x) = 4x + \frac{1}{\sqrt{x}}$$
+    $$f'(x) = 4 - \frac{1}{2x\sqrt{x^3}}$$
+    There is a critical point at $x = 0$ and $x = \frac{1}{4}$ \\
+    There is a local minimum at $x = \frac{1}{4}$ and $f\left(\frac{1}{4}\right) = 3$
+    There is a absolute minimum at $x = \frac{1}{4}$ and $f\left(\frac{1}{4}\right) = 3$
+    \item Find intervals where a function is concave up or concave down and identify inflection points
+    $$h(t) = 2 + \cos{2t}$$
+    $$h'(t) = -2\sin{2t}$$
+    $$h''(t) = -5\cos{2t}$$
+    $$[0, 2\pi]$$
+    $h$ is concave up at the following intervals: $\left(\frac{\pi}{4}, \frac{3\pi}{4}\right), \left(\frac{5\pi}{4}, \frac{7\pi}{4}\right)$ \\
+    $h$ is concave up at the following intervals: $\left(0, \frac{\pi}{4}\right), \left(\frac{3\pi}{4}, \frac{5\pi}{4}\right), \left(\frac{7\pi}{4}, 2\pi\right)$ \\
+    The inflection points for $h$ occur when $t = \frac{\pi}{4}, \frac{3\pi}{4}, \frac{5\pi}{4}, \frac{7\pi}{4}$
+    \item Use the Second Derivative Test to find local extrema
+    $$f(x) = \frac{e^x}{x + 1}$$
+    $$f'(x) = \frac{xe^x}{\left(x + 1\right)^2}$$
+    $$f''(x) = \frac{e^x\left(x^2+1\right)}{\left(x+1\right)^3}$$
+    There is a critical point at $x = 0$
+    $$f''(0) = 1$$
+    There is a local minimum at $x = 0$
 \end{enumerate}
 
 \section*{Related Exercises}
