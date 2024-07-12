@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}} 
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+\title{Module 6 Notes (MATH-211)}
+\author{Lillie Donato}
+\date{15 July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{General Notes (and Definitions)}
+\begin{itemize}
+    \item L'Hôpital's Rule \\
+    \textbf{Indeterminate Form}: An expression involving two components where the limit cannot be determined by evaluating the limits of the individual components. \\
+    \textbf{L'Hôpital's Rule}: Suppose $f$ and $g$ are differentiable functions on an open interval $I$ containing the point $x = a$, with $g'(x) \neq 0$ on $I$ when $x \neq a$. \\
+    If $\lim\limits_{x \to a}{\frac{f(x)}{g(x)}}$ has any of the indeterminate forms: $\frac{0}{0}$, $\frac{\infty}{\infty}$, $-\frac{\infty}{\infty}$, then
+    $$\lim_{x \to a}{\frac{f(x)}{g(x)}} = \lim_{x \to a}{\frac{f'(x)}{g'(x)}}$$
+    provided that one of the following is the case:
+    $$\lim_{x \to a}{\frac{f'(x)}{g'(x)}} \in \mathbb{R}$$
+    $$\lim_{x \to a}{\frac{f'(x)}{g'(x)}} = \infty$$
+    $$\lim_{x \to a}{\frac{f'(x)}{g'(x)}} = -\infty$$
+    L'Hôpital's Rule is still valid if $x \to a$ is replaced by any of $x \to a^+$, $x \to a^-$, $x \to \infty$, or $x \to -\infty$. In the last two of these cases, there must be a greatest $x$-value beyond which both $f$ and $g$ are differentiable at every point. \\
+    \textbf{Exponential Indeterminate forms}: $1^{\infty}$, $0^0$, $\infty^0$ \\
+    \textbf{Method for evaluating limits of indeterminate forms $1^{\infty}$, $0^0$, $\infty^0$}: \\
+    Assume that $L = \lim\limits_{x \to a}{f(x)^{g(x)}}$ has one of these indeterminate forms.
+    \begin{enumerate}
+        \item Use the fact that the natural logarithm and natural exponential functions are inverses to write
+        $$L = \lim_{x \to a}{e^{\ln{\left(f(x)^{g(x)}\right)}}}$$
+        \item Use the power property of logarithm arguments to write
+        $$L = \lim_{x \to a}{e^{g(x)\ln{\left(f(x)\right)}}}$$
+        \item Use continuity of the exponential function to write
+        $$L = e^{\lim\limits_{x \to a}{g(x)\ln{\left(f(x)\right)}}}$$
+        \item Rewrite multiplication as division by the reciprocal:
+        $$L = e^{\lim\limits_{x \to a}{\left(\frac{\ln{\left(f(x)\right)}}{\frac{1}{g(x)}}\right)}}$$
+        \item Use L'Hôpital's Rule to evaluate this limit expression
+    \end{enumerate}
+    \textbf{Growth Rates}: Suppose $f$ and $g$ are functions with $\lim\limits_{x \to \infty}{f(x)} = \infty$ and $\lim\limits_{x \to \infty}{g(x)} = \infty$ \\
+    \begin{enumerate}
+        \item If one of the following are true, \textbf{$f$ grows faster than $g$}, and we use the notation $f \gg g$
+        \begin{eqnarray}
+            \lim_{x \to \infty}{\frac{g(x)}{f(x)}} &=& 0 \\
+            \lim_{x \to \infty}{\frac{f(x)}{g(x)}} &=& \infty
+        \end{eqnarray}
+        \item \textbf{$f$ and $g$ have comparable growth rates}, if there is some non-zero finite number $M$ such that
+        $$\lim_{x \to \infty}{\frac{f(x)}{g(x)}} = M$$
+    \end{enumerate}
+    \textbf{Ranked Growth Rates as $x \to \infty$} \\
+    For any base $b > 1$, and for any positive numbers $p$, $q$, $r$, and $s$
+    $$\ln^q{x} \ll x^p \ll x^p \ln^r{x} \ll x^{p + s} \ll b^x \ll x^x$$
+\end{itemize}
+
+\section*{Examples}
+\begin{enumerate}
+    \item Use L'Hôpital's Rule to evaluate a limit with indeterminate form $\frac{0}{0}$
+        \begin{eqnarray}
+            \lim_{x \to 0}{\frac{e^x - x - 1}{5x^2}} &=& \lim_{x \to 0}{\frac{e^x - 1}{10x}} \\
+                                                     &=& \lim_{x \to 0}{\frac{e^x}{10}} \\
+                                                     &=& \frac{e^0}{10} \\
+                                                     &=& \frac{1}{10}
+        \end{eqnarray}
+    \item Use L'Hôpital's Rule to evaluate a limit with indeterminate form $\frac{\infty}{\infty}$
+        \begin{eqnarray}
+            \lim_{x \to 0^+}{\frac{1 - \ln{x}}{1 + \ln{x}}} &=& \lim_{x \to 0^+}{\frac{-\frac{1}{x}}{\frac{1}{x}}} \\
+                                                            &=& \lim_{x \to 0^+}{\frac{-\frac{1}{x}}{\frac{1}{x}}} \\
+                                                            &=& \frac{-1}{1} \\
+                                                            &=& -1
+        \end{eqnarray}
+    \item Use L'Hôpital's Rule to evaluate a limit with indeterminate form $0 \cdot \infty$
+        \begin{eqnarray}
+            \lim_{x \to 1^-}{\left(1 - x\right)\tan{\left(\frac{\pi x}{2}\right)}} &=& \lim_{x \to 1^-}{\frac{\left(1 - x\right)}{\cot{\left(\frac{\pi x}{2}\right)}}} \\
+                                                                                   &=& \lim_{x \to 1^-}{\frac{-1}{-\frac{\pi}{2}\csc^2{\left(\frac{\pi x}{2}\right)}}} \\
+                                                                                   &=& \lim_{x \to 1^-}{\frac{2}{\pi}\sin^2{\left(\frac{\pi x}{2}\right)}} \\
+                                                                                   &=& \frac{2}{\pi}
+        \end{eqnarray}
+    \item Use L'Hôpital's Rule to evaluate a limit with exponential indeterminate form
+        \begin{eqnarray}
+            \lim_{x \to 0^+}{x^{\tan{x}}} &=& e^{\lim\limits_{x \to 0^+}{\frac{\ln{x}}{\frac{1}{\tan{x}}}}} \\
+                                          &=& e^{\lim\limits_{x \to 0^+}{\frac{\ln{x}}{\cot{x}}}} \\
+                                          &=& e^{\lim\limits_{x \to 0^+}{\frac{1}{-x\csc^2{x}}}} \\
+                                          &=& e^{\lim\limits_{x \to 0^+}{\frac{-\sin^2{x}}{x}}} \\
+                                          &=& e^{\lim\limits_{x \to 0^+}{\frac{-2\sin{x}\cos{x}}{1}}} \\
+                                          &=& e^{\lim\limits_{x \to 0^+}{-2\sin{x}\cos{x}}} \\
+                                          &=& e^0 \\
+                                          &=& 1
+        \end{eqnarray}
+    \item Compare the growth rates of functions
+        $$f(x) = x^2\ln{x}$$
+        $$g(x) = x\ln^2{x}$$
+        \begin{eqnarray}
+            \lim_{x \to \infty}{\frac{f(x)}{g(x)}} &=& \lim_{x \to \infty}{\frac{x^2\ln{x}}{x\ln^2{x}}} \\
+                                                   &=& \lim_{x \to \infty}{\frac{x}{\ln{x}}} \\
+                                                   &=& \lim_{x \to \infty}{\frac{1}{\frac{1}{x}}} \\
+                                                   &=& \lim_{x \to \infty}{x} \\
+                                                   &=& \infty
+        \end{eqnarray}
+        Since $\lim\limits_{x \to \infty}{\frac{f(x)}{g(x)}} = \infty$, $f \gg g$
+\end{enumerate}
+
+\section*{Related Exercises}
+\begin{enumerate}
+    \item Example
+\end{enumerate}
+
+\blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
+\end{document}
