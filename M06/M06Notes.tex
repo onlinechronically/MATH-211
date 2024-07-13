@@ -66,7 +66,45 @@
     \textbf{Ranked Growth Rates as $x \to \infty$} \\
     For any base $b > 1$, and for any positive numbers $p$, $q$, $r$, and $s$
     $$\ln^q{x} \ll x^p \ll x^p \ln^r{x} \ll x^{p + s} \ll b^x \ll x^x$$
+    \item Antiderivatives \\
+    \textbf{Antiderivative}: A function $F$ is an antiderivative of another function $f$ on an interval $I$ if for all $x$ in $I$:
+    $$F'(x) = f(x)$$
+    \textbf{Family of Antiderivatives}: Let $F(x)$ be any antiderivative of $f(x)$ on an interval $I$. Then all antiderivatives of $f$ on $I$ have the form $F(x) + C$, where $C$ is an arbitrary constant. \\
+    \textbf{Differential Equations}: Any equation involving an unknown function and its derivatives
+    \begin{itemize}
+        \item Infinite family of solutions
+        \item No two solutions from the family pass through the same point
+        \item Given an initial condition $f(a) = b$, we can identify the particular family member that solves the given problem by solving for $C$
+    \end{itemize}
 \end{itemize}
+
+\section*{Antiderivative Rules}
+\begin{itemize}
+    \item Power Rule \\
+        If $p \neq -1$ and $C$ is an arbitrary constant:
+        $$\int{x^p} dx = \frac{x^{p + 1}}{p + 1} + C$$
+    \item Integral of $x^{-1}$
+        $$\int{x^{-1}}dx = \int{\frac{1}{x}}dx = \ln{|x|} + C$$
+    \item Constant Multiple and Sum Rules \\
+        If $c \in \mathbb{R}$:
+        $$\int{cf(x)}dx = c\int{f(x)}dx$$
+        $$\int{\left(f(x) + g(x)\right)}dx = \int{f(x)}dx + \int{g(x)}dx$$
+    \item Integral of $e^x$
+        $$\int{e^x}dx = e^x + C$$
+\end{itemize}
+
+\section*{Trigonometric (and inverse) Integrals}
+\begin{eqnarray}
+    \int{\cos{\left(x\right)}}dx &=& \sin{x} + C \\
+    \int{\sin{\left(x\right)}}dx &=& -\cos{x} + C \\
+    \int{\sec^2{\left(x\right)}}dx &=& \tan{x} + C \\
+    \int{\csc^2{\left(x\right)}}dx &=& -\cot{x} + C \\
+    \int{\sec{\left(x\right)}\tan{\left(x\right)}}dx &=& \sec{x} + C \\
+    \int{\csc{\left(x\right)}\cot{\left(x\right)}}dx &=& -\csc{x} + C \\
+    \int{\frac{1}{\sqrt{1 - x^2}}}dx &=& \sin^{-1}{x} + C \\
+    \int{\frac{1}{1 + x^2}}dx &=& \tan^{-1}{x} + C \\
+    \int{\frac{1}{x\sqrt{x^2 - 1}}}dx &=& \sec^{-1}{|x|} + C
+\end{eqnarray}
 
 \section*{Examples}
 \begin{enumerate}
@@ -113,6 +151,49 @@
                                                    &=& \infty
         \end{eqnarray}
         Since $\lim\limits_{x \to \infty}{\frac{f(x)}{g(x)}} = \infty$, $f \gg g$
+        \item Use knowledge of derivatives to find antiderivatives
+            $$f(x) = -4\cos{x} - x$$
+            $$F(x) = -4\sin{x} - \frac{1}{2}x^2$$
+            $$F'(x) = -4\cos{x} - x$$
+            $$\int{\left(-4\cos{x} - x\right)} dx = -4\sin{x} - \frac{1}{2}x^2 + C$$
+        \item Determine indefinite integrals using antiderivative rules
+            $$\int{\frac{3}{x^4} + 2 - 3x^2}dx = \int{3x^{-4} + 2 - 3x^2}dx = \frac{-1}{x^3} + 2x - x^3 + C$$
+        \item Rewrite an indefinite integral to find an antiderivative
+            \begin{eqnarray}
+                \int{\frac{2 + 3\cos{y}}{\sin^2{y}}}dy &=& \int{2\csc^2{y} + 3\cot{y}\csc{y}}dy \\
+                                                       &=& 2\int{\csc^2{y}}dy + 3\int{\cot{y}\csc{y}}dy \\
+                                                       &=& -2\cot{y} - 3\csc{y} + C
+            \end{eqnarray}
+        \item Solve an initial value problem
+            $$f'(u) = 4\cos{u} - 4\sin{u}$$
+            $$f(\pi) = 0$$
+            $$f(u) = 4\int{\cos{u}}\,du - 4\int{\sin{u}}\,du = 4\sin{u} + 4\cos{u} + C$$
+            \begin{eqnarray}
+                4\sin{\pi} + 4\cos{\pi} + C &=& 0 \\
+                0 - 4 + C &=& 0 \\
+                C &=& 4
+            \end{eqnarray}
+            $$f(u) = 4\sin{u} + 4\cos{u} + 4$$
+        \item Application of differential equations to linear motion
+            $$a(t) = 2 + 3\sin{t}$$
+            $$v(0) = 1$$
+            $$s(0) = 10$$
+            \begin{eqnarray}
+                v(t) &=& \int{2 + 3\sin{t}}\,dt \\
+                     &=& 2\int{t^0}\,dt + 3\int{\sin{t}}\,dt \\
+                     &=& 2t - 3\cos{t} + C \\
+                2(0) - 3\cos{0} + C &=& 1 \\
+                - 3 + C &=& 1 \\
+                C &=& 4 \\
+                v(t) &=& 2t - 3\cos{t} + 4 \\
+                s(t) &=& \int{2t - 3\cos{t} + 4}\,dt \\
+                     &=& 2\int{t}\,dt - 3\int{\cos{t}}\,dt + 4\int{t^0}\,dt \\
+                     &=& 2\frac{t^2}{2} - 3\sin{t} + 4t + C \\
+                     &=& t^2 - 3\sin{t} + 4t + C \\
+                0^2 - 3\sin{0} + 4(0) + C &=& 10 \\
+                C &=& 10 \\
+                s(t) &=& t^2 - 3\sin{t} + 4t + 10
+            \end{eqnarray}
 \end{enumerate}
 
 \section*{Related Exercises}
