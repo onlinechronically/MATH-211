@@ -91,6 +91,8 @@
         $$\int{\left(f(x) + g(x)\right)}dx = \int{f(x)}dx + \int{g(x)}dx$$
     \item Integral of $e^x$
         $$\int{e^x}dx = e^x + C$$
+    \item Integral of $\frac{1}{x}$
+        $$\int{\frac{1}{x}}\,dx = \ln{|x|} + C$$
 \end{itemize}
 
 \section*{Trigonometric (and inverse) Integrals}
@@ -356,6 +358,186 @@
                                                    &=& \frac{2432902008176640000}{\infty} \neq \infty
         \end{eqnarray}
         $$g \gg f$$
+    \item (Section 4.9, Exercise 12)
+        $$f(x) = 11x^{10}$$
+        \begin{eqnarray}
+            \int{11x^{10}}\,dx &=& 11\int{x^{10}}\,dx \\
+                               &=& 11\frac{x^{11}}{11} + C \\
+                               &=& x^{11} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 13)
+        $$f(x) = 2\sin{x} + 1$$
+        \begin{eqnarray}
+            \int{2\sin{x} + 1}\,dx &=& 2\int{\sin{x}} + \int{x^0} \\
+                                   &=& -2\cos{x} + x + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 24)
+        \begin{eqnarray}
+            \int{3u^{-2} - 4u^2 + 1}\,du &=& 3\int{u^{-2}}\,du - 4\int{u^2}\,du + \int{u^0}\,du \\
+                                         &=& 3\frac{u^{-1}}{-1} - 4\frac{u^3}{3} + u + C \\
+                                         &=& \frac{-3}{u} - \frac{4u^3}{3} + u + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 25)
+        \begin{eqnarray}
+            \int{4\sqrt{x} - \frac{4}{\sqrt{x}}}\,dx &=& 4\int{x^{\frac{1}{2}}}\,dx - 4\int{x^{-\frac{1}{2}}}\,dx \\
+                                                     &=& 4\frac{x^{\frac{3}{2}}}{\frac{3}{2}} - 4\frac{x^{\frac{1}{2}}}{\frac{1}{2}} + C \\
+                                                     &=& \frac{8x^{\frac{3}{2}}}{3} - 8x^{\frac{1}{2}} + C \\
+                                                     &=& \frac{8x\sqrt{x}}{3} - 8\sqrt{x} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 31)
+        \begin{eqnarray}
+            \int{\left(3x + 1\right)\left(4 - x\right)}\,dx &=& \int{-3x^2 + 11x + 4}\,dx \\
+                                                            &=& -3\int{x^2}\,dx + 11\int{x}\,dx + 4\int{x^0}\,dx \\
+                                                            &=& -3\frac{x^3}{3} + 11\frac{x^2}{2} + 4x + C \\
+                                                            &=& -x^3 + \frac{11x^2}{2} + 4x + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 35)
+        \begin{eqnarray}
+            \int{\frac{4x^4 - 6x^2}{x}}\,dx &=& \int{4x^3 - 6x}\,dx \\
+                                            &=& 4\int{x^3}\,dx - 6\int{x}\,dx \\
+                                            &=& 4\frac{x^4}{4} - 6\frac{x^2}{2} + C \\
+                                            &=& x^4 - 3x^2 + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 40)
+        \begin{eqnarray}
+            \int{\left(\csc^2{\theta} + 1\right)}\,d\theta &=& \int{\csc^2{\theta}}\,d\theta + \int{\theta^0}\,d\theta \\
+                                                           &=& -\cot{\theta} + \theta + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 41)
+        \begin{eqnarray}
+            \int{\frac{2 + 3\cos{y}}{\sin^2{y}}}\,dy &=& \int{\left(\frac{2}{\sin^2{y}} + \frac{3\cos{y}}{\sin^2{y}}\right)}\,dy \\
+                                                     &=& \int{\left(2\csc^2{y} + 3\cot{y}\csc{y}\right)}\,dy \\
+                                                     &=& 2\int{\csc^2{y}}\,dy + 3\int{\cot{y}\csc{y}}\,dy \\
+                                                     &=& -2\cot{y} - 3\csc{y} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 47)
+        \begin{eqnarray}
+            \int{\left(3t^2 + 2\csc^2{t}\right)}\,dt &=& \int{3t^2}\,dt + \int{2\csc^2{t}}\,dt \\
+                                                     &=& 3\int{t^2}\,dt + 2\int{\csc^2{t}}\,dt \\
+                                                     &=& 3\frac{t^3}{3} - 2\cot{t} + C \\
+                                                     &=& t^3 - 2\cot{t} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 45)
+        \begin{eqnarray}
+            \int{\left(sec^2{\theta} + \sec{\theta}\tan{\theta}\right)}\,d\theta &=& \int{sec^2{\theta}}\,d\theta + \int{\sec{\theta}\tan{\theta}}\,d\theta \\
+                                                                                 &=& \tan{\theta} + \sec{\theta} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 50)
+        \begin{eqnarray}
+            \int{\frac{\csc^3{x} + 1}{\csc{x}}}\,dx &=& \int{\frac{\csc^3{x}}{\csc{x}} + \frac{1}{\csc{x}}}\,dx \\
+                                                    &=& \int{\csc^2{x} + \sin{x}}\,dx \\
+                                                    &=& \int{\csc^2{x}}\,dx + \int{\sin{x}}\,dx \\
+                                                    &=& -\cot{x} + -\cos{x} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 51)
+        \begin{eqnarray}
+            \int{\frac{1}{2y}}\,dy &=& \frac{1}{2}\int{\frac{1}{y}}\,dy \\
+                                   &=& \frac{1}{2}\ln{|y|} + C \\
+                                   &=& \frac{\ln{|y|}}{2} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 53)
+        \begin{eqnarray}
+            \int{\frac{6}{\sqrt{4 - 4x^2}}}\,dx &=& \int{\frac{6}{\sqrt{4\left(1 - x^2\right)}}}\,dx \\
+                                                &=& \int{\frac{6}{2\sqrt{1 - x^2}}}\,dx \\
+                                                &=& 3\int{\frac{1}{\sqrt{1 - x^2}}}\,dx \\
+                                                &=& 3\sin^{-1}{x} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 59)
+        \begin{eqnarray}
+            \int{\frac{t + 1}{t}}\,dt &=& \int{\left(\frac{t}{t} + \frac{1}{t}\right)}\,dt \\
+                                      &=& \int{\frac{t}{t}}\,dt + \int{\frac{1}{t}}\,dt \\
+                                      &=& \int{t^0}\,dt + \ln{|t|} + C \\
+                                      &=& t + \ln{|t|} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 61)
+        \begin{eqnarray}
+            \int{e^{x + 2}}\,dx &=& \int{e^2e^x}\,dx \\
+                                &=& e^2\int{e^x}\,dx \\
+                                &=& e^2e^x \\
+                                &=& e^{x + 2}
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 54)
+        \begin{eqnarray}
+            \int{\frac{v^3 + v + 1}{1 + v^2}}\,dv &=& \int{\frac{v^3 + v}{1 + v^2} + \frac{1}{1 + v^2}}\,dv \\
+                                                  &=& \int{v + \frac{1}{1 + v^2}}\,dv \\
+                                                  &=& \int{v}\,dv + \int{\frac{1}{1 + v^2}}\,dv \\
+                                                  &=& \frac{v^2}{2} + \tan^{-1}{v} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 62)
+        \begin{eqnarray}
+            \int{\frac{10t^5 - 3}{t}}\,dt &=& \int{\left(\frac{10t^5}{t} - \frac{3}{t}\right)}\,dt \\
+                                          &=& \int{10t^4}\,dt - \int{\frac{3}{t}}\,dt \\
+                                          &=& 10\int{t^4}\,dt - 3\int{\frac{1}{t}}\,dt \\
+                                          &=& 10\frac{t^5}{5} - 3\ln{|t|} + C \\
+                                          &=& 2t^5 - 3\ln{|t|} + C
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 78)
+        \begin{eqnarray}
+            g'(x) &=& 7x^6 - 4x^3 + 12 \\
+            g(1) &=& 24 \\
+            g(x) &=& \int{7x^6 - 4x^3 + 12}\,dx \\
+                 &=& 7\int{x^6}\,dx - 4\int{x^3}\,dx + 12\int{x^0}\,dx \\
+                 &=& 7\frac{x^7}{7} - 4\frac{x^4}{4} + 12x + C \\
+                 &=& x^7 - x^4 + 12x + C \\
+            (1)^7 - (1)^4 + 12(1) + C &=& 24 \\
+            1 - 1 + 12 + C &=& 24 \\
+            12 + C &=& 24 \\
+            C &=& 12 \\
+            g(x) &=& x^7 - x^4 + 12x + 12
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 83)
+        \begin{eqnarray}
+            y'(t) &=& \frac{3}{t} + 6 \\
+            y(1) &=& 8, t > 0 \\
+            y(t) &=& \int{\left(\frac{3}{t} + 6\right)}\,dt \\
+                 &=& 3\int{\frac{1}{t}}\,dt + 6\int{t^0}\,dt \\
+                 &=& 3\ln{|t|} + 6t + C \\
+            3\ln{1} + 6(1) + C &=& 8 \\
+            6 + C &=& 8 \\
+            C &=& 2 \\
+            y(t) &=& 3\ln{|t|} + 6t + 2
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 105)
+        \begin{eqnarray}
+            v(t) &=& \sin{t} \\
+            s(0) &=& 0 \\
+            s(t) &=& \int{\sin{t}}\,dt \\
+                 &=& -\cos{t} + C \\
+            -\cos{0} + C &=& 0 \\
+            -1 + C &=& 0 \\
+            C &=& 1 \\
+            s(t) &=& -\cos{t} + 1
+        \end{eqnarray}
+        \begin{eqnarray}
+            V(t) &=& \cos{t} \\
+            S(0) &=& 0 \\
+            S(t) &=& \int{\cos{t}}\,dt \\
+                 &=& \sin{t} + C \\
+            \sin{0} + C &=& 0 \\
+            C &=& 0 \\
+            S(t) &=& \sin{t}
+        \end{eqnarray}
+    \item (Section 4.9, Exercise 106)
+        \begin{eqnarray}
+            v(t) &=& e^t \\
+            s(0) &=& 0 \\
+            s(t) &=& \int{e^t}\,dt \\
+                 &=& e^t + C \\
+            e^0 + C &=& 0 \\
+            1 + C &=& 0 \\
+            C &=& -1 \\
+            s(t) &=& e^t - 1
+        \end{eqnarray}
+        \begin{eqnarray}
+            V(t) &=& 2 + \cos{t} \\
+            S(0) &=& 3 \\
+            S(t) &=& \int{2 + \cos{t}}\,dt \\
+                 &=& \int{2}\,dt + \int{\cos{t}}\,dt \\
+                 &=& 2\int{t^0}\,dt + \sin{t} + C \\
+                 &=& 2t + \sin{t} + C \\
+            2(0) + \sin{0} + C &=& 3 \\
+            C &=& 3
+        \end{eqnarray}
 \end{enumerate}
 
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
