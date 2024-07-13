@@ -724,6 +724,103 @@
                   &\approx& 36.976
             \end{eqnarray}
         \end{enumerate}
+    \item (Section 5.1, Exercise 23)
+        $$f(x) = x + 1$$
+        $$[1,6]$$
+        $$n = 5$$
+        \begin{enumerate}
+            \item
+            \begin{eqnarray}
+                \left(1 + 1\right) + \left(2 + 1\right) + \left(3 + 1\right) + \left(4 + 1\right) + \left(5 + 1\right) &=& 2 + 3 + 4 + 5 + 6 \\
+                                                                                                                       &=& 20
+            \end{eqnarray}
+            \item
+            \begin{eqnarray}
+                \left(2 + 1\right) + \left(3 + 1\right) + \left(4 + 1\right) + \left(5 + 1\right) + \left(6 + 1\right) &=& 3 + 4 + 5 + 6 + 7 \\
+                                                                                                                       &=& 25
+            \end{eqnarray}
+        \end{enumerate}
+    \item (Section 5.1, Exercise 24)
+        $$f(x) = \frac{1}{x}$$
+        $$[1,5]$$
+        $$n = 4$$
+        $$\Delta{x} = 1$$
+        \begin{eqnarray}
+            \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} &=& \frac{25}{12} \\
+            \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} &=& \frac{77}{60}
+        \end{eqnarray}
+    \item (Section 5.1, Exercise 29)
+        $$f(x) = x^2 - 1$$
+        $$[2,4]$$
+        $$n = 4$$
+        $$\Delta{x} = \frac{1}{2}$$
+        $$[2,2.5],[2.5,3],[3,3.5],[3.5,4]$$
+        \begin{eqnarray}
+            \frac{3}{2} + \frac{5.25}{2} + \frac{8}{2} + \frac{11.25}{2} &=& 13.75 \\
+            \frac{5.25}{2} + \frac{8}{2} + \frac{11.25}{2} + \frac{15}{2} &=& 19.75
+        \end{eqnarray}
+    \item (Section 5.1, Exercise 33)
+        $$f(x) = 100 - x^2$$
+        $$[0,10]$$
+        $$n = 5$$
+        $$\Delta{x} = 2$$
+        \begin{eqnarray}
+            2\left(99\right) + 2\left(91\right) + 2\left(75\right) + 2\left(51\right) + 2\left(19\right) &=& 198 + 182 + 150 + 102 + 38 \\
+                                                                                                         &=& 670
+        \end{eqnarray}
+    \item (Section 5.1, Exercise 34)
+        $$f(t) = \cos{\frac{t}{2}}$$
+        $$[0, \pi]$$
+        $$n = 4$$
+        $$\Delta{x} = \frac{\pi}{4}$$
+        \begin{eqnarray}
+            \frac{\pi}{4}\left(\cos{\frac{\pi}{16}}\right) + \frac{\pi}{4}\left(\cos{\frac{3\pi}{16}}\right) + \frac{\pi}{4}\left(\cos{\frac{5\pi}{16}}\right) + \frac{\pi}{4}\left(\cos{\frac{7\pi}{16}}\right) &=& \frac{704}{105} \\
+                                                                                                                                                                                                                 &\approx& 6.704761905
+        \end{eqnarray}
+    \item (Section 5.1, Exercise 39)
+        $$f(x) = \sqrt{x}$$
+        $$[1,3]$$
+        $$n = 4$$
+        $$\Delta{x} = \frac{1}{2}$$
+        \begin{eqnarray}
+            \frac{\sqrt{1.25}}{2} + \frac{\sqrt{1.75}}{2} + \frac{\sqrt{2.25}}{2} + \frac{\sqrt{2.75}}{2} &\approx& 2.853
+        \end{eqnarray}
+    \item (Section 5.1, Exercise 43)
+        $$n = 4$$
+        $$[0,2]$$
+        $$\Delta{x} = \frac{1}{2}$$
+        \begin{eqnarray}
+            \frac{5}{2} + \frac{3}{2} + \frac{2}{2} + \frac{1}{2} &=& 5.5 \\
+            \frac{3}{2} + \frac{2}{2} + \frac{1}{2} + \frac{1}{2} &=& 3.5
+        \end{eqnarray}
+    \item (Section 5.1, Exercise 44)
+        $$n = 8$$
+        $$[1,5]$$
+        $$\Delta{x} = \frac{1}{2}$$
+        \begin{eqnarray}
+            \frac{0}{2} + \frac{2}{2} + \frac{3}{2} + \frac{2}{2} + \frac{2}{2} + \frac{1}{2} + \frac{0}{2} + \frac{2}{2} &=& 6 \\
+            \frac{2}{2} + \frac{3}{2} + \frac{2}{2} + \frac{2}{2} + \frac{1}{2} + \frac{0}{2} + \frac{2}{2} + \frac{3}{2} &=& 7.5
+        \end{eqnarray}
+    \item (Section 5.1, Exercise 51)
+        $$f(x) = 3\sqrt{x}$$
+        $$[0,4]$$
+        $$n = 40$$
+        $$\Delta{x} = \frac{1}{10}$$
+        \begin{eqnarray}
+            \sum_{k = 1}^{40}{\frac{3}{10}\sqrt{\frac{k - 1}{10}}} &\approx& 15.681 \\
+            \sum_{k = 1}^{40}{\frac{3}{10}\sqrt{\frac{k}{10}}} &\approx& 16.281 \\
+            \sum_{k = 1}^{40}{\frac{3}{10}\sqrt{\frac{k - \frac{1}{2}}{10}}} &\approx& 16.005
+        \end{eqnarray}
+    \item (Section 5.1, Exercise 52)
+        $$f(x) = x^2 + 1$$
+        $$[-1,1]$$
+        $$n = 50$$
+        $$\Delta{x} = \frac{1}{25}$$
+        \begin{eqnarray}
+            \sum_{k = 1}^{50}{0.04\left(\left(-1 + 0.04\left(k - 1\right)\right)^2 + 1\right)} &\approx& 2.6672 \\
+            \sum_{k = 1}^{50}{0.04\left(\left(-1 + 0.04k\right)^2 + 1\right)} &\approx& 2.6672 \\
+            \sum_{k = 1}^{50}{0.04\left(\left(-1 + 0.04\left(k - \frac{1}{2}\right)\right)^2 + 1\right)} &\approx& 2.6664
+        \end{eqnarray}
 \end{enumerate}
 
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
