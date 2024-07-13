@@ -76,6 +76,72 @@
         \item No two solutions from the family pass through the same point
         \item Given an initial condition $f(a) = b$, we can identify the particular family member that solves the given problem by solving for $C$
     \end{itemize}
+    \item Approximating Areas Under Curves
+    \begin{itemize}
+        \item If we know the velocity function of a moving object, what can we learn about its position function?
+        \item Given an object with velocity function $v(t)$, the displacement of the moving object over the interval $[a,b]$ is the area between the velocity curve and the $t$-axis from $t = a$ to $t = b$.
+        \item Because objects do not necessarily move at a constant velocity, we can extend this idea to positive velocities that change over an interval of time.
+        \item The strategy is to divide the time interval into many subintervals, approximate the velocity on each subinterval with a constant velocity, calculate the individual displacements and sum the results.
+    \end{itemize}
+    \textbf{Riemann Sums}
+    \begin{itemize}
+        \item Suppose $f(x)$ is continuous and non-negative on $[a,b]$.
+        \item Goal is to approximate the area of the region $R$ bounded by the graph of $f(x)$ and the $x$-axis from $x = a$ to $x = b$.
+        \item Divide $[a,b]$ into $n$ subintervals $[x_0,x_1],[x_1,x_2],...,[x_{n-1},x_n]$ where $a = x_0, b = x_n$.
+        \item The length of each subinterval is $\Delta x = \frac{b - a}{n}$
+        \item \textbf{Regular Partition}: Suppose $[a,b]$ is a closed interval containing $n$ subintervals
+            $$[x_0,x_1],[x_1,x_2],...,[x_{n-1},x_n]$$
+        of equal length $\Delta x = \frac{b - a}{n}$, with $a = x_0$ and $b = x_n$. The endpoints $x_0, x_1, x_2,...,x_{n - 1},x_n$ of the subintervals are called \textbf{grid points}, and they create a \textbf{regular partition} of the interval $[a,b]$. In general the $k$th grid point is
+            $$x_k = a + k\Delta x\text{, for } k = 0,1,2,...,n$$
+        \item In the $k$th subinterval $[x_{k - 1}, x_k]$, choose any point $x_k^*$ and build a rectangle whose height is $f(x_k^*)$.
+        \item The area of the rectangle of the $k$th subinterval is
+            $$\text{height} \cdot \text{base} = f(x_k^*)\Delta x\text{, where } k = 1,2,...,n$$
+        \item Summing the areas of these rectangles, we obtain an approximation to the area of $R$, which is called a \textbf{Riemann sum}:
+            $$f(x_1^*)\Delta x + f(x_2^*)\Delta x + ... + f(x_n^*)\Delta x$$
+        \item Three notable Riemann sums are the left, right, and midpoint Riemann sums.
+    \end{itemize}
+    \textbf{Riemann Sum}: Suppose $f$ is defined on a closed interval $[a,b]$, which is divided into $n$ subintervals of equal length $\Delta x$. If $x_k^*$ is any point in the $k$th subinterval $[x_{k - 1}, x_k]$, for $k = 1,2,...,n$, then
+        $$f(x_1^*)\Delta x + f(x_2^*)\Delta x + ... + f(x_n^*)\Delta x$$
+    is called a \textbf{Riemann sum} for $f$ on $[a,b]$. This sum is called
+        \begin{itemize}
+            \item a \textbf{left Riemann sum} if $x_k^*$ is the left endpoint of $[x_{k - 1}, x_k]$
+            \item a \textbf{right Riemann sum} if $x_k^*$ is the right endpoint of $[x_{k - 1}, x_k]$
+            \item a \textbf{midpoint Riemann sum} if $x_k^*$ is the midpoint of $[x_{k - 1}, x_k]$
+        \end{itemize}
+    \textbf{Summation notation ($\Sigma$)}:
+        \begin{itemize}
+            \item Working with Riemann sums is cumbersome when $n$ is large
+            \item We introduce sigma (summation) notation as a shorthand:
+                $$1 + 2 + ... + 49 + 50 = \sum_{k = 1}^{50}{k}$$
+            \item The symbol $\Sigma$ (sigma) stands for sum
+            \item $k$ is the index, and takes on all integer values from $k = 1$ to $k = 50$
+            \item The expression immediately following $\Sigma$, the summand, is evaluated for each $k$, and the resulting values are summed
+            \item The index is a dummy variable, and it does not matter which symbol is chosen for the index:
+                $$\sum_{k = 1}^{99}{k} = \sum_{n = 1}^{99}{n} = \sum_{p - 1}^{99}{p}$$
+            \item Two Properties of Sums and Sigma Notation
+                \begin{enumerate}
+                    \item Constant Multiple Rule:
+                        $$\sum_{k = 1}^{n}{ca_k} = c\sum_{k = 1}^{n}{a_k}$$
+                    \item Addition Rule:
+                        $$\sum_{k = 1}^{n}{\left(a_k + b_k\right)} = \sum_{k = 1}^{n}{a_k} + \sum_{k = 1}^{n}{b_k}$$
+                \end{enumerate}
+            \item \textbf{Theorem}: Sums of Power of Integers \\
+                Let $n \in \mathbb{Z}$ such that $n > 0$ and $c \in \mathbb{R}$
+                \begin{eqnarray}
+                    \sum_{k = 1}^{n}{c} &=& cn \\
+                    \sum_{k = 1}^{n}{k} &=& \frac{n\left(n + 1\right)}{2} \\
+                    \sum_{k = 1}^{n}{k^2} &=& \frac{n\left(n + 1\right)\left(2n + 1\right)}{6} \\
+                    \sum_{k = 1}^{n}{k^3} &=& \frac{n^2\left(n + 1\right)^2}{4}
+                \end{eqnarray}
+        \end{itemize}
+    \item \textbf{Left, Right, and Midpoint Riemann Sums in Sigma Notation}: \\
+        Suppose $f$ is defined on a closed interval $[a,b]$, which is divided into subintervals of equal length $\Delta{x}$. If $x_k^*$ is a point in the $k$th subinterval $[x_{k - 1}, x_k]$, for $k = 1,2,...,n$, then the \textbf{Riemann sum} for $f$ on $[a,b]$ is $$\sum_{k = 1}^{n}{f(x_k^*)\Delta{x}}$$
+        Three cases arise in practice
+    \begin{itemize}
+        \item $\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x}}$ is a \textbf{left Riemann sum} if $x_k^* = a + (k - 1)\Delta{x}$
+        \item $\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x}}$ is a \textbf{right Riemann sum} if $x_k^* = a + k\Delta{x}$
+        \item $\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x}}$ is a \textbf{midpoint Riemann sum} if $x_k^* = a + (k - \frac{1}{2})\Delta{x}$
+    \end{itemize}
 \end{itemize}
 
 \section*{Antiderivative Rules}
@@ -195,6 +261,97 @@
                 0^2 - 3\sin{0} + 4(0) + C &=& 10 \\
                 C &=& 10 \\
                 s(t) &=& t^2 - 3\sin{t} + 4t + 10
+            \end{eqnarray}
+        \item Approximating displacement
+            $$v = \sqrt{10t}$$
+            $$1 \leq t \leq 7$$
+            \begin{enumerate}
+                \item
+                $$n = 3$$
+                $$[1,3],[3,5],[5,7]$$
+                $$2,4,6$$
+                $$d \approx 2v(2) + 2v(4) + 2v(6) = 2\sqrt{20} + 2\sqrt{40} + 2\sqrt{60} \approx 37.085$$
+                \item
+                $$n = 6$$
+                $$1.5,2.5,3.5,4.5,5.5,6.5$$
+                \begin{eqnarray}
+                    d &\approx& v(1.5) + v(2.5) + v(3.5) + v(4.5) + v(5.5) + v(6.5) \\
+                      &=& \sqrt{15} + \sqrt{25} + \sqrt{35} + \sqrt{45} + \sqrt{55} + \sqrt{65} \\
+                      &\approx& 36.976
+                \end{eqnarray}
+            \end{enumerate}
+        \item Left and right Riemann sums (1)
+            $$f(x) = x + 1$$
+            $$[1,6]$$
+            $$n = 5$$
+            \begin{enumerate}
+                \item
+                \begin{eqnarray}
+                    \left(1 + 1\right) + \left(2 + 1\right) + \left(3 + 1\right) + \left(4 + 1\right) + \left(5 + 1\right) &=& 2 + 3 + 4 + 5 + 6 \\
+                                                                                                                           &=& 20
+                \end{eqnarray}
+                \item
+                \begin{eqnarray}
+                    \left(2 + 1\right) + \left(3 + 1\right) + \left(4 + 1\right) + \left(5 + 1\right) + \left(6 + 1\right) &=& 3 + 4 + 5 + 6 + 7 \\
+                                                                                                                           &=& 25
+                \end{eqnarray}
+            \end{enumerate}
+        \item Left and right Riemann sums (2)
+            $$f(x) = 9 - x$$
+            $$[3,8]$$
+            $$n = 5$$
+            $$\Delta{x} = \frac{8 - 3}{5} = \frac{5}{5} = 1$$
+            \begin{enumerate}
+                \item Grid Points: \\
+                    \begin{eqnarray}
+                        x_0 &=& 3 \\
+                        x_1 &=& 4 \\
+                        x_2 &=& 5 \\
+                        x_3 &=& 6 \\
+                        x_4 &=& 7 \\
+                        x_5 &=& 8
+                    \end{eqnarray}
+                \item Riemann Sums
+                    \begin{eqnarray}
+                        \left(9 - 3\right) + \left(9 - 4\right) + \left(9 - 5\right) + \left(9 - 6\right) + \left(9 - 7\right) &=& 6 + 5 + 4 + 3 + 2 \\
+                                                                                                                               &=& 20 \text{ (Overestimation)}
+                    \end{eqnarray}
+                    \begin{eqnarray}
+                        \left(9 - 4\right) + \left(9 - 5\right) + \left(9 - 6\right) + \left(9 - 7\right) + \left(9 - 8\right) &=& 5 + 4 + 3 + 2 + 1 \\
+                                                                                                                               &=& 15 \text{ (Underestimation)}
+                    \end{eqnarray}
+            \end{enumerate}
+        \item Midpoint Riemann sum
+            $$f(x) = 100 - x^2$$
+            $$[0, 10]$$
+            $$n = 5$$
+            $$\Delta{x} = 2$$
+            \begin{eqnarray}
+                2f(1) + 2f(3) + 2f(5) + 2f(7) + 2f(9) &=& 2(99) + 2(91) + 2(75) + 2(51) + 2(19) \\
+                                                      &=& 198 + 182 + 150 + 102 + 38 \\
+                                                      &=& 670
+            \end{eqnarray}
+        \item Riemann sums from tables
+            $$[0,2]$$
+            $$n = 4$$
+            $$\Delta{x} = \frac{1}{2}$$
+            \begin{eqnarray}
+                \frac{5}{2} + \frac{3}{2} + \frac{2}{2} + \frac{1}{2} &=& 5.5 \\
+                \frac{3}{2} + \frac{2}{2} + \frac{1}{2} + \frac{1}{2} &=& 3.5
+            \end{eqnarray}
+        \item Computing Riemann sums for large values of $n$
+            $$f(x) = x^2 + 1$$
+            $$[-1, 1]$$
+            $$n = 50$$
+            \begin{eqnarray}
+                \sum_{k = 1}^{50}{0.04f\left(-1 + 0.04\left(k - 1\right)\right)} &=& \sum_{k = 1}^{50}{0.04\left(\left(-1 + 0.04\left(k - 1\right)\right)^2 + 1\right)} \\
+                                                                                 &\approx& 2.6672 \\
+                                                                                 \nonumber \\
+                \sum_{k = 1}^{50}{0.04f\left(-1 + 0.04k\right)} &=& \sum_{k = 1}^{50}{0.04\left(\left(-1 + 0.04k\right)^2 + 1\right)} \\
+                                                                &\approx& 2.6672 \\
+                                                                \nonumber \\
+                \sum_{k - 1}^{50}{0.04f\left(-1 + 0.04\left(k - \frac{1}{2}\right)\right)} &=& \sum_{k - 1}^{50}{0.04\left(\left(-1 + 0.04\left(k - \frac{1}{2}\right)\right)^2 + 1\right)} \\
+                                                                                           &\approx& 2.6664
             \end{eqnarray}
 \end{enumerate}
 
