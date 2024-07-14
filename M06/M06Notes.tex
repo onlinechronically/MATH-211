@@ -142,6 +142,33 @@
         \item $\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x}}$ is a \textbf{right Riemann sum} if $x_k^* = a + k\Delta{x}$
         \item $\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x}}$ is a \textbf{midpoint Riemann sum} if $x_k^* = a + (k - \frac{1}{2})\Delta{x}$
     \end{itemize}
+    \item Definite Integrals \\
+    \textbf{Net Area}: Consider the region $R$ bounded by the graph of a continuous function $f$ and the $x$-axis between $x = a$ and $x = b$. The \textbf{net area} of $R$ is the sum of the area of the parts of $R$ that lie above the $x$-axis minus the sum of the areas of the parts of $R$ that lie below the $x$-axis on $[a,b]$.
+    \begin{itemize}
+        \item Where $f(x) < 0$, Riemann sums approximate the negative of the area of the region bounded by the curve
+        \item On the interval $[a,b]$, we get positive, and negative contributions to the Riemann sum where $f(x)$ is negative
+        \item Riemann sums approximate the area of the regions that lie above the $x$-axis minus the area of the regions that lie below the $x$-axis
+        \item The difference is called the \textbf{net area}; it can be positive, negative, or zero
+    \end{itemize}
+    $$area_{net} = \lim_{n \to \infty}{\sum_{k = 1}^{n}{f(x_k^*)\Delta{x}}}$$
+    A \textbf{general partition} of $[a,b]$ consists of the $n$ subintervals
+    $$[x_0,x_1],[x_1,x_2],...,[x_{n - 1}, x_n]$$
+    where $x_0 = a$and $x_n = b$. The length of the $k$th subinterval is $\Delta{x_k} = x_k - k_{k-1}$, for $k = 1,2,...,n$. We let $x_k^*$ be any point in the subinterval $[x_{k - 1}, x_k]$. \\
+    \textbf{General Riemann Sum}: Suppose $[x_0,x_1],[x_1, x_2],...,[x_{n - 1}, x_n]$ are subintervals of $[a,b]$ with
+    $$a = x_0 < x_1 < x_2 < ... < x_{n - 1} < x_n = b$$
+    Let $x\Delta{x_k}$ be the length of the subinterval $[x_{k - 1}, x_k]$ and let $x_k^*$ be any point in $[x_{k - 1}, x_k]$, for $k = 1,2,...n$ \\
+    If $f$ is defined on $[a,b]$, the sum
+    $$\sum_{k = 1}^{n}{f(x_k^*)\Delta{x_k}} = f(x_1^*)\Delta{x_1} + f(x_2^*)\Delta{x_2} + ... + f(x_n^*)\Delta{x_n}$$
+    is called a \textbf{general Riemann sum} for $f$ on $[a,b]$ \\
+    \textbf{Definite Integral}: A function $f$ defined on $[a,b]$ is \textbf{integrable} on $[a,b]$ if $\lim\limits_{\Delta{x} \to 0}{\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x_k}}}$ exists and is unique over all partitions of $[a,b]$ and all choices of $x_k^*$ on a parition. This limit is the \textbf{definite integral of $f$ from a to b}, which we rite
+    $$\int_a^b{f(x)dx} = \lim_{\Delta{x} \to 0}{\sum_{k = 1}^{n}{f(x_k^*)\Delta{x_k}}}$$
+    \textbf{Integrable Functions}: If $f$ is continuous on $[a,b]$ or bounded on $[a,b]$ with a finite number of discontinuities, then $f$ is integrale on $[a,b]$. \\
+    Let $f$ and $g$ be integrable function on $[a,b]$, where $b > a$
+    \begin{enumerate}
+        \item If $f(x) \geq 0$ on $[a,b]$, then $\int_a^b{f(x)\,dx} \geq 0$
+        \item If $f(x) \geq g(x)$ on $[a,b]$, then $\int_a^b{f(x)\,dx} \geq \int_a^b{g(x)\,dx}$
+        \item If $m \leq f(x) \leq M$, then $m(b - a) \leq \int_a^b{f(x)\,dx} \leq M(b - a)$
+    \end{enumerate}
 \end{itemize}
 
 \section*{Antiderivative Rules}
@@ -173,6 +200,17 @@
     \int{\frac{1}{1 + x^2}}dx &=& \tan^{-1}{x} + C \\
     \int{\frac{1}{x\sqrt{x^2 - 1}}}dx &=& \sec^{-1}{|x|} + C
 \end{eqnarray}
+
+\section*{Properties of Definite Integrals}
+Let $f$ and $g$ be integrable functions on an interval that contains $a$, $b$, and $p$
+\begin{eqnarray}
+    \int_a^a{f(x)\,dx} &=& 0 \\
+    \int_b^a{f(x)\,dx} &=& -\int_a^b{f(x)\,dx} \\
+    \int_a^b{\left(f(x) \pm g(x)\right)\,dx} &=& \int_a^b{f(x)\,dx} \pm \int_a^b{g(x)\,dx} \\
+    \int_a^b{cf(x)\,dx} &=& c\int_a^b{f(x)\,dx}\text{, for any constant } c \\
+    \int_a^b{f(x)\,dx} &=& \int_a^p{f(x)\,dx} + \int_p^b{f(x)\,dx}
+\end{eqnarray}
+\hspace{0.5cm} The function $|f|$ is integrable on $[a,b]$, and $\int\limits_a^b{|f(x)|\,dx}$ is the sum of the areas of the regions bounded by the graph of $f$ and the $x$-axis on $[a,b]$.
 
 \section*{Examples}
 \begin{enumerate}
@@ -353,6 +391,66 @@
                 \sum_{k - 1}^{50}{0.04f\left(-1 + 0.04\left(k - \frac{1}{2}\right)\right)} &=& \sum_{k - 1}^{50}{0.04\left(\left(-1 + 0.04\left(k - \frac{1}{2}\right)\right)^2 + 1\right)} \\
                                                                                            &\approx& 2.6664
             \end{eqnarray}
+    \item Approximating net area
+        $$f(x) = 4 - 2x$$
+        $$[0,4]$$
+        $$n = 4$$
+        $$\Delta{x} = 1$$
+        \begin{eqnarray}
+            4 + 2 + 0 - 2 &=& 4 \\
+            2 + 0 - 2 - 4 &=& -4 \\
+            3 + 1 - 1 - 3 &=& 0
+        \end{eqnarray}
+    \item Identifying definite integrals as limits of sums
+        $$\lim_{\Delta \to 0}{\sum_{k = 1}^{n}{\left(4 - x_k^{*2}\right)\Delta{x_k}}}$$
+        $$\int_0^2{\left(4-x^2\right)\,dx}$$
+    \item Using geometry to evaluate definite integrals
+        $$\int_0^4{\left(8 - 2x\right)\,dx} = \frac{4 \cdot 8}{2} = 16$$
+    \item Definite integrals from graphs
+        \begin{eqnarray}
+            \int_0^b{f(x)\,dx} &=& 16 - 5 \\
+                               &=& 11 \\
+            \int_0^c{f(x)\,dx} &=& 16 - 5 + 11 \\
+                               &=& 22 \\
+            \int_a^0{f(x)\,dx} &=& -\int_0^a{f(x)\,dx} \\
+                               &=& -16 \\
+            \int_0^c{|f(x)|\,dx} &=& 16 + 5 + 11 \\
+                                 &=& 32
+        \end{eqnarray}
+    \item Using properties of integrals
+        $$\int_1^4{f(x)\,dx} = 8$$
+        $$\int_1^6{f(x)\,dx} = 5$$
+        \begin{eqnarray}
+            \int_1^4{\left(-3f(x)\right)\,dx} &=& -3\int_1^4{f(x)\,dx} \\
+                                              &=& -3 \cdot 8 \\
+                                              &=& -24 \\
+            \int_1^4{3f(x)\,dx} &=& 3\int_1^4{f(x)\,dx} \\
+                                &=& 3 \cdot 8 \\
+                                &=& 24 \\
+            \int_6^4{12f(x)\,dx} &=& -\int_4^6{12f(x)\,dx} \\
+                                 &=& -12\int_4^6{f(x)\,dx} \\
+                                 &=& -12\left(5 - 8\right) \\
+                                 &=& 36 \\
+            \int_4^6{3f(x)\,dx} &=& 3\int_4^6{f(x)\,dx} \\
+                                &=& 3\left(5 - 8\right) \\
+                                &=& -9
+        \end{eqnarray}
+    \item Use definition of definite integral
+        \begin{eqnarray}
+            \int_0^2{\left(2x + 1\right)\,dx} &=& \lim_{n \to \infty}{\sum_{k = 1}^n{\left(\frac{4k}{n} + 1\right)\frac{2}{n}}} \\
+                                              &=& \lim_{n \to \infty}{\frac{2}{n}\sum_{k = 1}^n{\left(\frac{4k}{n} + 1\right)}} \\
+                                              &=& \lim_{n \to \infty}{\frac{2}{n}\left(\sum_{k = 1}^n{\frac{4k}{n}} + \sum_{k = 1}^n{1}\right)} \\
+                                              &=& \lim_{n \to \infty}{\frac{2}{n}\left(\frac{4}{n}\sum_{k = 1}^n{k} + \sum_{k = 1}^n{1}\right)} \\
+                                              &=& \lim_{n \to \infty}{\frac{2}{n}\left(\frac{4}{n}\left(\frac{n(n + 1)}{2}\right) + n\right)} \\
+                                              &=& \lim_{n \to \infty}{\frac{2}{n}\left(\frac{4n(n + 1)}{2n} + n\right)} \\
+                                              &=& \lim_{n \to \infty}{\frac{2}{n}\left(2(n + 1) + n\right)} \\
+                                              &=& \lim_{n \to \infty}{\frac{2}{n}\left(2n + 2 + n\right)} \\
+                                              &=& \lim_{n \to \infty}{\frac{2}{n}\left(3n + 2\right)} \\
+                                              &=& \lim_{n \to \infty}{\frac{6n + 4}{n}} \\
+                                              &=& \lim_{n \to \infty}{6 + \frac{4}{n}} \\
+                                              &=& 6 + 0 \\
+                                              &=& 6
+        \end{eqnarray}
 \end{enumerate}
 
 \section*{Related Exercises}
