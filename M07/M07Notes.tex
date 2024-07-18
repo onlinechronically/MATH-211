@@ -39,7 +39,33 @@
         $$\overline{f} = \frac{1}{b - a}\int_a^b{f(x)\,dx}$$
         Let $f$ be continuous on the interval $[a,b]$. There exists a point $c$ in $(a,b)$ such that (Mean Value Theorem)
         $$f(c) = \overline{f} = \frac{1}{b - a}\int_a^b{f(t)\,dx}$$
+    \item Substitution Rule \\
+        Let $u = g(x)$, where $g$ is differentiable on an interval, and let $f$ be continuous on the corresponding range of $g$. On that interval,
+        $$\int{f(g(x))g'(x)\,dx} = \int{f(u)\,du}$$
+        \begin{enumerate}
+            \item Given an indefinite integral involving a commposite function $f(g(x))$, identify an inner function $u = g(x)$ such that a constant multiple of $g'(x)$ appears in the integrand.
+            \item Substitute $u = g(x)$ and $du = g'(x)\,dx$ in the integral.
+            \item Evaluate the new indefinite integral with respect to $u$.
+            \item Write the result in terms of $x$ using $u = g(x)$.
+        \end{enumerate}
+        Let $u = g(x)$, where $g'$ is continuous on $[a,b]$, and let $f$ be continuous on the range of $g$. Then
+        $$\int_a^b{f(g(x))g'(x)\,dx} = \int_{g(a)}^{g(b)}{f(u)\,du}$$
 \end{itemize}
+
+\section*{General formulas for indefinite integrals}
+\begin{eqnarray}
+    \int{\cos{ax}\,dx} &=& \frac{1}{a}\sin{ax} + C \\
+    \int{\sin{ax}\,dx} &=& -\frac{1}{a}\cos{ax} + C \\
+    \int{\sec^2{ax}\,dx} &=& \frac{1}{a}\tan{ax} + C \\
+    \int{\csc^2{ax}\,dx} &=& -\frac{1}{a}\cot{ax} + C \\
+    \int{\sec{ax}\tan{ax}\,dx} &=& \frac{1}{a}\sec{ax} + C \\
+    \int{\csc{ax}\cot{ax}\,dx} &=& -\frac{1}{a}\csc{ax} + C \\
+    \int{e^{ax}\,dx} &=& \frac{1}{a}e^{ax} + C \\
+    \int{b^x\,dx} &=& \frac{1}{\ln{b}}b^x + C, b > 0, b \neq 1 \\
+    \int{\frac{dx}{a^2 + x^2}} &=& \frac{1}{a}\tan^{-1}{\frac{x}{a}} + C \\
+    \int{\frac{dx}{\sqrt{a^2 - x^2}}} &=& \sin^{-1}{\frac{x}{a}} + C, a > 0 \\
+    \int{\frac{dx}{x\sqrt{x^2 - a^2}}} &=& \frac{1}{a}\sec^{-1}{\left|\frac{x}{a}\right|} + C, a > 0
+\end{eqnarray}
 
 \section*{Examples}
 \begin{enumerate}
@@ -73,6 +99,93 @@
                          &=& \frac{e^2 - 1}{2} \\
             e^x &=& \frac{e^2 - 1}{2} \\
             \ln{e^x} &=& \ln{\frac{e^2 - 1}{2}}
+        \end{eqnarray}
+    \item Perfect substitutions in indefinite integrals
+        \begin{eqnarray}
+            u &=& 4x^3 - 8 \\
+            du &=& 12x^2\,dx \\
+            \int{12x^2\left(4x^3 - 8\right)^5\,dx} &=& \int{12x^2u^5\,dx} \\
+                                                   &=& \frac{u^6}{6} + C \\
+                                                   &=& \frac{\left(4x^3 - 8\right)^6}{6} + C
+        \end{eqnarray}
+        \begin{eqnarray}
+            u &=& \sin{t} \\
+            du &=& \cos{t}\,dt \\
+            \int{\left(\cos{t}\right)e^{\sin{t}}\,dt} &=& \int{e^u\,du} \\
+                                                      &=& e^u + C \\
+                                                      &=& e^{\sin{t}} + C
+        \end{eqnarray}
+    \item Introducting constants when integrating by substitution
+        \begin{eqnarray}
+            u &=& 6x + 4 \\
+            du &=& 6\,dx \\
+            dx &=& \frac{du}{6} \\
+            \int{\left(6x + 4\right)^9\,dx} &=& \int{\frac{1}{6} \cdot u^9\,du} \\
+                                            &=& \frac{1}{6}\int{u^8\,du} \\
+                                            &=& \frac{1}{6} \cdot \frac{u^9}{9} + C \\
+                                            &=& \frac{\left(6x + 4\right)^9}{54} + C
+        \end{eqnarray}
+        \begin{eqnarray}
+            u &=& \cot{x} \\
+            du &=& -\csc^2{x}\,dx \\
+            \int{\cot^2{x}\csc^2{x}\,dx} &=& \int{-u^2\,du} \\
+                                         &=& -\frac{u^3}{3} + C \\
+                                         &=& -\frac{\csc^3{x}}{3} + C
+        \end{eqnarray}
+    \item Variations on the substitution method
+        \begin{eqnarray}
+            u &=& x - 1 \\
+            du &=& dx \\
+            x &=& u + 1 \\
+            \int{x\sqrt{x - 1}\,dx} &=& \int{\left(u + 1\right)\sqrt{u}\,du} \\
+                                    &=& \int{u\sqrt{u} + \sqrt{u}\,du} \\
+                                    &=& \int{u^{\frac{3}{2}} + u^{\frac{1}{2}}\,du} \\
+                                    &=& \frac{2}{5}u^{\frac{5}{2}} + \frac{2}{3}u^{\frac{3}{2}} + C \\
+                                    &=& \frac{2}{5}\left(x - 1\right)^{\frac{5}{2}} + \frac{2}{3}\left(x - 1\right)^{\frac{3}{2}} + C
+        \end{eqnarray}
+    \item Use known formulas to evaluate indefinite integrals
+        \begin{eqnarray}
+            \int{2e^{-4x}\,dx} &=& 2\int{e^{-4x}\,dx} \\
+                               &=& \frac{2}{-4}e^{-4x} + C \\
+                               &=& -\frac{1}{2}e^{-4x} + C \\
+        \end{eqnarray}
+        \begin{eqnarray}
+            \int{\frac{dx}{\sqrt{36 - x^2}}} &=& \int{\frac{dx}{\sqrt{6^2 - x^2}}} \\
+                                             &=& \sin^{-1}{\frac{x}{6}} + C
+        \end{eqnarray}
+    \item Evaluating definite integrals using substitution
+        \begin{eqnarray}
+            u &=& 2^x + 4 \\
+            du &=& 2^x\ln{2}\,dx \\
+            \frac{1}{\ln{2}}\,du &=& 2^x\,dx \\
+            \int_1^3{\frac{2^x}{2^x + 4}\,dx} &=& \int_1^3{\frac{1}{u\ln{2}}\,du} \\
+            \int_{g(1)}^{g(3)}{\frac{1}{u\ln{2}}\,du} &=& \int_{6}^{12}{\frac{1}{u\ln{2}}\,du} \\
+                                                      &=& \frac{1}{\ln{2}}\int_{6}^{12}{\frac{du}{u}} \\
+                                                      &=& \frac{1}{\ln{2}}\cdot\left(\ln{12} - \ln{6}\right) \\
+                                                      &=& \frac{\ln{2}}{\ln{2}} \\
+                                                      &=& 1
+        \end{eqnarray}
+        \begin{eqnarray}
+            u &=& \ln{p} \\
+            du &=& \frac{1}{p}\,dx \\
+            \int_1^{e^2}{\frac{\ln{p}}{p}} &=& \int_0^2{u\,du} \\
+                                           &=& \frac{2^2}{2} - \frac{0^2}{2} \\
+                                           &=& \frac{4}{2} \\
+                                           &=& 2
+        \end{eqnarray}
+    \item Integrals involving $\cos^2{x}$ and $\sin^2{x}$
+        \begin{eqnarray}
+            u &=& 2x \\
+            du &=& 2\,dx \\
+            dx &=& \frac{1}{2}du \\
+            \sin^2{x} &=& \frac{1 - \cos{2x}}{2} \\
+            \int_0^{\pi}{\sin^2{x}\,dx} &=& \int_0^{\pi}{\frac{1 - \cos{2x}}{2}\,dx} \\
+                                        &=& \frac{1}{2}\int_0^{\pi}{1 - \cos{2x}\,dx} \\
+                                        &=& \frac{1}{2}\left(\int_0^{\pi}{1\,dx} - \int_0^{\pi}{\cos{2x}\,dx}\right) \\
+                                        &=& \frac{1}{2}\left(\left(\pi - 0\right) - \frac{1}{2}\int_0^{2\pi}{\cos{u}\,du}\right) \\
+                                        &=& \frac{1}{2}\left(\pi - \frac{1}{2}\left(\sin{2\pi} - \sin{0}\right)\right) \\
+                                        &=& \frac{1}{2}\left(\pi - 0\right) \\
+                                        &=& \frac{\pi}{2}
         \end{eqnarray}
 \end{enumerate}
 
