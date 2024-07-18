@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}} 
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+\title{Module 7 Notes (MATH-211)}
+\author{Lillie Donato}
+\date{22 July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{General Notes (and Definitions)}
+\begin{itemize}
+    \item Working with Integrals \\
+        A function $f(x)$ is \textbf{even} if $f(-x) = f(x)$. \\
+        A function $f(x)$ is \textbf{odd} if $f(-x) = -f(x)$. \\
+        Let $a \in \mathbb{R}$ such that $a > 0$ and let $f$ be an integrable function on the interval $[-a,a]$.
+        $$\text{If } f \text{ is even, } \int_{-a}^a{f(x)\,dx} = 2\int_0^a{f(x)\,dx}$$
+        $$\text{If } f \text{ is odd, } \int_{-a}^a{f(x)\,dx} = 0$$
+        The average value of an integrable function $f$ on the interval $[a,b]$ is
+        $$\overline{f} = \frac{1}{b - a}\int_a^b{f(x)\,dx}$$
+        Let $f$ be continuous on the interval $[a,b]$. There exists a point $c$ in $(a,b)$ such that (Mean Value Theorem)
+        $$f(c) = \overline{f} = \frac{1}{b - a}\int_a^b{f(t)\,dx}$$
+\end{itemize}
+
+\section*{Examples}
+\begin{enumerate}
+    \item Use symmetry to evaluate integrals
+        $$\int_{-200}^{200}{2x^5\,dx} = 0$$
+        \begin{eqnarray}
+            \int_{-2}^{2}{\left(x^2 + x^3\right)\,dx} &=& \int_{-2}^{2}{x^2\,dx} + \int_{-2}^{2}{x^3\,dx} \\
+                                                      &=& 2\int_{0}^{2}{x^2\,dx} + 0 \\
+                                                      &=& 2\frac{x^3}{3} \\
+                                                      &=& \frac{16}{3}
+        \end{eqnarray}
+    \item A derivative calculation
+        $$s(t) = -16t^2 + 64t$$
+        $$t = 4$$
+        $$[0,4]$$
+        \begin{eqnarray}
+            v(t) &=& s'(t) \\
+            \overline{v} &=& \frac{1}{4}\int_0^4{v(t)\,dx} \\
+                         &=& \frac{1}{4}\int_0^4{s'(t)\,dx} \\
+                         &=& \frac{1}{4}s(t) \\
+                         &=& \frac{1}{4}\left(s(4) - s(0)\right) \\
+                         &=& 0
+        \end{eqnarray}
+    \item Applying MVT for integrals
+        $$f(x) = e^x$$
+        $$[0,2]$$
+        \begin{eqnarray}
+            \overline{f} &=& \frac{1}{2}\left(\int_0^2{e^x\,dx}\right) \\
+                         &=& \frac{e^x}{2} \\
+                         &=& \frac{e^2}{2} - \frac{e^0}{2} \\
+                         &=& \frac{e^2 - 1}{2} \\
+            e^x &=& \frac{e^2 - 1}{2} \\
+            \ln{e^x} &=& \ln{\frac{e^2 - 1}{2}}
+        \end{eqnarray}
+\end{enumerate}
+
+\section*{Related Exercises}
+\begin{enumerate}
+    \item Example
+\end{enumerate}
+
+\blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
+\end{document}
