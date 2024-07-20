@@ -50,6 +50,28 @@
         \end{enumerate}
         Let $u = g(x)$, where $g'$ is continuous on $[a,b]$, and let $f$ be continuous on the range of $g$. Then
         $$\int_a^b{f(g(x))g'(x)\,dx} = \int_{g(a)}^{g(b)}{f(u)\,du}$$
+    \item Velocity and Net Change \\
+        \textbf{Position, Velocity, Displacement, and Distance}:
+        \begin{enumerate}
+            \item The \textbf{position} of an object moving along a line at time $t$, denoted $s(t)$, is the location of the object relative to the origin.
+            \item The \textbf{velocity} of an object at time $t$ is $v(t) = s'(t)$.
+            \item The \textbf{displacement} of the object between $t = a$ and $t = b > a$ is
+                $$s(b) - s(a) = \int_a^b{v(t)\,dt}$$
+            \item The \textbf{distance traveled} by the object between $t = a$ and $t = b > a$ is
+                $$\int_a^b{\left|v(t)\right|\,dt}$$
+                where $|v(t)|$ is the \textbf{speed} of the object at time $t$.
+        \end{enumerate}
+        \textbf{Theorem: Position from Velocity} \\
+        Given the velocity $v(t)$ of an object moving along a line and its initial position $s(0)$, the position function of the object for future times $t \geq 0$ is
+        $$s(t) = s(0) + \int_0^t{v(x)\,dx}$$
+        \textbf{Theorem: Velocity from Acceleration} \\
+        Given the acceleration $a(t)$ of an object moving along a line and its initial velocity $v(0)$, the velocity of the object for future times $t \geq 0$ is
+        $$v(t) = v(0) + \int_0^t{a(x)\,dx}$$
+        \textbf{Theorem: Net Change and Future Value} \\
+        Suppose a quantity $Q$ changes over time at a known rate $Q'$. Then the \textbf{net change} in $Q$ between $t = a$ and $t = b > a$ is
+        $$Q(b) - Q(a) = \int_a^b{Q'(t)\,dt}$$
+        Given the initial value $Q(0)$, the \textbf{future value} of $Q$ at time $t \geq 0$ is
+        $$Q(t) = Q(0) + \int_0^t{Q'(x)\,dx}$$
 \end{itemize}
 
 \section*{General formulas for indefinite integrals}
@@ -186,6 +208,80 @@
                                         &=& \frac{1}{2}\left(\pi - \frac{1}{2}\left(\sin{2\pi} - \sin{0}\right)\right) \\
                                         &=& \frac{1}{2}\left(\pi - 0\right) \\
                                         &=& \frac{\pi}{2}
+        \end{eqnarray}
+    \item Displacement and distance from velocity
+        $$v(t) = 4t^3 - 24t^2 + 20t$$
+        \begin{enumerate}
+            \item
+                \begin{eqnarray}
+                    v(t) &=& 0 \\
+                    4t^3 - 24t^2 + 20t &=& 0 \\
+                    4t(t^2 - 6t + 5) &=& 0 \\
+                    4t(t - 1)(t - 5) &=& 5 \\
+                    t &=& 0 \\
+                    t &=& 1 \\
+                    t &=& 5 \\
+                    0 < t < 1 &=& \text{Positive} \\
+                    1 < t < 5 &=& \text{Negative} \\
+                    t > 5 &=& \text{Positive}
+                \end{eqnarray}
+            \item
+                \begin{eqnarray}
+                    \int_0^5{4t^3 - 24t^2 + 20t\,dt} &=& 4\int_0^5{t^3\,dt} - 24\int_0^5{t^2\,dt} + 20\int_0^5{t\,dt} \\
+                                                     &=& 4\left(\frac{5^4}{4} - \frac{0^4}{4}\right) - 24\left(\frac{5^3}{3} - \frac{0^3}{3}\right) + 20\left(\frac{5^2}{2} - \frac{0^2}{2}\right) \\
+                                                     &=& 4\left(\frac{625}{4}\right) - 24\left(\frac{125}{3}\right) + 20\left(\frac{25}{2}\right) \\
+                                                     &=& -125
+                \end{eqnarray}
+            \item
+                \begin{eqnarray}
+                    \int_0^5{|4t^3 - 24t^2 + 20t|\,dt} &=& \int_0^1{4t^3 - 24t^2 + 20t\,dt} + \int_1^5{-4t^3 + 24t^2 - 20t\,dt} \\
+                                                     &=& 3 + 128 \\
+                                                     &=& 131
+                \end{eqnarray}
+        \end{enumerate}
+    \item Position and velocity from acceleration
+        $$a(t) = \frac{20}{\left(t + 2\right)^2}$$
+        $$v(0) = 20$$
+        $$s(0) = 10$$
+        \begin{eqnarray}
+            v(t) &=& v(0) + \int_0^t{a(t)\,d5} \\
+                 &=& 20 + \int_0^t{\frac{20}{\left(t + 2\right)^2}\,d5} \\
+                 &=& 20 - \frac{20}{t + 2} + 10 \\
+                 &=& 30 - \frac{20}{t + 2} \\
+            s(t) &=& s(0) + \int_0^t{v(t)\,dt} \\
+                 &=& 10 + \int_0^t{\left(30 - \frac{20}{t + 2}\right)\,dt} \\
+                 &=& 10 + 30t - 20\ln{|t + 2|} + 20\ln{2}
+        \end{eqnarray}
+    \item Acceleration application
+        $$a(t) = -15$$
+        $$v(0) = 60$$
+        $$s(0) = 0$$
+        \begin{eqnarray}
+            v(t) &=& 60 + \int_0^t{-15\,dt} \\
+                 &=& 60 + -15\int_0^t{t^0\,dt} \\
+                 &=& -15t + 60 \\
+            s(t) &=& 0 + \int_0^t{-15t + 60\,dt} \\
+                 &=& -15\int_0^t{t\,dt} + 60t \\
+                 &=& -\frac{15}{2}t^2 + 60t \\
+            v(t) &=& 0 \\
+            60 - 15t &=& 0 \\
+            15t &=& 60 \\
+            t &=& \frac{60}{15} \\
+              &=& 4 \\
+            s(4) - s(0) &=& 60(4) - \frac{15}{2}(4)^2 - 0 \\
+                        &=& 120
+        \end{eqnarray}
+    \item Application of net change
+        $$V'(t) = 70(1 + \sin{2\pi t})$$
+        $$[0,t]$$
+        $$V(0) = 0$$
+        \begin{eqnarray}
+            V(t) &=& V(0) + \int_0^t{V'(x)\,dx} \\
+                 &=& 0 + \int_0^t{70(1 + \sin{(2\pi x)}\,dx} \\
+                 &=& 70\left(t - \frac{\cos{2\pi t}}{2\pi} + \frac{1}{2\pi}\right) \\
+            V(60) &=& 70\left(60 - \frac{\cos{120\pi}}{2\pi} + \frac{1}{2\pi}\right) \\
+                  &=& 70 \cdot 60 \\
+                  &=& 4200
         \end{eqnarray}
 \end{enumerate}
 
