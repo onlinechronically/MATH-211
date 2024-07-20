@@ -264,6 +264,156 @@
             \sin^{-1}{\sin{x}} &=& \sin^{-1}{\frac{2}{\pi}} \\
             x &=& \sin^{-1}{\frac{2}{\pi}}
         \end{eqnarray}
+    \item (Section 5.5, Exercise 17)
+        \begin{eqnarray}
+            u &=& x^2 - 1 \\
+            du &=& 2x\,dx \\
+            \int{2x\left(x^2 - 1\right)^{99}\,dx} &=& \int{u^{99}\,du} \\
+                                                  &=& \frac{u^{100}}{100} + C \\
+                                                  &=& \frac{\left(x^2 - 1\right)^{100}}{100} + C
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 20)
+        \begin{eqnarray}
+            u &=& \sqrt{x} + 1 \\
+            du &=& \frac{1}{2\sqrt{x}}\,dx \\
+            \int{\frac{\left(\sqrt{x} + 1\right)^4}{2\sqrt{x}}\,dx} &=& \int{u^4\,du} \\
+                                                                    &=& \frac{u^5}{5} + C \\
+                                                                    &=& \frac{\left(\sqrt{x} + 1\right)^5}{5} + C
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 21)
+        \begin{eqnarray}
+            u &=& x^2 + x \\
+            du &=& 2x + 1\,dx \\
+            \int{\left(x^2 + x\right)^{10}\left(2x + 1\right)\,dx} &=& \int{u^{10}\,du} \\
+                                                                   &=& \frac{u^{11}}{11} + C \\
+                                                                   &=& \frac{\left(x^2 + x\right)^{11}}{11} + C
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 23)
+        \begin{eqnarray}
+            u &=& x^4 + 16 \\
+            du &=& 4x^3\,dx \\
+            x^3\,dx &=& \frac{1}{4}du \\
+            \int{x^3\left(x^4 + 16\right)^6\,dx} &=& \int{\frac{1}{4}u^6\,du} \\
+                                                 &=& \frac{1}{4}\int{u^6\,du} \\
+                                                 &=& \frac{1}{4}\cdot\frac{u^7}{7} + C \\
+                                                 &=& \frac{\left(x^4 + 16\right)^7}{28} + C
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 24)
+        \begin{eqnarray}
+            u &=& \sin{\theta} \\
+            du &=& \cos{\theta}\,d\theta \\
+            \int{\sin^{10}{\theta}\cos{\theta}\,d\theta} &=& \int{u^{10}\,du} \\
+                                                         &=& \frac{u^{11}}{11} + C \\
+                                                         &=& \frac{\sin^{11}{\theta}}{11} + C
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 78)
+        \begin{eqnarray}
+            u &=& x - 2 \\
+            x &=& u + 2 \\
+            du &=& \,dx \\
+            \int{\frac{x}{x - 2}\,dx} &=& \int{\frac{u + 2}{u}\,du} \\
+                                      &=& \int{\frac{u}{u}\,du} + \int{\frac{2}{u}\,du} \\
+                                      &=& u + 2\int{\frac{1}{u}\,du} + C \\
+                                      &=& u + 2\ln{|u|} + C \\
+                                      &=& x - 2 + 2\ln{|u|} + C
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 79)
+        \begin{eqnarray}
+            u &=& \sqrt{x - 4} \\
+            u^2 &=& x - 4 \\
+            x &=& u^2 + 4 \\
+            dx &=& 2u\,du \\
+            \int{\frac{x}{\sqrt{x - 4}}\,dx} &=& \int{2u\frac{u^2 + 4}{u}\,du} \\
+                                             &=& \int{\frac{2u^3 + 8u}{u}\,du} \\
+                                             &=& 2\left(\int{u^2\,du} + \int{4\,du}\right) \\
+                                             &=& 2\left(\frac{\sqrt{x - 4}^3}{3} + 4\sqrt{x - 4}\right) + C \\
+                                             &=& \frac{2}{3}\sqrt{x - 4} + 8\sqrt{x - 4} + C
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 15)
+        \begin{eqnarray}
+            \int{e^{10x}\,dx} &=& \frac{1}{10}e^{10x} + C \\
+            \int{\sec{5x}\tan{5x}\,dx} &=& \frac{1}{5}\sec{5x} + C \\
+            \int{\sin{7x}\,dx} &=& -\frac{1}{7}\cos{7x} + C \\
+            \int{\cos{\frac{x}{7}}\,dx} &=& 7\sin{\frac{x}{7}} + C \\
+            \int{\frac{dx}{81 + 9x^2}} &=& \int{\frac{dx}{9^2 + 9x^2}} \\
+                                       &=& \int{\frac{dx}{9(9 + x^2)}} \\
+                                       &=& \frac{1}{9}\int{\frac{dx}{3^2 + x^2}} \\
+                                       &=& \frac{1}{27}\tan^{-1}{\frac{x}{3}} + C \\
+            \int{\frac{dx}{\sqrt{36 - x^2}}} &=& \int{\frac{dx}{\sqrt{6^2 - x^2}}} \\
+                                             &=& \sin^{-1}{\frac{x}{6}} + C
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 16)
+        \begin{eqnarray}
+            \int_0^1{10^x\,dx} &=& \frac{1}{\ln{10}}10 - \frac{1}{\ln{10}} \\
+                               &=& \frac{9}{\ln{10}} \\
+            \int_0^{\frac{\pi}{40}}{\cos{20x}\,dx} &=& \cos{\frac{20\pi}{40}} - \cos{20(0)} \\
+                                                   &=& 0 - 1 \\
+                                                   &=& -1 \\
+            \int_{3\sqrt{2}}^6{\frac{\,dx}{x\sqrt{x^2 - 9}}} &=& \int_{3\sqrt{2}}^6{\frac{\,dx}{x\sqrt{x^2 - 3^2}}} \\
+                                                             &=& \frac{1}{3}\sec^{-1}{\left|\frac{6}{3}\right|} - \frac{1}{3}\sec^{-1}{\left|\frac{3\sqrt{2}}{3}\right|} \\
+                                                             &=& \frac{1}{3}\sec^{-1}{\frac{\pi}{3}} - \frac{1}{3}\sec^{-1}{\frac{\pi}{4}} \\
+            \int_0^{\frac{\pi}{16}}{\sec^2{4x}\,dx} &=& \frac{1}{4}\tan{\frac{4\pi}{16}} - \frac{1}{4}\tan{0} \\
+                                                    &=& \frac{1}{4} - 0 \\
+                                                    &=& \frac{1}{4}
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 49)
+        \begin{eqnarray}
+            u &=& 2^x + 4 \\
+            du &=& 2^x\ln{2}\,dx \\
+            2^x\,dx &=& \frac{1}{\ln{2}}\,du \\
+            \int_1^3{\frac{2^x}{2^x + 4}\,dx} &=& \frac{1}{\ln{2}}\int_6^{12}{\frac{1}{u}\,du} \\
+                                              &=& \frac{1}{\ln{2}}\left(\ln{12} - \ln{6}\right) \\
+                                              &=& \frac{1}{\ln{2}}\cdot\ln{2} \\
+                                              &=& 1
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 51)
+        \begin{eqnarray}
+            u &=& \sin{\theta} \\
+            du &=& \cos{\theta}\,d\theta \\
+            \int_0^{\frac{\pi}{2}}{\sin^2{\theta}\cos{\theta}\,d\theta} &=& \int_0^{\frac{\pi}{2}}{u^2\,du} \\
+                                                                        &=& \int_0^1{u^2\,du} \\
+                                                                        &=& \frac{1^3}{3} - \frac{0^3}{3} \\
+                                                                        &=& \frac{1}{3}
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 64)
+        \begin{eqnarray}
+            u &=& 3 + 2e^x \\
+            du &=& 2e^x\,dx \\
+            e^x\,dx &=& \frac{1}{2}\,du \\
+            \int_0^{\ln{4}}{\frac{e^x}{3 + 2e^x}\,dx} &=& \frac{1}{2}\int_{u = 5}^{u = 11}{\frac{1}{u}\,du} \\
+                                                      &=& \frac{\ln{11} - \ln{5}}{2}
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 87)
+        \begin{eqnarray}
+            u &=& 2x \\
+            du &=& 2\,dx \\
+            dx &=& \frac{1}{2}\,du \\
+            \cos^2{x} &=& \frac{1 + \cos{2x}}{2} \\
+            \int_{-\pi}^{\pi}{\cos^2{x}\,dx} &=& \int_{-\pi}^{\pi}{\frac{1}{2} + \frac{\cos{2x}}{2}\,dx} \\
+                                             &=& \frac{1}{2}\int_{-\pi}^{\pi}{1 + \cos{2x}\,dx} \\
+                                             &=& \frac{1}{2}\left(\int_{-\pi}^{\pi}{1\,dx} + \frac{1}{2}\int_{-\pi}^{\pi}{\cos{u}\,du}\right) \\
+                                             &=& \frac{1}{2}\left(\left(\pi - \left(-\pi\right)\right) + \frac{1}{2}\int_{u = -2\pi}^{u = 2\pi}{\cos{u}\,du}\right) \\
+                                             &=& \frac{1}{2}\left(2\pi + \frac{1}{2}\left(\sin{2\pi} - \sin{\left(-2\pi\right)}\right)\right) \\
+                                             &=& \frac{1}{2}\left(2\pi + \frac{1}{2}\left(0\right)\right) \\
+                                             &=& \frac{2\pi}{2} \\
+                                             &=& \pi
+        \end{eqnarray}
+    \item (Section 5.5, Exercise 91)
+        \begin{eqnarray}
+            u &=& 4\theta \\
+            du &=& 4\,d\theta \\
+            d\theta &=& \frac{1}{4}\,du \\
+            \sin^2{x} &=& \frac{1 - \cos{2x}}{2} \\
+            \sin^2{2\theta} &=& \frac{1 - \cos{4\theta}}{2} \\
+            \int_{-\pi}^{\pi}{\sin^2{2\theta}\,d\theta} &=& \int_{-\pi}^{\pi}{\frac{1 - \cos{4\theta}}{2}\,d\theta} \\
+                                                        &=& \int_{-\pi}^{\pi}{\frac{1}{2} - \frac{\cos{u}}{2}\,d\theta} \\
+                                                        &=& \frac{1}{2}\int_{-\pi}^{\pi}{1 - \cos{u}\,d\theta} \\
+                                                        &=& \frac{1}{2}\left(\int_{-\pi}^{\pi}{1\,d\theta} - \int_{-\pi}^{\pi}{\cos{u}\,d\theta}\right) \\
+                                                        &=& \frac{1}{2}\left(2\pi - \frac{1}{4}\int_{u = -4\pi}^{u = 4\pi}{\cos{u}\,du}\right) \\
+                                                        &=& \frac{1}{2}\left(2\pi - \frac{1}{4}\left(\sin{4\pi} - \sin{\left(-4\pi\right)}\right)\right) \\
+                                                        &=& \frac{2\pi}{2} \\
+                                                        &=& \pi
+        \end{eqnarray}
 \end{enumerate}
 
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
