@@ -510,6 +510,120 @@
                                                         &=& \frac{2\pi}{2} \\
                                                         &=& \pi
         \end{eqnarray}
+    \item (Section 6.1, Exercise 7)
+        \begin{enumerate}
+            \item $0 < t < 1$ and $3 < t < 5$
+            \item $-4$
+            \item $26$
+            \item 6
+        \end{enumerate}
+    \item (Section 6.1, Exercise 8)
+        \begin{enumerate}
+            \item $0 < t < 2$ and $4 < t < 6$
+            \item $4$
+            \item $44$
+            \item $-10$
+        \end{enumerate}
+    \item (Section 6.1, Exercise 17)
+        $$v(t) = \sin{t}$$
+        $$s(0) = 1$$
+        \begin{eqnarray}
+            s(t) &=& 1 + \int_0^t{\sin{t}\,dt} \\
+                 &=& 1 - \cos{t} + \cos{0} \\
+                 &=& 2 - \cos{t}
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 20)
+        $$v(t) = 3\sin{\pi t}$$
+        $$s(0) = 1$$
+        \begin{eqnarray}
+            u &=& \pi t \\
+            du &=& \pi\,dt \\
+            s(t) &=& 1 + \int_0^t{3\sin{\pi t}\,dt} \\
+                 &=& 1 + \frac{3}{\pi}\int_0^t{\sin{u}\,du} \\
+                 &=& 1 + \frac{3}{\pi}\left(-\cos{\pi t} + \cos{0}\right) \\
+                 &=& 1 + \frac{3}{\pi} - \frac{3}{\pi}\cos{\pi t}
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 27)
+        \begin{eqnarray}
+            \int_0^{20}{3t\,dt} + \int_{20}^{30}{60} &=& \left(\frac{3(20)^2}{2} - \frac{3(0)^2}{2}\right) + \left(60(30) - 60(20)\right) \\
+                                                     &=& \left(\frac{1200}{2}\right) + \left(1800 - 1200\right) \\
+                                                     &=& 600 + 600 \\
+                                                     &=& 1200 \\
+            \int_0^{20}{3t\,dt} + \int_{20}^{45}{60} + \int_{45}^{60}{240 - 4t\,dt} &=& 600 + 2700 - 1200 + 14400 - 7200 - 10800 - 4050 \\
+                                                                                    &=& 2100 + \left(\left(14400 - 7200\right) - \left(10800 - 4050\right)\right) \\
+                                                                                    &=& 2100 + \left(7200 - 6750\right) \\
+                                                                                    &=& 2550 \\
+            s(t) &=& \int_0^{20}{3t\,dt} + \int_{20}^{45}{60} + \int_{45}^{t}{240 - 4t\,dt} \\
+                 &=& 2100 + \left(240t - 2t^2 - 6750\right) \\
+                 &=& 240t - 2t^2 -4650 \\
+            s(75) &=& 2100
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 28)
+        \begin{eqnarray}
+            \int_0^{10}{9.8t\,dt} + \int_{10}^{30}{10} &=& \left(4.9(10)^2 - 4.9(0^2)\right) + \left(10(30) - 10(10)\right) \\
+                                                       &=& \left(4.9(100)\right) + \left(300 - 100\right) \\
+                                                       &=& 490 + 200 \\
+                                                       &=& 690
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 30)
+        $$a(t) = -32$$
+        $$v(0) = 50$$
+        $$s(0) = 0$$
+        \begin{eqnarray}
+            v(t) &=& v(0) + \int_0^t{-32} \\
+                 &=& 50 - 32t \\
+            s(t) &=& s(0) + \int_0^t{50 - 32t} \\
+                 &=& 50t - 16t^2
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 31)
+        $$a(t) = -9.8$$
+        $$v(0) = 20$$
+        $$s(0) = 0$$
+        \begin{eqnarray}
+            v(t) &=& v(0) + \int_0^t{-9.8} \\
+                 &=& 20 - 9.8t \\
+            s(t) &=& s(0) + \int_0^t{20 - 9.8t} \\
+                 &=& 20t - 4.9t^2
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 43)
+        $$N'(t) = 100e^{-0.25t}$$
+        \begin{eqnarray}
+            u &=& -0.25t \\
+            du &=& -0.25\,dt \\
+            N(t) &=& N(0) + \int_0^t{10e^{-0.25t}\,dt} \\
+                 &=& 1900 + 100\int_0^t{\frac{1}{-0.25}e^{u}\,du} \\
+                 &=& 1900 - 400e^{-0.25t} \\
+            N(20) &=& 1900 - 400e^{-5} \\
+                  &\approx& 1897.305 \\
+            N(40) &=& 1900 - 400e^{-10} \\
+                  &\approx& 1899.98
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 44)
+        $$r(t) = 0.0025e^{0.25t} - 0.1485e^{-0.15t}$$
+        \begin{eqnarray}
+            t_0 &=& \frac{\ln{0.0025} - \ln{0.1485}}{-0.4} \\
+            \int_0^{t_0}{0.0025e^{0.25t} - 0.1485e^{-0.15t}} &\approx& 271
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 55)
+        $$C'(x) = 2000 - 0.5x$$
+        \begin{eqnarray}
+            \int_{100}^{150}{2000 - 0.5x\,dx} &=& \left(2000(150) - 0.25(150)^2\right) - \left(2000(100) - 0.25(100)^2\right) \\
+                                              &=& \left(300000 - 5625\right) - \left(200000 - 2500\right) \\
+                                              &=& 294375 - 197500 \\
+                                              &=& 96875 \\
+            \int_{500}^{550}{2000 - 0.5x\,dx} &=& \left(1024375\right) - \left(937500\right) \\
+                                              &=& 86875
+        \end{eqnarray}
+    \item (Section 6.1, Exercise 56)
+        $$C'(x) = 200 - 0.05x$$
+        \begin{eqnarray}
+            \int_{100}^{150}{200 - 0.05x\,dx} &=& \left(200(150) - 0.025(150)^2\right) - \left(200(100) - 0.025(100)^2\right) \\
+                                              &=& \left(29437.5\right) - \left(19750\right) \\
+                                              &=& 9687.5 \\
+            \int_{500}^{500}{200 - 0.05x\,dx} &=& \left(200(550) - 0.025(550)^2\right) - \left(200(500) - 0.025(500)^2\right) \\
+                                              &=& 102437.5 - 93750 \\
+                                              &=& 8687.5
+        \end{eqnarray}
 \end{enumerate}
 
 \blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
