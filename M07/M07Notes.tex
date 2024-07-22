@@ -72,6 +72,10 @@
         $$Q(b) - Q(a) = \int_a^b{Q'(t)\,dt}$$
         Given the initial value $Q(0)$, the \textbf{future value} of $Q$ at time $t \geq 0$ is
         $$Q(t) = Q(0) + \int_0^t{Q'(x)\,dx}$$
+    \item Area Between Curves \\
+        \textbf{Area of a Region Between Two Curves}: \\
+        Suppose that $f$ and $g$ are continuous functions with $f(x) \geq g(x)$ on the interval $[a,b]$. The area of the region bounded by the graphs of $f$ and $g$ on $[a,b]$ is
+        $$A = \int_a^b{\left(f(x) - g(x)\right)\,dx}$$
 \end{itemize}
 
 \section*{General formulas for indefinite integrals}
@@ -283,6 +287,37 @@
                   &=& 70 \cdot 60 \\
                   &=& 4200
         \end{eqnarray}
+    \item Area between curves (one integral)
+        $$y = x$$
+        $$y = x^2 - 2$$
+        \begin{eqnarray}
+            x &=& x^2 - 2 \\
+            0 &=& x^2 - x - 2 \\
+              &=& \left(x-2\right)\left(x+1\right) \\
+            x &=& -1 \\
+            x &=& 2 \\
+            \int_{-1}^2{x - \left(x^2 - 2\right)\,dx} &=& \int_{-1}^2{-x^2 + x + 2\,dx} \\
+                                                      &=& \left(\frac{-2^3}{3} + \frac{2^2}{2} + 2(2)\right) - \left(\frac{-(-1)^3}{3} + \frac{(-1)^2}{2} + 2(-1)\right) \\
+                                                      &=& \left(\frac{-8}{3} + 6\right) - \left(\frac{1}{3} + \frac{1}{2} - 2\right) \\
+                                                      &=& \frac{-9}{3} + 8  - \frac{1}{2} \\
+                                                      &=& 5 - \frac{1}{2} \\
+                                                      &=& 4.5
+        \end{eqnarray}
+    \item Area between curves (multiple integrals)
+        $$y = x$$
+        $$y = x^3$$
+        \begin{eqnarray}
+            x^3 &=& x \\
+            0 &=& x^3 - x \\
+              &=& x\left(x^2 - 1\right) \\
+            x &=& -1 \\
+            x &=& 0 \\
+            x &=& 1 \\
+        \end{eqnarray}
+    \item Area between curves (multiple integrals 2)
+    \item Area between curves (integrating $dy$)
+    \item Area between curves (choosing a method)
+    \item Using geometry to find area between curves
 \end{enumerate}
 
 \section*{Related Exercises}
