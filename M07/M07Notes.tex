@@ -79,6 +79,21 @@
         \textbf{Area of a Region Between Two Curves with Respect to $y$}: \\
         Suppose that $f$ and $g$ are continuous functions with $f(y) \geq g(y)$ on the interval $[c,d]$. The area of the region bounded by the graphs $x = f(y)$ and $x = g(y)$ on $[c,d]$ is
         $$A = \int_c^d{\left(f(y) - g(y)\right)\,dy}$$
+    \item Volume by Slicing \\
+        \textbf{General Slicing Method}: \\
+        Suppose a solid object extends from $x = a$ to $x = b$ and the cross section of the solid perpendicular to the $x$-axis has an area given by a function $A$ that is integrable on $[a,b]$. The volume of the solid is
+        $$V = \int_a^b{A(x)\,dx}$$
+        \textbf{Disk Method about the $x$-Axis}: \\
+        Let $f$ be continuous with $f(x) \geq 0$ on the interval $[a,b]$. If the region $R$ bounded by the graph of $f$, the $x$-axis, and the lines $x = a$ and $x = b$ is revolved about the $x$-axis, the volume of the resulting solid of revolution is
+        $$V = \int_a^b{\pi\,f(x)^2\,dx}$$
+        \textbf{Washer Method about the $x$-Axis}: \\
+        Let $f$ and $g$ be continuous functions with $f(x) \geq g(x) \geq 0$ on $[a,b]$. Let $R$ be the region bounded by $y = f(x)$, $y = g(x)$, and the lines $x = a$ and $x = b$. When $R$ is revolved about the $x$-axis, the volume of the resulting solid of revolution is
+        $$V = \int_a^b{\left(f(x)^2 - g(x)^2\right)\,dx}$$
+        \textbf{Disk and Washer Methods about the $y$-Axis}: \\
+        Let $p$ and $q$ be continuous functions with $p(y) \geq q(y) \geq 0$ on $[c,d]$. Let $R$ be the region bounded by $x = p(y)$, $x = q(y)$, and the lines $y = c$ and $y = d$. When $R$ is revolved about the $y$-axis, the volume of the resulting solid of revolution is given by
+        $$V = \int_c^d{\pi\left(p(y)^2 - q(y)^2\right)\,dy}$$
+        If $q(y) = 0$, the disk method results:
+        $$V = \int_c^d{\pi\,p(y)^2\,dy}$$
 \end{itemize}
 
 \section*{General formulas for indefinite integrals}
@@ -367,6 +382,103 @@
             A_2 &=& \frac{1}{2} \\
             A &=& 1 - \frac{1}{2} \\
               &=& \frac{1}{2}
+        \end{eqnarray}
+    \item Applying the general slicing method
+        $$y = \sqrt{1 - x^2}$$
+        \begin{eqnarray}
+            S &=& \sqrt{1 - x^2} \\
+            A(x) &=& \sqrt{1 - x^2}^2 \\
+                 &=& 1 - x^2 \\
+            x &=& -1, 1 \\
+            V &=& \int_{-1}^1{1 - x^2\,dx} \\
+              &=& \left(1 - \frac{1^3}{3}\right) - \left(-1 - \frac{(-1)^3}{3}\right) \\
+              &=& 1 - \frac{1}{3} + 1 - \frac{1}{3} \\
+              &=& 2 - \frac{2}{3} \\
+              &=& \frac{4}{3}
+        \end{eqnarray}
+    \item Graphing and applying the general slicing method
+        $$y = x^2 \hspace{0.5cm} \text{(Base Region)}$$
+        $$y = 1 \hspace{0.5cm} \text{(Base Line)}$$
+        \begin{eqnarray}
+            S &=& 1 - x^2 \\
+            A(x) &=& \left(1 - x^2\right)^2 \\
+                 &=& 1 - 2x^2 + x^4 \\
+            1 &=& x^2 \\
+            x &=& -1, 1 \\
+            \int_{-1}^1{1 - 2x^2 + x^4\,dx} &=& \left(1 - 2\frac{1^3}{3} + \frac{1^5}{5}\right) - \left(-1 - 2\frac{(-1)^3}{3} + \frac{(-1)^5}{5}\right) \\
+                                            &=& 1 - \frac{2}{3} + \frac{1}{5} + 1 - \frac{2}{3} + \frac{1}{5} \\
+                                            &=& \frac{16}{15}
+        \end{eqnarray}
+    \item Applying the disk method ($x$-axis)
+        $$y = e^{-x}$$
+        $$y = 0$$
+        $$x = 0$$
+        $$x = \ln{4}$$
+        \begin{eqnarray}
+            V &=& \int_0^{\ln{4}}{\pi\left(e^{-x}\right)^2\,dx} \\
+              &=& \int_0^{\ln{4}}{\left(\pi\,e^{-2x}\right)\,dx} \\
+              &=& \frac{15}{32}\pi
+        \end{eqnarray}
+    \item Applying the washer method ($x$-axis)
+        $$y = x$$
+        $$y = \sqrt[4]{x}$$
+        \begin{eqnarray}
+            r_o &=& \sqrt[4]{x} \\
+            r_i &=& x \\
+            x &=& \sqrt[4]{x} \\
+            x^4 &=& x \\
+            0 &=& x^4 - x \\
+              &=& x\left(x^3 - 1\right) \\
+            x &=& 0, 1 \\
+            V &=& \int_0^1{\pi\left(\left(\sqrt[4]{x}\right)^2 - x^2\right)\,dx} \\
+              &=& \int_0^1{\pi\left(x^{\frac{1}{2}} - x^2\right)\,dx} \\
+              &=& \frac{1}{3}\pi
+        \end{eqnarray}
+    \item Applying the washer method ($y$-axis)
+        $$y = x^3$$
+        $$y = 0$$
+        $$x = 1$$
+        \begin{eqnarray}
+            r_o &=& 1 \\
+            x &=& y^{\frac{1}{3}} \\
+            r_i &=& \sqrt[3]{y} \\
+            V &=& \int_0^1{\pi\left(1^2 - \sqrt[3]{y}^2\right)\,dy} \\
+              &=& \int_0^1{\pi\left(1 - y^{\frac{2}{3}}\right)\,dy} \\
+              &=& \frac{2}{5}\pi
+        \end{eqnarray}
+    \item Which solid of rotation is bigger
+        $$y = x^2$$
+        $$y = \sqrt{8x}$$
+        \begin{eqnarray}
+            x^2 &=& \sqrt{8x} \\
+            x^4 &=& 8x \\
+            0 &=& x^4 - 8x \\
+              &=& x\left(x^3 - 8\right) \\
+            x &=& 0, 2 \\
+            y &=& 0, 4 \\
+            r_o &=& \sqrt{8x} \\
+            r_i &=& x^2 \\
+            V &=& \int_0^2{\pi\left(\sqrt{8x}^2 - \left(x^2\right)^2\right)\,dx} \\
+              &=& \int_0^2{\pi\left(8x - x^4\right)\,dx} \\
+              &=& \frac{48}{5}\pi \\
+            r_o &=& \sqrt{y} \\
+            r_i &=& \frac{y^2}{8} \\
+            V &=& \int_0^4{\pi\left(\sqrt{y}^2 - \left(\frac{y^2}{8}\right)^2\right)\,dy} \\
+              &=& \int_0^4{\pi\left(y - \frac{y^4}{64}\right)\,dy} \\
+              &=& \frac{24}{5}\pi
+        \end{eqnarray}
+    \item Volume and rotation about a parallel axis
+        $$x = 0$$
+        $$y = \sqrt{x}$$
+        $$y = 2$$
+        $$x = 4 \hspace{0.5cm} \text{(about)}$$
+        \begin{eqnarray}
+            x &=& y^2 \\
+            r_o &=& 4 \\
+            r_i &=& 4 - y^2 \\
+            V &=& \int_0^2{\pi\left(4^2 - \left(4 - y^2\right)^2\right)\,dy} \\
+              &=& \int_0^2{\pi\left(8y^2 - y^4\right)\,dy} \\
+              &=& \frac{224}{15}\pi
         \end{eqnarray}
 \end{enumerate}
 
