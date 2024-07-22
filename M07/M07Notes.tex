@@ -94,6 +94,10 @@
         $$V = \int_c^d{\pi\left(p(y)^2 - q(y)^2\right)\,dy}$$
         If $q(y) = 0$, the disk method results:
         $$V = \int_c^d{\pi\,p(y)^2\,dy}$$
+    \item Volume by Shells \\
+        \textbf{Volume by the Shell Method}: \\
+        Let $f$ and $g$ be continuous functions with $f(x) \geq g(x)$ on $[a,b]$. If $R$ is the region bounded by the curves $y = f(x)$ and $y = g(x)$ between the lines $x = a$ and $x = b$, the volume of the solid generated when $R$ is revolved about the $y$-axis is
+        $$V = \int_a^b{2\pi\,x\left(f(x) - g(x)\right)\,dx}$$
 \end{itemize}
 
 \section*{General formulas for indefinite integrals}
@@ -480,6 +484,81 @@
               &=& \int_0^2{\pi\left(8y^2 - y^4\right)\,dy} \\
               &=& \frac{224}{15}\pi
         \end{eqnarray}
+    \item Applying the cylindrical shells formula ($y$-axis)
+        $$y = -x^2 + 4x + 2$$
+        $$y = x^2 - 6x + 10$$
+        $$\text{Axis: } y$$
+        \begin{eqnarray}
+            h &=& -x^2 + 4x + 2 - \left(x^2 - 6x + 10\right) \\
+              &=& -2x^2 + 10x - 8 \\
+            x &=& 1, 4 \\
+            V &=& \int_1^4{2\pi\,x\left(-2x^2 + 10 - 8\right)\,dx} \\
+              &=& 45\pi
+        \end{eqnarray}
+    \item Applying the cylindrical shells formula ($x$-axis)
+        $$y = x^3$$
+        $$y = 1$$
+        $$x = 0$$
+        $$\text{Axis: } x$$
+        \begin{eqnarray}
+            r &=& y \\
+            y &=& x^3 \\
+            x &=& \sqrt[3]{y} \\
+            h &=& x \\
+              &=& \sqrt[3]{y} \\
+            V &=& \int_0^1{2\pi\,y\sqrt[3]{y}\,dy} \\
+              &=& \int_0^1{2\pi\,y^{\frac{4}{3}}\,dy} \\
+              &=& \frac{6}{7}\pi
+        \end{eqnarray}
+    \item Applying the cylindrical shells formula (parallel line)
+        $$y = x^2$$
+        $$y = 1$$
+        $$x = 0$$
+        \begin{enumerate}
+            \item $x = -1$
+                \begin{eqnarray}
+                    r &=& x + 1 \\
+                    h &=& 1 - x^2 \\
+                    V &=& \int_0^1{2\pi\left(x + 1\right)\left(1 - x^2\right)\,dx} \\
+                      &=& \frac{11}{6}\pi
+                \end{eqnarray}
+            \item $y = 6$
+                \begin{eqnarray}
+                    r &=& 6 - y \\
+                    y &=& x^2 \\
+                    x &=& \sqrt{y} \\
+                    h &=& x \\
+                      &=& \sqrt{y} \\
+                    V &=& \int_0^1{2\pi\left(6 - y\right)\sqrt{y}\,dy} \\
+                      &=& \frac{36}{5}\pi
+                \end{eqnarray}
+        \end{enumerate}
+    \item Using both the disk/washer and shells method
+        $$y = 8$$
+        $$y = 2x + 2$$
+        $$x = 0$$
+        $$x = 2$$
+        $$\text{Axis: } y$$
+        \begin{enumerate}
+            \item Disk/Washer Method
+                \begin{eqnarray}
+                    r_i &=& 0 \\
+                    r_o &=& 2 \\
+                    y &=& 2x + 2 \\
+                    x &=& \frac{y - 2}{2} \\
+                    r_o &=& \frac{y - 2}{2} \\
+                    V &=& \int_2^6{\left(\frac{y - 2}{2}\right)^2\,dy} + \int_6^8{\pi\left(2\right)^2\,dy} \\
+                      &=& \frac{40}{3}\pi
+                \end{eqnarray}
+            \item Cylindrical Shells
+                \begin{eqnarray}
+                    r &=& x \\
+                    h &=& 8 - \left(2x + 2\right) \\
+                      &=& 6 - 2x \\
+                    V &=& \int_0^2{2\pi\,x\left(6 - 2x\right)\,dy} \\
+                      &=& \frac{40}{3}\pi
+                \end{eqnarray}
+        \end{enumerate}
 \end{enumerate}
 
 \section*{Related Exercises}
