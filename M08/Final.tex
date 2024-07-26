@@ -1,0 +1,387 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}} 
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+\title{Final Review (MATH-211)}
+\author{Lillie Donato}
+\date{29 July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Applications of Derivatives (M05)}
+\begin{itemize}
+    \item Maxima and Minima \\
+    \textbf{Absolute Maximum:} Assume a function $f$ is defined on a set $D$, and $x = c$ is a point in $D$. Then, $y = f(c)$ is an \textbf{absolute maximum value} of $f$ on $D$ if $f(c) \geq f(x)$ for every $x$ in $D$. Changing the set on which $f$ is defined \underline{may} change the absolute maximum value. \\
+    \textbf{Absolute Minimum}: Assume a function $f$ is defined on a set $D$, and $x = c$ is a point in $D$. Then, $y = f(c)$ is an \textbf{absolute minimum value} of $f$ on $D$ if $f(c) \leq f(x)$ for every $x$ in $D$. Changing the set on which $f$ is defined \underline{may} change the absolute minimum value. \\
+    \textbf{Extreme Value Theorem}: A function that is continuous on a closed interval is guarenteed to have both an absolute maximum value and an absolute minmum value. \\
+    A discontinuous function, or a function defined on an interval that is not closed, may still have absolute extrema. \\
+    \textbf{Local Maximum and Minimum Values}: Assume $x = c$ is an interior point (not an endpoint) of some interval $I$ in the domain of $f$. Then, $y = f(c)$ is a \textbf{local maximum value} of $f$ if $f(c) \geq f(x)$ for every $x$ in $I$, and $y = f(c)$ is a \textbf{local minimum value} of $f$ if $f(c) \leq f(x)$ for every $x$ in $I$. \\
+    \textbf{Critical Points}: An interior point $x = c$ of the domain of $f$ is called a \textbf{critical point} of $f$ if either $f'(c) = 0$ or $f'(c)$ does not exist. \\
+    \textbf{Local Extreme Value Theorem}: If a function $f$ has a local maximum or a local minimum at a point $x = c$, then either $f'(c) = 0$ or $f'(c)$ does not exist. \\
+    If $f$ has a local extreme, it must occur at a critical point. \\
+    Not every critical point is the location of a local extreme value. \\
+    For a continuous function $f$ on a closed interval $[a, b]$, absolute extremes are guaranteed to exist, and they must occur either at the endpoints of interval or at critical points of $f$ within the interval.
+    \item Mean Value Theorem \\
+    \textbf{Rolle's Theorem}: Let $f$ be a continuous function on a closed interval $[a, b]$ that is differentiable on $(a, b)$, with $f(a) = f(b)$. Then, there is at least one point $x = c$ in $(a, b)$ where $f'(c) = 0$. \\
+    \textbf{Mean Value Theorem}: If $f$ is a continuous function on a closed interval $[a, b]$ that is differentiable on $(a, b)$, then there is at least one point $x = c$ in $(a, b)$ where
+    $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+    \textbf{Zero Derivative Implies Constant Function}: If $f$ is differentiable on an open interval $I$, and $f'(x) = 0$ for all $x$ in $I$, then $f$ is a constant function on $I$. \\
+    \textbf{Function with Equal Derivative Differ by a Constant}: If $f'(x) = g'(x)$ for all $x$ in an open interval $I$, then $f(x) = g(x) + C$ for some constant $C$.
+    \item What Derivatives Tell Us \\
+    \textbf{Increasing and Decreasing Functions}: Suppose a function $f$ is defined on an interval $I$. We say $f$ is \textbf{increasing} on $I$ if $f(x_2) > f(x_1)$ whenever $x_1$ and $x_2$ are in $I$ and $x_2 > x_1$, and we say $f$ is decreasing on $I$ if $f(x_2) < f(x_1)$ whenever $x_1$ and $x_2$ are in $I$ and $x_2 > x_1$. \\
+    \textbf{Test for Interals of Increase and Decrease}: Suppose a function $f$ is defined on an interval $I$, and differentiable inside $I$. If $f'(x) > 0$ at all interior points of $I$, then $f$ is increasing on $I$; If $f'(x) < 0$ at all interior points of $I$, then $f$ is decreasing on $I$. \\
+    \textbf{First Derivative Test}: Assume $f$ is continuous on an interval containing a critical point $c$, and that $f$ is differentiable on an interval containing $c$ (except possible at $c$ itself). Under these conditions:
+    \begin{itemize}
+        \item If $f'$ changes sign from positive to negative as $x$ increases through $c$, then $f$ has a local maximum at $c$.
+        \item If $f'$ changes sign from negative to positive as $x$ increases through $c$, then $f$ has a local minimum at $c$.
+        \item If $f'$ is positive on both sides of $c$, or negative on both sides of $c$, then $f$ has no local extreme value at $c$.
+    \end{itemize}
+    \textbf{One local extremum implies absolute extremum}: Suppose $f$ is continuous on an interval $I$ that contains exactly one local extremum $x = c$.
+    \begin{itemize}
+        \item If $f$ has a local max at $c$, then $f(c)$ is the absolute max of $f$ on $I$.
+        \item If $f$ has a local min at $c$, then $f(c)$ is the absolute min of $f$ on $I$.
+    \end{itemize}
+    \textbf{Concavity}: Suppose a function $f$ is twice differentiable on an open interval $I$.
+    \begin{itemize}
+        \item If $f'$ is increasing on $I$, then $f$ is \textbf{concave up} on $I$, and $f'' > 0$ on $I$.
+        \item If $f'$ is decreasing on $I$, then $f$ is \textbf{concave down} on $I$, and $f'' < 0$ on $I$.
+    \end{itemize}
+    \textbf{Inflection Point}: Suppose a function $f$ is twice differentiable on an open interval $I$. If $f$ is continuous at a point $c$ in $I$ and $f$ changes concavity at $c$, then $f$ has an \textbf{inflection point} at $c$. \\
+    \textbf{Second Derivative Test}: Assume $f''$ is continuous on an open interval containing $x = c$, with $f'(c) = 0$. Under these conditions:
+    \begin{itemize}
+        \item If $f''(c) > 0$, then $f$ has a local minimum at $c$.
+        \item If $f''(c) < 0$, then $f$ has a local maximum at $c$.
+        \item If $f''(c) = 0$, then the test is inconclusive; $f$ may have a local minimum, a local maximum, or neither of these at $x = c$.
+    \end{itemize}
+    \item Graphing Functions \\
+    \textbf{Graphing guidelines for a function} $f(x)$:
+    \begin{enumerate}
+        \item \textbf{Identify the domain of $f$, or intervals of interest.} You need to find out on which intervals the function should be graphed.
+        \item \textbf{Consider symmetry.} It can be helpful to determine if the function is even, odd, or neither.
+        \item \textbf{Find formulas for the first and second derivatives of $f$.}
+        \item \textbf{Find all critical points and possible inflection points.} Within the domain of $f$, critical points are points at which $f' = 0$ or $f' \text{DNE}$, and possible inflection points are points at which $f'' = 0$ or $f'' \text{DNE}$.
+        \item \textbf{Find intervals on which $f$ is increasing or decreasing, and intervals on which $f$ is concave up or concave down.} Together with discontinuities of $f$, use the critical points of $f$ to make a sign graph for $f'$, and use the possible inflection points of $f$ to make a sign graph for $f''$.
+        \item \textbf{Identify local extrema and inflection points.} You can get this information from the sign graphs you already made for $f'$ and $f''$. To help graph $f$, you need both the $x$ and $y$-coordinates of these points.
+        \item \textbf{Locate asymptotes and determine end behaviour.} Vertical asymptotes often occur at zeros of the denominator of $f$. Determine the end behaviour by evaluating limits of $f$ as $x \to \pm \infty$; if either limit exists, $f$ has a horizontal asymptote.
+        \item \textbf{Find the $x$ and $y$ intercepts of $f$.}
+        \item \textbf{Plot the graph on an appropriate window.} Be sure that your graph is scaled to clearly show all the important details of the function.
+    \end{enumerate}
+    \item Optimization \\
+    \underline{Goal}: Find absolute max/min of a given function called the \textbf{objective function} \\
+    \underline{New}: Applied problems can introduce \textbf{constraints} (restrictions) on the variables. This could change the results of the optimization of the objective function. \\
+    Guidelines:
+    \begin{enumerate}
+        \item Read the problem carefully, organize the information in a picture, and identify the variables.
+        \item Identify the function to be optimized (the objective function), and write this function in terms of the variables in the problem.
+        \item Identify all the constraints, and write each of them in terms of the variables in the problem. \\
+        \item Use the constraints to rewrite the objective function in terms of only one variable.
+        \item Identify the appropriate interval of interest for the remaining variable.
+        \item Use calculus methods to find the absolute maximum and/or absolute minimum value of the constrained objective function on the interval of interest, possible including at endpoints.
+    \end{enumerate}
+\end{itemize}
+
+\section*{L'Hôpital's Rule and Techniques of Integration (M06)}
+\begin{itemize}
+    \item L'Hôpital's Rule \\
+    \textbf{Indeterminate Form}: An expression involving two components where the limit cannot be determined by evaluating the limits of the individual components. \\
+    \textbf{L'Hôpital's Rule}: Suppose $f$ and $g$ are differentiable functions on an open interval $I$ containing the point $x = a$, with $g'(x) \neq 0$ on $I$ when $x \neq a$. \\
+    If $\lim\limits_{x \to a}{\frac{f(x)}{g(x)}}$ has any of the indeterminate forms: $\frac{0}{0}$, $\frac{\infty}{\infty}$, $-\frac{\infty}{\infty}$, then
+    $$\lim_{x \to a}{\frac{f(x)}{g(x)}} = \lim_{x \to a}{\frac{f'(x)}{g'(x)}}$$
+    provided that one of the following is the case:
+    $$\lim_{x \to a}{\frac{f'(x)}{g'(x)}} \in \mathbb{R}$$
+    $$\lim_{x \to a}{\frac{f'(x)}{g'(x)}} = \infty$$
+    $$\lim_{x \to a}{\frac{f'(x)}{g'(x)}} = -\infty$$
+    L'Hôpital's Rule is still valid if $x \to a$ is replaced by any of $x \to a^+$, $x \to a^-$, $x \to \infty$, or $x \to -\infty$. In the last two of these cases, there must be a greatest $x$-value beyond which both $f$ and $g$ are differentiable at every point. \\
+    \textbf{Exponential Indeterminate forms}: $1^{\infty}$, $0^0$, $\infty^0$ \\
+    \textbf{Method for evaluating limits of indeterminate forms $1^{\infty}$, $0^0$, $\infty^0$}: \\
+    Assume that $L = \lim\limits_{x \to a}{f(x)^{g(x)}}$ has one of these indeterminate forms.
+    \begin{enumerate}
+        \item Use the fact that the natural logarithm and natural exponential functions are inverses to write
+        $$L = \lim_{x \to a}{e^{\ln{\left(f(x)^{g(x)}\right)}}}$$
+        \item Use the power property of logarithm arguments to write
+        $$L = \lim_{x \to a}{e^{g(x)\ln{\left(f(x)\right)}}}$$
+        \item Use continuity of the exponential function to write
+        $$L = e^{\lim\limits_{x \to a}{g(x)\ln{\left(f(x)\right)}}}$$
+        \item Rewrite multiplication as division by the reciprocal:
+        $$L = e^{\lim\limits_{x \to a}{\left(\frac{\ln{\left(f(x)\right)}}{\frac{1}{g(x)}}\right)}}$$
+        \item Use L'Hôpital's Rule to evaluate this limit expression
+    \end{enumerate}
+    \textbf{Growth Rates}: Suppose $f$ and $g$ are functions with $\lim\limits_{x \to \infty}{f(x)} = \infty$ and $\lim\limits_{x \to \infty}{g(x)} = \infty$ \\
+    \begin{enumerate}
+        \item If one of the following are true, \textbf{$f$ grows faster than $g$}, and we use the notation $f \gg g$
+        \begin{eqnarray}
+            \lim_{x \to \infty}{\frac{g(x)}{f(x)}} &=& 0 \\
+            \lim_{x \to \infty}{\frac{f(x)}{g(x)}} &=& \infty
+        \end{eqnarray}
+        \item \textbf{$f$ and $g$ have comparable growth rates}, if there is some non-zero finite number $M$ such that
+        $$\lim_{x \to \infty}{\frac{f(x)}{g(x)}} = M$$
+    \end{enumerate}
+    \textbf{Ranked Growth Rates as $x \to \infty$} \\
+    For any base $b > 1$, and for any positive numbers $p$, $q$, $r$, and $s$
+    $$\ln^q{x} \ll x^p \ll x^p \ln^r{x} \ll x^{p + s} \ll b^x \ll x^x$$
+    \item Antiderivatives \\
+    \textbf{Antiderivative}: A function $F$ is an antiderivative of another function $f$ on an interval $I$ if for all $x$ in $I$:
+    $$F'(x) = f(x)$$
+    \textbf{Family of Antiderivatives}: Let $F(x)$ be any antiderivative of $f(x)$ on an interval $I$. Then all antiderivatives of $f$ on $I$ have the form $F(x) + C$, where $C$ is an arbitrary constant. \\
+    \textbf{Differential Equations}: Any equation involving an unknown function and its derivatives
+    \begin{itemize}
+        \item Infinite family of solutions
+        \item No two solutions from the family pass through the same point
+        \item Given an initial condition $f(a) = b$, we can identify the particular family member that solves the given problem by solving for $C$
+    \end{itemize}
+    \item Approximating Areas Under Curves
+    \begin{itemize}
+        \item If we know the velocity function of a moving object, what can we learn about its position function?
+        \item Given an object with velocity function $v(t)$, the displacement of the moving object over the interval $[a,b]$ is the area between the velocity curve and the $t$-axis from $t = a$ to $t = b$.
+        \item Because objects do not necessarily move at a constant velocity, we can extend this idea to positive velocities that change over an interval of time.
+        \item The strategy is to divide the time interval into many subintervals, approximate the velocity on each subinterval with a constant velocity, calculate the individual displacements and sum the results.
+    \end{itemize}
+    \textbf{Riemann Sums}
+    \begin{itemize}
+        \item Suppose $f(x)$ is continuous and non-negative on $[a,b]$.
+        \item Goal is to approximate the area of the region $R$ bounded by the graph of $f(x)$ and the $x$-axis from $x = a$ to $x = b$.
+        \item Divide $[a,b]$ into $n$ subintervals $[x_0,x_1],[x_1,x_2],...,[x_{n-1},x_n]$ where $a = x_0, b = x_n$.
+        \item The length of each subinterval is $\Delta x = \frac{b - a}{n}$
+        \item \textbf{Regular Partition}: Suppose $[a,b]$ is a closed interval containing $n$ subintervals
+            $$[x_0,x_1],[x_1,x_2],...,[x_{n-1},x_n]$$
+        of equal length $\Delta x = \frac{b - a}{n}$, with $a = x_0$ and $b = x_n$. The endpoints $x_0, x_1, x_2,...,x_{n - 1},x_n$ of the subintervals are called \textbf{grid points}, and they create a \textbf{regular partition} of the interval $[a,b]$. In general the $k$th grid point is
+            $$x_k = a + k\Delta x\text{, for } k = 0,1,2,...,n$$
+        \item In the $k$th subinterval $[x_{k - 1}, x_k]$, choose any point $x_k^*$ and build a rectangle whose height is $f(x_k^*)$.
+        \item The area of the rectangle of the $k$th subinterval is
+            $$\text{height} \cdot \text{base} = f(x_k^*)\Delta x\text{, where } k = 1,2,...,n$$
+        \item Summing the areas of these rectangles, we obtain an approximation to the area of $R$, which is called a \textbf{Riemann sum}:
+            $$f(x_1^*)\Delta x + f(x_2^*)\Delta x + ... + f(x_n^*)\Delta x$$
+        \item Three notable Riemann sums are the left, right, and midpoint Riemann sums.
+    \end{itemize}
+    \textbf{Riemann Sum}: Suppose $f$ is defined on a closed interval $[a,b]$, which is divided into $n$ subintervals of equal length $\Delta x$. If $x_k^*$ is any point in the $k$th subinterval $[x_{k - 1}, x_k]$, for $k = 1,2,...,n$, then
+        $$f(x_1^*)\Delta x + f(x_2^*)\Delta x + ... + f(x_n^*)\Delta x$$
+    is called a \textbf{Riemann sum} for $f$ on $[a,b]$. This sum is called
+        \begin{itemize}
+            \item a \textbf{left Riemann sum} if $x_k^*$ is the left endpoint of $[x_{k - 1}, x_k]$
+            \item a \textbf{right Riemann sum} if $x_k^*$ is the right endpoint of $[x_{k - 1}, x_k]$
+            \item a \textbf{midpoint Riemann sum} if $x_k^*$ is the midpoint of $[x_{k - 1}, x_k]$
+        \end{itemize}
+    \textbf{Summation notation ($\Sigma$)}:
+        \begin{itemize}
+            \item Working with Riemann sums is cumbersome when $n$ is large
+            \item We introduce sigma (summation) notation as a shorthand:
+                $$1 + 2 + ... + 49 + 50 = \sum_{k = 1}^{50}{k}$$
+            \item The symbol $\Sigma$ (sigma) stands for sum
+            \item $k$ is the index, and takes on all integer values from $k = 1$ to $k = 50$
+            \item The expression immediately following $\Sigma$, the summand, is evaluated for each $k$, and the resulting values are summed
+            \item The index is a dummy variable, and it does not matter which symbol is chosen for the index:
+                $$\sum_{k = 1}^{99}{k} = \sum_{n = 1}^{99}{n} = \sum_{p - 1}^{99}{p}$$
+            \item Two Properties of Sums and Sigma Notation
+                \begin{enumerate}
+                    \item Constant Multiple Rule:
+                        $$\sum_{k = 1}^{n}{ca_k} = c\sum_{k = 1}^{n}{a_k}$$
+                    \item Addition Rule:
+                        $$\sum_{k = 1}^{n}{\left(a_k + b_k\right)} = \sum_{k = 1}^{n}{a_k} + \sum_{k = 1}^{n}{b_k}$$
+                \end{enumerate}
+            \item \textbf{Theorem}: Sums of Power of Integers \\
+                Let $n \in \mathbb{Z}$ such that $n > 0$ and $c \in \mathbb{R}$
+                \begin{eqnarray}
+                    \sum_{k = 1}^{n}{c} &=& cn \\
+                    \sum_{k = 1}^{n}{k} &=& \frac{n\left(n + 1\right)}{2} \\
+                    \sum_{k = 1}^{n}{k^2} &=& \frac{n\left(n + 1\right)\left(2n + 1\right)}{6} \\
+                    \sum_{k = 1}^{n}{k^3} &=& \frac{n^2\left(n + 1\right)^2}{4}
+                \end{eqnarray}
+        \end{itemize}
+    \textbf{Left, Right, and Midpoint Riemann Sums in Sigma Notation}: \\
+        Suppose $f$ is defined on a closed interval $[a,b]$, which is divided into subintervals of equal length $\Delta{x}$. If $x_k^*$ is a point in the $k$th subinterval $[x_{k - 1}, x_k]$, for $k = 1,2,...,n$, then the \textbf{Riemann sum} for $f$ on $[a,b]$ is $$\sum_{k = 1}^{n}{f(x_k^*)\Delta{x}}$$
+        Three cases arise in practice
+    \begin{itemize}
+        \item $\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x}}$ is a \textbf{left Riemann sum} if $x_k^* = a + (k - 1)\Delta{x}$
+        \item $\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x}}$ is a \textbf{right Riemann sum} if $x_k^* = a + k\Delta{x}$
+        \item $\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x}}$ is a \textbf{midpoint Riemann sum} if $x_k^* = a + (k - \frac{1}{2})\Delta{x}$
+    \end{itemize}
+    \item Definite Integrals \\
+    \textbf{Net Area}: Consider the region $R$ bounded by the graph of a continuous function $f$ and the $x$-axis between $x = a$ and $x = b$. The \textbf{net area} of $R$ is the sum of the area of the parts of $R$ that lie above the $x$-axis minus the sum of the areas of the parts of $R$ that lie below the $x$-axis on $[a,b]$.
+    \begin{itemize}
+        \item Where $f(x) < 0$, Riemann sums approximate the negative of the area of the region bounded by the curve
+        \item On the interval $[a,b]$, we get positive, and negative contributions to the Riemann sum where $f(x)$ is negative
+        \item Riemann sums approximate the area of the regions that lie above the $x$-axis minus the area of the regions that lie below the $x$-axis
+        \item The difference is called the \textbf{net area}; it can be positive, negative, or zero
+    \end{itemize}
+    $$area_{net} = \lim_{n \to \infty}{\sum_{k = 1}^{n}{f(x_k^*)\Delta{x}}}$$
+    A \textbf{general partition} of $[a,b]$ consists of the $n$ subintervals
+    $$[x_0,x_1],[x_1,x_2],...,[x_{n - 1}, x_n]$$
+    where $x_0 = a$and $x_n = b$. The length of the $k$th subinterval is $\Delta{x_k} = x_k - k_{k-1}$, for $k = 1,2,...,n$. We let $x_k^*$ be any point in the subinterval $[x_{k - 1}, x_k]$. \\
+    \textbf{General Riemann Sum}: Suppose $[x_0,x_1],[x_1, x_2],...,[x_{n - 1}, x_n]$ are subintervals of $[a,b]$ with
+    $$a = x_0 < x_1 < x_2 < ... < x_{n - 1} < x_n = b$$
+    Let $x\Delta{x_k}$ be the length of the subinterval $[x_{k - 1}, x_k]$ and let $x_k^*$ be any point in $[x_{k - 1}, x_k]$, for $k = 1,2,...n$ \\
+    If $f$ is defined on $[a,b]$, the sum
+    $$\sum_{k = 1}^{n}{f(x_k^*)\Delta{x_k}} = f(x_1^*)\Delta{x_1} + f(x_2^*)\Delta{x_2} + ... + f(x_n^*)\Delta{x_n}$$
+    is called a \textbf{general Riemann sum} for $f$ on $[a,b]$ \\
+    \textbf{Definite Integral}: A function $f$ defined on $[a,b]$ is \textbf{integrable} on $[a,b]$ if $\lim\limits_{\Delta{x} \to 0}{\sum\limits_{k = 1}^{n}{f(x_k^*)\Delta{x_k}}}$ exists and is unique over all partitions of $[a,b]$ and all choices of $x_k^*$ on a parition. This limit is the \textbf{definite integral of $f$ from a to b}, which we rite
+    $$\int_a^b{f(x)dx} = \lim_{\Delta{x} \to 0}{\sum_{k = 1}^{n}{f(x_k^*)\Delta{x_k}}}$$
+    \textbf{Integrable Functions}: If $f$ is continuous on $[a,b]$ or bounded on $[a,b]$ with a finite number of discontinuities, then $f$ is integrale on $[a,b]$. \\
+    Let $f$ and $g$ be integrable function on $[a,b]$, where $b > a$
+    \begin{enumerate}
+        \item If $f(x) \geq 0$ on $[a,b]$, then $\int_a^b{f(x)\,dx} \geq 0$
+        \item If $f(x) \geq g(x)$ on $[a,b]$, then $\int_a^b{f(x)\,dx} \geq \int_a^b{g(x)\,dx}$
+        \item If $m \leq f(x) \leq M$, then $m(b - a) \leq \int_a^b{f(x)\,dx} \leq M(b - a)$
+    \end{enumerate}
+    \item Fundamental Theorem of Calculus \\
+        Area Functions: Let $f$ be a continuous function, for $t \geq a$. The \textbf{area function for $f$ with left endpoint $a$} is
+        $$A(x) = \int_a^x{f(t)\,dt}$$
+        where $x \geq a$. The area function gives the net area of the region bounded by the graph of $f$ and the $t$-axis on the interval $[a,x]$. \\
+        If $f$ is continuous on $[a,b]$, then the area function
+        $$A(x) = \int_a^x{f(t)\,dt}\text{, for } a \leq x \leq b\text{,}$$
+        is continuous on $[a,b]$ and differentiable on $(a,b)$. The area function satisfies $A'(x) = f(x)$. Equivalently,
+        $$A'(x) = \frac{d}{dx}\int_a^x{f(t)\,dt} = f(x)\text{,}$$
+        which means that the area function of $f$ is an antiderivative of $f$ on $[a,b]$. \\
+        If $f$ is continuous on $[a,b]$ and $F$ is any antiderivative of $f$ on $[a,b]$, then
+        $$\int_a^b{f(x)\,dx} = F(b) - F(a)$$
+\end{itemize}
+
+\section*{Applications of Integration (M07)}
+\begin{itemize}
+    \item Working with Integrals \\
+        A function $f(x)$ is \textbf{even} if $f(-x) = f(x)$. \\
+        A function $f(x)$ is \textbf{odd} if $f(-x) = -f(x)$. \\
+        Let $a \in \mathbb{R}$ such that $a > 0$ and let $f$ be an integrable function on the interval $[-a,a]$.
+        $$\text{If } f \text{ is even, } \int_{-a}^a{f(x)\,dx} = 2\int_0^a{f(x)\,dx}$$
+        $$\text{If } f \text{ is odd, } \int_{-a}^a{f(x)\,dx} = 0$$
+        The average value of an integrable function $f$ on the interval $[a,b]$ is
+        $$\overline{f} = \frac{1}{b - a}\int_a^b{f(x)\,dx}$$
+        Let $f$ be continuous on the interval $[a,b]$. There exists a point $c$ in $(a,b)$ such that (Mean Value Theorem)
+        $$f(c) = \overline{f} = \frac{1}{b - a}\int_a^b{f(t)\,dx}$$
+    \item Substitution Rule \\
+        Let $u = g(x)$, where $g$ is differentiable on an interval, and let $f$ be continuous on the corresponding range of $g$. On that interval,
+        $$\int{f(g(x))g'(x)\,dx} = \int{f(u)\,du}$$
+        \begin{enumerate}
+            \item Given an indefinite integral involving a commposite function $f(g(x))$, identify an inner function $u = g(x)$ such that a constant multiple of $g'(x)$ appears in the integrand.
+            \item Substitute $u = g(x)$ and $du = g'(x)\,dx$ in the integral.
+            \item Evaluate the new indefinite integral with respect to $u$.
+            \item Write the result in terms of $x$ using $u = g(x)$.
+        \end{enumerate}
+        Let $u = g(x)$, where $g'$ is continuous on $[a,b]$, and let $f$ be continuous on the range of $g$. Then
+        $$\int_a^b{f(g(x))g'(x)\,dx} = \int_{g(a)}^{g(b)}{f(u)\,du}$$
+    \item Velocity and Net Change \\
+        \textbf{Position, Velocity, Displacement, and Distance}:
+        \begin{enumerate}
+            \item The \textbf{position} of an object moving along a line at time $t$, denoted $s(t)$, is the location of the object relative to the origin.
+            \item The \textbf{velocity} of an object at time $t$ is $v(t) = s'(t)$.
+            \item The \textbf{displacement} of the object between $t = a$ and $t = b > a$ is
+                $$s(b) - s(a) = \int_a^b{v(t)\,dt}$$
+            \item The \textbf{distance traveled} by the object between $t = a$ and $t = b > a$ is
+                $$\int_a^b{\left|v(t)\right|\,dt}$$
+                where $|v(t)|$ is the \textbf{speed} of the object at time $t$.
+        \end{enumerate}
+        \textbf{Theorem: Position from Velocity} \\
+        Given the velocity $v(t)$ of an object moving along a line and its initial position $s(0)$, the position function of the object for future times $t \geq 0$ is
+        $$s(t) = s(0) + \int_0^t{v(x)\,dx}$$
+        \textbf{Theorem: Velocity from Acceleration} \\
+        Given the acceleration $a(t)$ of an object moving along a line and its initial velocity $v(0)$, the velocity of the object for future times $t \geq 0$ is
+        $$v(t) = v(0) + \int_0^t{a(x)\,dx}$$
+        \textbf{Theorem: Net Change and Future Value} \\
+        Suppose a quantity $Q$ changes over time at a known rate $Q'$. Then the \textbf{net change} in $Q$ between $t = a$ and $t = b > a$ is
+        $$Q(b) - Q(a) = \int_a^b{Q'(t)\,dt}$$
+        Given the initial value $Q(0)$, the \textbf{future value} of $Q$ at time $t \geq 0$ is
+        $$Q(t) = Q(0) + \int_0^t{Q'(x)\,dx}$$
+    \item Area Between Curves \\
+        \textbf{Area of a Region Between Two Curves}: \\
+        Suppose that $f$ and $g$ are continuous functions with $f(x) \geq g(x)$ on the interval $[a,b]$. The area of the region bounded by the graphs of $f$ and $g$ on $[a,b]$ is
+        $$A = \int_a^b{\left(f(x) - g(x)\right)\,dx}$$
+        \textbf{Area of a Region Between Two Curves with Respect to $y$}: \\
+        Suppose that $f$ and $g$ are continuous functions with $f(y) \geq g(y)$ on the interval $[c,d]$. The area of the region bounded by the graphs $x = f(y)$ and $x = g(y)$ on $[c,d]$ is
+        $$A = \int_c^d{\left(f(y) - g(y)\right)\,dy}$$
+    \item Volume by Slicing \\
+        \textbf{General Slicing Method}: \\
+        Suppose a solid object extends from $x = a$ to $x = b$ and the cross section of the solid perpendicular to the $x$-axis has an area given by a function $A$ that is integrable on $[a,b]$. The volume of the solid is
+        $$V = \int_a^b{A(x)\,dx}$$
+        \textbf{Disk Method about the $x$-Axis}: \\
+        Let $f$ be continuous with $f(x) \geq 0$ on the interval $[a,b]$. If the region $R$ bounded by the graph of $f$, the $x$-axis, and the lines $x = a$ and $x = b$ is revolved about the $x$-axis, the volume of the resulting solid of revolution is
+        $$V = \int_a^b{\pi\,f(x)^2\,dx}$$
+        \textbf{Washer Method about the $x$-Axis}: \\
+        Let $f$ and $g$ be continuous functions with $f(x) \geq g(x) \geq 0$ on $[a,b]$. Let $R$ be the region bounded by $y = f(x)$, $y = g(x)$, and the lines $x = a$ and $x = b$. When $R$ is revolved about the $x$-axis, the volume of the resulting solid of revolution is
+        $$V = \int_a^b{\pi\left(f(x)^2 - g(x)^2\right)\,dx}$$
+        \textbf{Disk and Washer Methods about the $y$-Axis}: \\
+        Let $p$ and $q$ be continuous functions with $p(y) \geq q(y) \geq 0$ on $[c,d]$. Let $R$ be the region bounded by $x = p(y)$, $x = q(y)$, and the lines $y = c$ and $y = d$. When $R$ is revolved about the $y$-axis, the volume of the resulting solid of revolution is given by
+        $$V = \int_c^d{\pi\left(p(y)^2 - q(y)^2\right)\,dy}$$
+        If $q(y) = 0$, the disk method results:
+        $$V = \int_c^d{\pi\,p(y)^2\,dy}$$
+    \item Volume by Shells \\
+        \textbf{Volume by the Shell Method}: \\
+        Let $f$ and $g$ be continuous functions with $f(x) \geq g(x)$ on $[a,b]$. If $R$ is the region bounded by the curves $y = f(x)$ and $y = g(x)$ between the lines $x = a$ and $x = b$, the volume of the solid generated when $R$ is revolved about the $y$-axis is
+        $$V = \int_a^b{2\pi\,x\left(f(x) - g(x)\right)\,dx}$$
+\end{itemize}
+
+\section*{Antiderivative Rules}
+\begin{itemize}
+    \item Power Rule \\
+        If $p \neq -1$ and $C$ is an arbitrary constant:
+        $$\int{x^p} dx = \frac{x^{p + 1}}{p + 1} + C$$
+    \item Integral of $x^{-1}$
+        $$\int{x^{-1}}dx = \int{\frac{1}{x}}dx = \ln{|x|} + C$$
+    \item Constant Multiple and Sum Rules \\
+        If $c \in \mathbb{R}$:
+        $$\int{cf(x)}dx = c\int{f(x)}dx$$
+        $$\int{\left(f(x) + g(x)\right)}dx = \int{f(x)}dx + \int{g(x)}dx$$
+    \item Integral of $e^x$
+        $$\int{e^x}dx = e^x + C$$
+    \item Integral of $\frac{1}{x}$
+        $$\int{\frac{1}{x}}\,dx = \ln{|x|} + C$$
+\end{itemize}
+
+\section*{Trigonometric (and inverse) Integrals}
+\begin{eqnarray}
+    \int{\cos{\left(x\right)}}dx &=& \sin{x} + C \\
+    \int{\sin{\left(x\right)}}dx &=& -\cos{x} + C \\
+    \int{\sec^2{\left(x\right)}}dx &=& \tan{x} + C \\
+    \int{\csc^2{\left(x\right)}}dx &=& -\cot{x} + C \\
+    \int{\sec{\left(x\right)}\tan{\left(x\right)}}dx &=& \sec{x} + C \\
+    \int{\csc{\left(x\right)}\cot{\left(x\right)}}dx &=& -\csc{x} + C \\
+    \int{\frac{1}{\sqrt{1 - x^2}}}dx &=& \sin^{-1}{x} + C \\
+    \int{\frac{1}{1 + x^2}}dx &=& \tan^{-1}{x} + C \\
+    \int{\frac{1}{x\sqrt{x^2 - 1}}}dx &=& \sec^{-1}{|x|} + C
+\end{eqnarray}
+
+\section*{Properties of Definite Integrals}
+Let $f$ and $g$ be integrable functions on an interval that contains $a$, $b$, and $p$
+\begin{eqnarray}
+    \int_a^a{f(x)\,dx} &=& 0 \\
+    \int_b^a{f(x)\,dx} &=& -\int_a^b{f(x)\,dx} \\
+    \int_a^b{\left(f(x) \pm g(x)\right)\,dx} &=& \int_a^b{f(x)\,dx} \pm \int_a^b{g(x)\,dx} \\
+    \int_a^b{cf(x)\,dx} &=& c\int_a^b{f(x)\,dx}\text{, for any constant } c \\
+    \int_a^b{f(x)\,dx} &=& \int_a^p{f(x)\,dx} + \int_p^b{f(x)\,dx}
+\end{eqnarray}
+\hspace{0.5cm} The function $|f|$ is integrable on $[a,b]$, and $\int\limits_a^b{|f(x)|\,dx}$ is the sum of the areas of the regions bounded by the graph of $f$ and the $x$-axis on $[a,b]$.
+
+\section*{General formulas for indefinite integrals}
+\begin{eqnarray}
+    \int{\cos{ax}\,dx} &=& \frac{1}{a}\sin{ax} + C \\
+    \int{\sin{ax}\,dx} &=& -\frac{1}{a}\cos{ax} + C \\
+    \int{\sec^2{ax}\,dx} &=& \frac{1}{a}\tan{ax} + C \\
+    \int{\csc^2{ax}\,dx} &=& -\frac{1}{a}\cot{ax} + C \\
+    \int{\sec{ax}\tan{ax}\,dx} &=& \frac{1}{a}\sec{ax} + C \\
+    \int{\csc{ax}\cot{ax}\,dx} &=& -\frac{1}{a}\csc{ax} + C \\
+    \int{e^{ax}\,dx} &=& \frac{1}{a}e^{ax} + C \\
+    \int{b^x\,dx} &=& \frac{1}{\ln{b}}b^x + C, b > 0, b \neq 1 \\
+    \int{\frac{dx}{a^2 + x^2}} &=& \frac{1}{a}\tan^{-1}{\frac{x}{a}} + C \\
+    \int{\frac{dx}{\sqrt{a^2 - x^2}}} &=& \sin^{-1}{\frac{x}{a}} + C, a > 0 \\
+    \int{\frac{dx}{x\sqrt{x^2 - a^2}}} &=& \frac{1}{a}\sec^{-1}{\left|\frac{x}{a}\right|} + C, a > 0
+\end{eqnarray}
+
+\blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
+\end{document}
