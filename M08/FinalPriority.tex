@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}} 
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+\title{Final Review - Priority (MATH-211)}
+\author{Lillie Donato}
+\date{29 July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Simplified Write Ups}
+\begin{enumerate}
+    \item Critical Points and Increasing/Decreasing Intervals
+    \begin{enumerate}
+        \item Given some function $f$, Critical Points are when $f'$ is equal to $0$
+        \item Once you have the critical points, you can find the intervals of increase/decrease by creating sign graphs for values in between critical points, as well as in between the outermost points and $\pm \infty$
+    \end{enumerate}
+    \item Inflection Points and Concavity/Curvature
+    \begin{enumerate}
+        \item Given some function $f$, there are \textbf{possible} inflection points where $f''$ is equal to $0$
+        \item Once you have the possible inflection points, you can confirm those points and find the intervals of concavity by creating sign graphs for values in between possible inflection points, as well as in between the outermost points and $\pm \infty$
+    \end{enumerate}
+    \item L'Hôpital's Rule of unusable indeterminate forms \\
+        Take one of the values and convert it to the reciprocal, such as
+        $$\csc{x} = \frac{1}{\sin{x}}$$
+    \item Area Between Curves ($dx$) \\
+        This should be used, when one function appears to be above another, let the upper function be $f$ and the lower function be $g$ \\
+        $$A = \int_a^b{\left(f(x) - g(x)\right)\,dx}$$
+    \item Area Between Curves ($dy$)
+        This should be used, when one function appears to be more right/left as opposed to the other, let the rightmost function be $f$ and the leftmost function be $g$ \\
+        $$A = \int_c^d{\left(f(y) - g(y)\right)\,dy}$$
+    \item Optimization Tips
+    \begin{enumerate}
+        \item Differentiate the objective function once if you are finding maximum/minimum values
+        \item Differentiate the objective function twice if you are finding curvature/concavity or inflection points
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Applications of Integration (M07)}
+\begin{itemize}
+    \item Area Between Curves \\
+        \textbf{Area of a Region Between Two Curves}: \\
+        Suppose that $f$ and $g$ are continuous functions with $f(x) \geq g(x)$ on the interval $[a,b]$. The area of the region bounded by the graphs of $f$ and $g$ on $[a,b]$ is
+        $$A = \int_a^b{\left(f(x) - g(x)\right)\,dx}$$
+        \textbf{Area of a Region Between Two Curves with Respect to $y$}: \\
+        Suppose that $f$ and $g$ are continuous functions with $f(y) \geq g(y)$ on the interval $[c,d]$. The area of the region bounded by the graphs $x = f(y)$ and $x = g(y)$ on $[c,d]$ is
+        $$A = \int_c^d{\left(f(y) - g(y)\right)\,dy}$$
+    \item Volume by Slicing \\
+        \textbf{General Slicing Method}: \\
+        Suppose a solid object extends from $x = a$ to $x = b$ and the cross section of the solid perpendicular to the $x$-axis has an area given by a function $A$ that is integrable on $[a,b]$. The volume of the solid is
+        $$V = \int_a^b{A(x)\,dx}$$
+        \textbf{Disk Method about the $x$-Axis}: \\
+        Let $f$ be continuous with $f(x) \geq 0$ on the interval $[a,b]$. If the region $R$ bounded by the graph of $f$, the $x$-axis, and the lines $x = a$ and $x = b$ is revolved about the $x$-axis, the volume of the resulting solid of revolution is
+        $$V = \int_a^b{\pi\,f(x)^2\,dx}$$
+        \textbf{Washer Method about the $x$-Axis}: \\
+        Let $f$ and $g$ be continuous functions with $f(x) \geq g(x) \geq 0$ on $[a,b]$. Let $R$ be the region bounded by $y = f(x)$, $y = g(x)$, and the lines $x = a$ and $x = b$. When $R$ is revolved about the $x$-axis, the volume of the resulting solid of revolution is
+        $$V = \int_a^b{\pi\left(f(x)^2 - g(x)^2\right)\,dx}$$
+        \textbf{Disk and Washer Methods about the $y$-Axis}: \\
+        Let $p$ and $q$ be continuous functions with $p(y) \geq q(y) \geq 0$ on $[c,d]$. Let $R$ be the region bounded by $x = p(y)$, $x = q(y)$, and the lines $y = c$ and $y = d$. When $R$ is revolved about the $y$-axis, the volume of the resulting solid of revolution is given by
+        $$V = \int_c^d{\pi\left(p(y)^2 - q(y)^2\right)\,dy}$$
+        If $q(y) = 0$, the disk method results:
+        $$V = \int_c^d{\pi\,p(y)^2\,dy}$$
+    \item Volume by Shells \\
+        \textbf{Volume by the Shell Method}: \\
+        Let $f$ and $g$ be continuous functions with $f(x) \geq g(x)$ on $[a,b]$. If $R$ is the region bounded by the curves $y = f(x)$ and $y = g(x)$ between the lines $x = a$ and $x = b$, the volume of the solid generated when $R$ is revolved about the $y$-axis is
+        $$V = \int_a^b{2\pi\,x\left(f(x) - g(x)\right)\,dx}$$
+\end{itemize}
+
+\blfootnote{A copy of my notes (in \LaTeX) are available on my \href{https://github.com/onlinechronically/MATH-211}{GitHub}}
+\end{document}
